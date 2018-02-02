@@ -4,7 +4,10 @@
   "description": "Word search game",
   "main": "index.js",
   "scripts": {
-    "start:dev": "webpack-dev-server"
+    "start-dev": "webpack-dev-server",
+    "build": "webpack --watch",
+    "build-css": "node-sass client/scss/main.scss client/public/css/main.css",
+    "lint": "eslint --ext .jsx client"
   },
   "author": "Doug Riblet",
   "license": "ISC",
