@@ -4,9 +4,16 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <Controls />
-        <Gameboard />
+        <header>
+          <Header />
+        </header>
+        <main>
+          <Controls />
+          <Gameboard />
+        </main>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     );
   }
