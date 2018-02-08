@@ -1,29 +1,23 @@
-
 body {
   background-color: #552521;
-  text-align: center;
-}
+  text-align: center; }
 
 #header-container {
   width: 700px;
   margin: 4px auto;
   text-align: left;
-  background-color: #666666;
-  h1 {
-    color: white;
-  }
-}
+  background-color: #666666; }
+  #header-container h1 {
+    color: white; }
 
 #controls-container {
   width: 700px;
   margin: 4px auto;
   text-align: left;
-  background-color: #bbbbbb;
-}
+  background-color: #bbbbbb; }
 
 #gameboard-container {
   width: 700px;
   margin: 4px auto;
   text-align: left;
-  background-color: white;
-}
+  background-color: white; }
