@@ -1,17 +1,17 @@
 import { render } from 'react-dom';
 import React from 'react';
-// import { Provider } from 'react-redux';
-// import { createStore, applyMiddleware } from 'redux';
-// import logger from 'redux-logger';
-// import promise from 'redux-promise';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import promise from 'redux-promise';
 import App from './components/App';
-// import reducer from './reducers/root-reducer';
+import reducer from './reducers/root-reducer';
 
-// const store = createStore(reducer, {}, applyMiddleware(logger, promise));
+const store = createStore(reducer, {}, applyMiddleware(logger, promise));
 
 render(
-  // <Provider store={store}>
-    <App />,
-  // </Provider>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('app'),
 );
