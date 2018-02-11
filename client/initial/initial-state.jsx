@@ -1,10 +1,10 @@
 const initialState = {
-  'allow-new': true,
+  'allownew': true,
   'timer': false,
-  'current-seven': 'jeezely',
-  'pool-four': ['jeez'],
-  'found-four': [],
-  'wrong-four': []
+  'currentseven': 'jeezely',
+  'poolfour': ['jeez'],
+  'foundfour': [],
+  'wrongfour': []
 };
 
 export default initialState;
