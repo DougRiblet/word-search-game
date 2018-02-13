@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import present from './quiz-seven-present';
 
 const capitalize = word => word.toUpperCase();
