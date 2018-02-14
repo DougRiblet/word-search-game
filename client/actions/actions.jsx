@@ -1,6 +1,6 @@
 import { GUESS_RIGHT, GUESS_WRONG } from './action-types';
 
-export const guessRight = (word) => {
+export const guessRight = (newpool, newfound) => {
   return {
     type: GUESS_RIGHT,
     id: id
