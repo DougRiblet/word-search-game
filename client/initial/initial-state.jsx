@@ -1,8 +1,8 @@
 const initialState = {
   'allownew': true,
   'timer': false,
-  'currentseven': 'jeezely',
-  'poolfour': ['jeez'],
+  'currentseven': 'JEEZELY',
+  'poolfour': ['JEEZ'],
   'foundfour': [],
   'wrongfour': []
 };
