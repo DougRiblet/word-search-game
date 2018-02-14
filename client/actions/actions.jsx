@@ -7,7 +7,7 @@ export const guessRight = (newpool, newfound) => {
   };
 };
 
-export const guessWrong = (word) => {
+export const guessWrong = (newwrong) => {
   return {
     type: GUESS_WRONG,
     id: id

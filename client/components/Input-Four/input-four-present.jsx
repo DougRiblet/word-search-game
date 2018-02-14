@@ -6,12 +6,12 @@ export default class InputFour extends React.Component {
     this.state = {
       'guess': ''
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange (event) {
-    this.setState({value: event.target.value.toUpperCase()});
+    this.setState({guess: event.target.value.toUpperCase()});
   }
 
   handleSubmit (event) {
@@ -19,8 +19,12 @@ export default class InputFour extends React.Component {
       let newpool = this.props.poolfour.filter(x => x !== this.state.guess);
       let newfound = this.props.foundfour.concat(this.state.guess);
       this.props.guessRight(newpool, newfound);
+    } else if (!this.props.foundfour.includes(this.state.guess) && !this.props.wrongfour.includes(this.state.guess)) {
+      let newwrong = this.props.wrongfour.concat(this.state.guess);
+      this.props.guessWrong(newwrong);
     }
     event.preventDefault();
+    this.setState({'guess': ''});
   }
 
   render () {
@@ -29,8 +33,8 @@ export default class InputFour extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <input type="text"
             value={this.state.guess}
-            minlength='4'
-            maxlength='4'
+            minLength='4'
+            maxLength='4'
             onChange={this.handleChange} />
         </form>
       </div>
