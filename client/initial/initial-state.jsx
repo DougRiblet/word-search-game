@@ -4,7 +4,7 @@ const initialState = {
   currentseven: 'JEEZELY',
   poolfour: ['JEEZ'],
   foundfour: [],
-  wrongfour: []
+  wrongfour: [],
 };
 
 export default initialState;

@@ -5,11 +5,11 @@ const reducer = (state, action) => {
     case GUESS_RIGHT:
       return Object.assign({}, state, {
         poolfour: action.newpool,
-        foundfour: action.newfound
+        foundfour: action.newfound,
       });
     case GUESS_WRONG:
       return Object.assign({}, state, {
-        wrongfour: action.newwrong
+        wrongfour: action.newwrong,
       });
     default:
       return state;
