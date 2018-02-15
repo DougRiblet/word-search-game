@@ -5,6 +5,7 @@ const initialState = {
   poolfour: ['JEEZ'],
   foundfour: [],
   wrongfour: [],
+  showmissed: false,
 };
 
 export default initialState;
