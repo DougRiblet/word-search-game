@@ -3,8 +3,8 @@ import present from './quiz-seven-present';
 
 const capitalize = word => word.toUpperCase();
 
-const mapStateToProps = (state) => ({
-  'currentseven': capitalize(state.currentseven)
+const mapStateToProps = state => ({
+  currentseven: capitalize(state.currentseven),
 });
 
 export default connect(mapStateToProps)(present);
