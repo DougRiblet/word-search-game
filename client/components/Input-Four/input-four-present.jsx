@@ -1,43 +1,46 @@
 import React from 'react';
 
 export default class InputFour extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      'guess': ''
-    }
+      guess: '',
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange (event) {
-    this.setState({guess: event.target.value.toUpperCase()});
+  handleChange(event) {
+    this.setState({ guess: event.target.value.toUpperCase() });
   }
 
-  handleSubmit (event) {
+  handleSubmit(event) {
     if (this.props.poolfour.includes(this.state.guess)) {
-      let newpool = this.props.poolfour.filter(x => x !== this.state.guess);
-      let newfound = this.props.foundfour.concat(this.state.guess);
+      const newpool = this.props.poolfour.filter(x => x !== this.state.guess);
+      const newfound = this.props.foundfour.concat(this.state.guess);
       this.props.guessRight(newpool, newfound);
-    } else if (!this.props.foundfour.includes(this.state.guess) && !this.props.wrongfour.includes(this.state.guess)) {
-      let newwrong = this.props.wrongfour.concat(this.state.guess);
+    } else if (!this.props.foundfour.includes(this.state.guess)
+        && !this.props.wrongfour.includes(this.state.guess)) {
+      const newwrong = this.props.wrongfour.concat(this.state.guess);
       this.props.guessWrong(newwrong);
     }
     event.preventDefault();
-    this.setState({'guess': ''});
+    this.setState({ guess: '' });
   }
 
-  render () {
+  render() {
     return (
       <div id='enter-guess'>
         <form onSubmit={this.handleSubmit}>
-          <input type="text"
+          <input
+            type='text'
             value={this.state.guess}
             minLength='4'
             maxLength='4'
-            onChange={this.handleChange} />
+            onChange={this.handleChange}
+          />
         </form>
       </div>
-    )
+    );
   }
 }
