@@ -1,14 +1,19 @@
 import React from 'react';
 
-const answers = ({ poolfour, foundfour, wrongfour, showmissed }) => (
+const answers = ({
+  poolfour,
+  foundfour,
+  wrongfour,
+  showmissed,
+}) => (
   <div>
-    <div class='answersrow' id='rightfound'>
+    <div className='answersrow' id='rightfound'>
       { foundfour }
     </div>
-    <div class='answersrow' id='rightmissed'>
+    <div className='answersrow' id='rightmissed'>
       { showmissed ? poolfour : '' }
     </div>
-    <div class='answersrow' id='guessedwrong'>
+    <div className='answersrow' id='guessedwrong'>
       { wrongfour }
     </div>
 
