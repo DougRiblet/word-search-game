@@ -16,7 +16,6 @@ const answers = ({
     <div className='answersrow' id='guessedwrong'>
       { wrongfour }
     </div>
-
   </div>
 );
 
