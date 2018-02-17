@@ -1,1 +1,0 @@
-generateNewWord.jsx

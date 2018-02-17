@@ -3,12 +3,12 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
-import promise from 'redux-promise';
+import thunk from 'redux-thunk';
 import App from './components/App';
 import reducer from './reducers/root-reducer';
 import initialState from './initial/initial-state';
 
-const store = createStore(reducer, initialState, applyMiddleware(logger, promise));
+const store = createStore(reducer, initialState, applyMiddleware(logger, thunk));
 
 render(
   <Provider store={store}>
