@@ -1,4 +1,4 @@
-export const sevens = [
+const selectsevens = [
   "ACRATIC",
   "ADELGID",
   "ADIOSES",
@@ -1213,4 +1213,6 @@ export const sevens = [
   "ZIPOLAS",
   "ZIPPILY",
   "ZONINGS"
-]
+];
+
+export default selectsevens;

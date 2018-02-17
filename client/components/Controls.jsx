@@ -1,8 +1,9 @@
 import React from 'react';
+import NewGameButton from './New-Game';
 
 const Controls = () => (
   <div id='controls-container'>
-    <p>## CONTROLS ##</p>
+    <NewGameButton />
   </div>
 );
 
