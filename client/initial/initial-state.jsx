@@ -6,6 +6,7 @@ const initialState = {
   poolfour: ['JEEZ'],
   foundfour: [],
   wrongfour: [],
+  poollength: 1,
   showmissed: false,
 };
 

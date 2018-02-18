@@ -34,6 +34,7 @@ const reducer = (state, action) => {
         poolfour: action.newpool,
         foundfour: [],
         wrongfour: [],
+        poollength: action.newlength,
         showmissed: false,
       });
     default:

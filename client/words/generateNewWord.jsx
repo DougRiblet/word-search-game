@@ -28,8 +28,8 @@ const generateNewWord = () => {
     }
   });
 
-  let output = {newSeven, newPool};
-  console.log("### NEW WORD: ", newSeven);
+  let newLength = newPool.length;
+  let output = {newSeven, newPool, newLength};
 
   return new Promise(
     (resolve, reject) => {
