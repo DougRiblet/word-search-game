@@ -17,9 +17,9 @@ const testFour = (alphaSeven, four) => {
   return match === 4;
 };
 
-const generateNewRound = () => {
-  const newSeven = sevens[Math.floor(Math.random() * sevens.length)];
-  const alphaSeven = newSeven.split('').sort();
+const generateNewWord = () => {
+  let newSeven = sevens[Math.floor(Math.random() * sevens.length)];
+  let alphaSeven = newSeven.split('').sort();
   let newPool = [];
 
   fours.forEach(function(item){
@@ -28,21 +28,19 @@ const generateNewRound = () => {
     }
   });
 
-  return {newSeven, newPool};
-};
+  let output = {newSeven, newPool};
+  console.log("### NEW WORD: ", newSeven);
 
-const generatePromise = new Promise(
-  (resolve, reject) => {
-    const newRound = generateNewRound();
-    if (newRound) {
-      resolve(newRound);
-    } else {
-      const reason = new Error('Error starting new game');
-      reject(reason);
+  return new Promise(
+    (resolve, reject) => {
+      if (output) {
+        resolve(output);
+      } else {
+        const reason = new Error('Error starting new game');
+        reject(reason);
+      }
     }
-  }
-);
-
-const generateNewWord = () => generatePromise;
+  );
+};
 
 export default generateNewWord;
