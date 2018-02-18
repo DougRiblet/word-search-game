@@ -12,6 +12,10 @@ export const guessWrong = newwrong => ({
   newwrong,
 });
 
+export const endGame = () => ({
+  type: types.END_GAME,
+});
+
 const requestNewGame = () => ({
   type: types.REQUEST_NEW_GAME,
 });

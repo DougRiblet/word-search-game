@@ -11,6 +11,11 @@ const reducer = (state, action) => {
       return Object.assign({}, state, {
         wrongfour: action.newwrong,
       });
+    case types.END_GAME:
+      return Object.assign({}, state, {
+        allownew: true,
+        showmissing: true,
+      });
     case types.REQUEST_NEW_GAME:
       return Object.assign({}, state, {
         allownew: false,
@@ -19,9 +24,11 @@ const reducer = (state, action) => {
         poolfour: [],
         foundfour: [],
         wrongfour: [],
+        showmissing: false,
       });
     case types.RECEIVE_NEW_GAME:
       return Object.assign({}, state, {
+        allownew: false,
         isfetching: false,
         currentseven: action.newseven,
         poolfour: action.newpool,

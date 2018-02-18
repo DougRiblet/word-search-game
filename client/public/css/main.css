@@ -32,6 +32,12 @@ body {
   text-align: left;
   background-color: #bbbbbb;
   box-sizing: border-box; }
+  #controls-container button {
+    width: 160px;
+    padding: 3px 10px;
+    margin-right: 40px;
+    background-color: #552521;
+    color: white; }
 
 #gameboard-container {
   width: 900px;
