@@ -8,7 +8,10 @@ const answers = ({
   poollength,
   foundlength,
 }) => (
-  <div>
+  <div id='answers-four'>
+    <div className='answersrow'>
+      { foundlength } of { poollength }
+    </div>
     <div className='answersrow' id='rightfound'>
       { foundfour }
     </div>

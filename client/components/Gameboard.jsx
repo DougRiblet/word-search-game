@@ -11,9 +11,7 @@ const Gameboard = () => (
     <div id='input-four'>
       <InputFour />
     </div>
-    <div id='answers-four'>
-      <AnswersFour />
-    </div>
+    <AnswersFour />
   </div>
 );
 

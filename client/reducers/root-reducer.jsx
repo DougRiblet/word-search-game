@@ -6,6 +6,7 @@ const reducer = (state, action) => {
       return Object.assign({}, state, {
         poolfour: action.newpool,
         foundfour: action.newfound,
+        foundlength: state.foundlength + 1,
       });
     case types.GUESS_WRONG:
       return Object.assign({}, state, {
@@ -35,6 +36,7 @@ const reducer = (state, action) => {
         foundfour: [],
         wrongfour: [],
         poollength: action.newlength,
+        foundlength: 0,
         showmissed: false,
       });
     default:
