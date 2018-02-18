@@ -33,6 +33,7 @@ export default class InputFour extends React.Component {
       <div id='enter-guess'>
         <form onSubmit={this.handleSubmit}>
           <input
+            id='inputguess'
             type='text'
             value={this.state.guess}
             minLength='4'

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:500");
 body {
   background-color: #552521;
   padding: 0px;
@@ -47,7 +48,15 @@ body {
   min-height: 500px;
   text-align: left;
   background-color: white;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500; }
+
+#inputguess {
+  padding: 4px 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 24px; }
 
 #footer-container {
   width: 900px;
@@ -62,4 +71,11 @@ body {
 .answersrow {
   border-top: 2px solid #666666;
   margin: 20px 0px;
-  padding: 10px 20px; }
+  padding: 10px 20px;
+  font-size: 18px; }
+
+#rightfound, #rightmissed {
+  color: darkgreen; }
+
+#guessedwrong {
+  color: #aa0000; }
