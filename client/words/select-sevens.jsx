@@ -1,4 +1,4 @@
-const selectsevens = [
+const sevens = [
   "ACRATIC",
   "ADELGID",
   "ADIOSES",
@@ -1215,4 +1215,4 @@ const selectsevens = [
   "ZONINGS"
 ];
 
-export default selectsevens;
+export default sevens;

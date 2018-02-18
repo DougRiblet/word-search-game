@@ -1,4 +1,4 @@
-const allfours = [
+const fours = [
   "AAHS",
   "AALS",
   "ABAS",
@@ -4215,4 +4215,4 @@ const allfours = [
   "ZYME"
 ];
 
-export default allfours;
+export default fours;
