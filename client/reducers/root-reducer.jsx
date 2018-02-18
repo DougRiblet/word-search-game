@@ -14,7 +14,7 @@ const reducer = (state, action) => {
     case types.END_GAME:
       return Object.assign({}, state, {
         allownew: true,
-        showmissing: true,
+        showmissed: true,
       });
     case types.REQUEST_NEW_GAME:
       return Object.assign({}, state, {
@@ -24,7 +24,7 @@ const reducer = (state, action) => {
         poolfour: [],
         foundfour: [],
         wrongfour: [],
-        showmissing: false,
+        showmissed: false,
       });
     case types.RECEIVE_NEW_GAME:
       return Object.assign({}, state, {
@@ -34,7 +34,7 @@ const reducer = (state, action) => {
         poolfour: action.newpool,
         foundfour: [],
         wrongfour: [],
-        showmissing: false,
+        showmissed: false,
       });
     default:
       return state;
