@@ -7,6 +7,8 @@ const mapStateToProps = state => ({
   poolfour: alphabetize(state.poolfour),
   foundfour: alphabetize(state.foundfour),
   wrongfour: alphabetize(state.wrongfour),
+  poollength: state.poollength,
+  foundlength: state.foundlength,
   showmissed: state.showmissed,
 });
 

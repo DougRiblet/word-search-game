@@ -5,6 +5,8 @@ const answers = ({
   foundfour,
   wrongfour,
   showmissed,
+  poollength,
+  foundlength,
 }) => (
   <div>
     <div className='answersrow' id='rightfound'>

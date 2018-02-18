@@ -7,6 +7,7 @@ const initialState = {
   foundfour: [],
   wrongfour: [],
   poollength: 1,
+  foundlength: 0,
   showmissed: false,
 };
 
