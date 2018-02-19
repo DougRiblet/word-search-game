@@ -50,15 +50,29 @@ body {
 }
 
 #gameboard-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
   width: 900px;
   margin: 0px;
-  padding: 4px 40px;
+  padding: 0px;
   min-height: 500px;
   text-align: left;
   background-color: white;
   box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
+}
+
+#quiz-seven {
+  grid-column-start: 2;
+  grid-column-end: 3;
+
+}
+
+#input-four {
+  grid-column-start: 2;
+  grid-column-end: 3;
+
 }
 
 #inputguess {
