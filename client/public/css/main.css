@@ -42,6 +42,8 @@ body {
     border-radius: 2px; }
 
 #gameboard-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
   width: 900px;
   margin: 0px;
   padding: 4px 40px;
@@ -51,6 +53,48 @@ body {
   box-sizing: border-box;
   font-family: 'Roboto Mono', monospace;
   font-weight: 500; }
+
+#quiz-seven {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 1;
+  padding: 10px; }
+
+#input-four {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 2;
+  padding: 10px; }
+
+#answers-count {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row: 3;
+  border-top: 2px solid darkgreen;
+  padding: 10px; }
+
+#answers-right {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 3;
+  color: darkgreen;
+  border-top: 2px solid darkgreen;
+  padding: 10px; }
+
+#answers-missed {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 4;
+  border-top: 2px solid #666666;
+  padding: 10px; }
+
+#answers-wrong {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 5;
+  color: #aa0000;
+  border-top: 2px solid #666666;
+  padding: 10px; }
 
 #inputguess {
   padding: 4px 8px;
