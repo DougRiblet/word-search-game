@@ -30,7 +30,7 @@ export default class InputFour extends React.Component {
 
   render() {
     return (
-      <div id='enter-guess'>
+      <div id='input-four'>
         <form onSubmit={this.handleSubmit}>
           <input
             id='inputguess'

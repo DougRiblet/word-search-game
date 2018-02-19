@@ -5,12 +5,8 @@ import AnswersFour from './Answers-Four';
 
 const Gameboard = () => (
   <div id='gameboard-container'>
-    <div id='quiz-seven'>
-      <QuizSeven />
-    </div>
-    <div id='input-four'>
-      <InputFour />
-    </div>
+    <QuizSeven />
+    <InputFour />
     <AnswersFour />
   </div>
 );

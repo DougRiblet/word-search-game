@@ -1,7 +1,9 @@
 import React from 'react';
 
 const currentSeven = ({ currentseven }) => (
-  <h1>{ currentseven }</h1>
+  <div id='quiz-seven'>
+    <h1>{ currentseven }</h1>
+  </div>
 );
 
 export default currentSeven;
