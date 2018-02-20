@@ -1,18 +1,5 @@
 // @flow
 
-type ftState = {
-  allownew: boolean,
-  isfetching: boolean,
-  timer: boolean,
-  currentseven: string,
-  poolfour: Array<string>,
-  foundfour: Array<string>,
-  wrongfour: Array<string>,
-  poollength: number,
-  foundlength: number,
-  showmissed: boolean,
-};
-
 import * as types from '../actions/action-types';
 
 const reducer = (state: ftState, action: Object): ftState => {
