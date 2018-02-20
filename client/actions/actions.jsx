@@ -1,13 +1,15 @@
+// @flow
+
 import * as types from './action-types';
 import generateNewWord from '../words/generateNewWord';
 
-export const guessRight = (newpool, newfound) => ({
+export const guessRight = (newpool: Array<string>, newfound: Array<string>) => ({
   type: types.GUESS_RIGHT,
   newpool,
   newfound,
 });
 
-export const guessWrong = newwrong => ({
+export const guessWrong = (newwrong: Array<string>) => ({
   type: types.GUESS_WRONG,
   newwrong,
 });
@@ -20,7 +22,7 @@ const requestNewGame = () => ({
   type: types.REQUEST_NEW_GAME,
 });
 
-const receiveNewGame = (newseven, newpool, newlength) => ({
+const receiveNewGame = (newseven: string, newpool: Array<string>, newlength: number) => ({
   type: types.RECEIVE_NEW_GAME,
   newseven,
   newpool,
