@@ -2,6 +2,7 @@
 
 import * as types from '../actions/action-types';
 
+// eslint-disable-next-line no-undef
 const reducer = (state: ftState, action: Object): ftState => {
   switch (action.type) {
     case types.GUESS_RIGHT:

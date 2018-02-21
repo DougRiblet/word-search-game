@@ -1,8 +1,8 @@
 // @flow
 
+import type { Dispatch } from 'redux';
 import * as types from './action-types';
 import generateNewWord from '../words/generateNewWord';
-import type { Dispatch } from 'redux'
 
 export const guessRight = (newpool: Array<string>, newfound: Array<string>) => ({
   type: types.GUESS_RIGHT,
@@ -30,6 +30,8 @@ const receiveNewGame = (newseven: string, newpool: Array<string>, newlength: num
   newlength,
 });
 
+/* eslint-disable func-names, no-console */
+
 export function newGame() {
   return function (dispatch: Dispatch<*>) {
     dispatch(requestNewGame());
@@ -38,3 +40,5 @@ export function newGame() {
       .catch(err => console.log(err.message));
   };
 }
+
+/* eslint-enable func-names, no-console */
