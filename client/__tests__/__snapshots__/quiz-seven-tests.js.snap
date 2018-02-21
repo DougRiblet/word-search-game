@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz Seven Snapshot 1`] = `
+<div
+  id="quiz-seven"
+>
+  <h1>
+    JEEZELY
+  </h1>
+</div>
+`;

@@ -6,10 +6,10 @@ type Props = {
   currentseven: string,
 };
 
-const currentSeven = ({ currentseven }: Props) => (
+const CurrentSeven = ({ currentseven }: Props) => (
   <div id='quiz-seven'>
     <h1>{ currentseven }</h1>
   </div>
 );
 
-export default currentSeven;
+export default CurrentSeven;
