@@ -1,4 +1,6 @@
-const sevens = [
+// @flow
+
+const sevens: Array<string> = [
   "ACRATIC",
   "ADELGID",
   "ADIOSES",

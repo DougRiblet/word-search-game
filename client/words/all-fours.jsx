@@ -1,4 +1,6 @@
-const fours = [
+// @flow
+
+const fours: Array<string> = [
   "AAHS",
   "AALS",
   "ABAS",
