@@ -1,6 +1,14 @@
+// @flow
+
 import React from 'react';
 
-const answersCount = ({ poollength, foundlength }) => (
+type Props = {
+  poollength: number,
+  foundlength: number,
+};
+
+
+const answersCount = ({ poollength, foundlength }: Props) => (
   <div id='answers-count'>
     { foundlength } of { poollength }
   </div>

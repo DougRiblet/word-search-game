@@ -1,6 +1,13 @@
+// @flow
+
 import React from 'react';
 
-const newButton = ({ newGame, allownew }) => (
+type Props = {
+  newGame: () => mixed,
+  allownew: boolean,
+};
+
+const newButton = ({ newGame, allownew }: Props) => (
   <button
     id='new-game-button'
     disabled={!allownew}

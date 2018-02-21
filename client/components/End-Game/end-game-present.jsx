@@ -1,6 +1,13 @@
+// @flow
+
 import React from 'react';
 
-const endButton = ({ endGame, allownew }) => (
+type Props = {
+  endGame: () => mixed,
+  allownew: boolean,
+};
+
+const endButton = ({ endGame, allownew }: Props) => (
   <button
     id='end-game-button'
     disabled={allownew}

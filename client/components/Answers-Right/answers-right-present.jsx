@@ -1,6 +1,12 @@
+// @flow
+
 import React from 'react';
 
-const answersRight = ({ foundfour }) => (
+type Props = {
+  foundfour: string,
+};
+
+const answersRight = ({ foundfour }: Props) => (
   <div id='answers-right'>
     { foundfour }
   </div>
