@@ -15,4 +15,13 @@ describe('Action Creators', () => {
     expect(actions.guessRight(dummyA1, dummyA2)).toEqual(expectedAction);
   });
 
+  test('call action for wrong guess', () => {
+    const dummyB1 = ['ABCD', 'EFGH', 'HGFE'];
+    const expectedAction = {
+      type: types.GUESS_WRONG,
+      newwrong: dummyB1,
+    };
+    expect(actions.guessWrong(dummyB1)).toEqual(expectedAction);
+  });
+
 });
