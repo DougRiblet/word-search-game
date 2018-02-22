@@ -7,7 +7,7 @@ type Props = {
   allownew: boolean,
 };
 
-const endButton = ({ endGame, allownew }: Props) => (
+const EndButton = ({ endGame, allownew }: Props) => (
   <button
     id='end-game-button'
     disabled={allownew}
@@ -17,4 +17,4 @@ const endButton = ({ endGame, allownew }: Props) => (
   </button>
 );
 
-export default endButton;
+export default EndButton;

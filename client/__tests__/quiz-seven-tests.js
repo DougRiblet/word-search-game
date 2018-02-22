@@ -17,4 +17,4 @@ describe('Quiz Seven', () => {
     ReactDOM.render(<CurrentSeven currentseven='JEEZELY' />, div);
   });
 
-})
+});
