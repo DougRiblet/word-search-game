@@ -8,10 +8,10 @@ type Props = {
 };
 
 
-const answersCount = ({ poollength, foundlength }: Props) => (
+const AnswersCount = ({ poollength, foundlength }: Props) => (
   <div id='answers-count'>
     { foundlength } of { poollength }
   </div>
 );
 
-export default answersCount;
+export default AnswersCount;

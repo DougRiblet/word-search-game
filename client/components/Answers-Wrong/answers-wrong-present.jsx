@@ -6,10 +6,10 @@ type Props = {
   wrongfour: string,
 };
 
-const answersWrong = ({ wrongfour }: Props) => (
+const AnswersWrong = ({ wrongfour }: Props) => (
   <div id='answers-wrong'>
     { wrongfour }
   </div>
 );
 
-export default answersWrong;
+export default AnswersWrong;

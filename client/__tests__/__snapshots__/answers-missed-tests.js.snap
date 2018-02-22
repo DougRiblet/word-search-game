@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Answers Missed Snapshot 1`] = `
+<div
+  id="answers-missed"
+>
+  ABCD EFGH MNOP
+</div>
+`;

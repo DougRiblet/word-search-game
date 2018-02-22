@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Answers Count Snapshot 1`] = `
+<div
+  id="answers-count"
+>
+  8
+   of 
+  14
+</div>
+`;

@@ -7,10 +7,10 @@ type Props = {
   showmissed: boolean,
 };
 
-const answersMissed = ({ poolfour, showmissed }: Props) => (
+const AnswersMissed = ({ poolfour, showmissed }: Props) => (
   <div id='answers-missed'>
     { showmissed ? poolfour : '' }
   </div>
 );
 
-export default answersMissed;
+export default AnswersMissed;
