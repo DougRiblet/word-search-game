@@ -15,5 +15,12 @@ describe('Generate New Word', () => {
       })
   });
 
+  test('returns new seven-letter all-caps word', () => {
+    return generateNewWord()
+      .then(obj => {
+        expect(obj.newSeven).toMatch(/^[A-Z]{7}$/);
+      })
+  });
+
 });
 
