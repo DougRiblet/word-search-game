@@ -1,4 +1,7 @@
-const initialState = {
+// @flow
+
+// eslint-disable-next-line no-undef
+const initialState: ftState = {
   allownew: true,
   isfetching: false,
   timer: false,
