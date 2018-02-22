@@ -7,7 +7,7 @@
     "start-dev": "webpack-dev-server",
     "build": "webpack --watch",
     "build-css": "node-sass client/scss/main.scss client/public/css/main.css",
-    "test": "jest",
+    "test": "jest --verbose",
     "flow": "flow",
     "lint": "eslint --ext .jsx client"
   },
