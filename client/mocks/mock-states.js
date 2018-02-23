@@ -38,6 +38,15 @@ export const afterRequestNewGame = {
   showmissed: false,
 };
 
-
-
-
+export const afterReceiveNewGame = {
+  allownew: false,
+  isfetching: false,
+  timer: false,
+  currentseven: 'QAWWALI',
+  poolfour: ['WAIL', 'WALI', 'WAWL'],
+  foundfour: [],
+  wrongfour: [],
+  poollength: 3,
+  foundlength: 0,
+  showmissed: false,
+};

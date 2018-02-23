@@ -32,4 +32,14 @@ describe('Reducer', () => {
     expect(reducer(initialState, action)).toEqual(mocks.afterRequestNewGame);
   });
 
-})
+  test('handles RECEIVE_NEW_GAME action properly', () => {
+    const action = {
+      type: types.RECEIVE_NEW_GAME,
+      newseven: 'QAWWALI',
+      newpool: ['WAIL', 'WALI', 'WAWL'],
+      newlength: 3,
+    };
+    expect(reducer(initialState, action)).toEqual(mocks.afterReceiveNewGame);
+  });
+
+});
