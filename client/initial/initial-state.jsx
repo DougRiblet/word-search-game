@@ -6,10 +6,10 @@ const initialState: ftState = {
   isfetching: false,
   timer: false,
   currentseven: 'JEEZELY',
-  poolfour: ['JEEZ'],
+  poolfour: ['JEEZ', 'EELY'],
   foundfour: [],
   wrongfour: [],
-  poollength: 1,
+  poollength: 2,
   foundlength: 0,
   showmissed: false,
 };

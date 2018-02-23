@@ -22,5 +22,12 @@ describe('Generate New Word', () => {
       })
   });
 
+  test('calculates pool length correctly', () => {
+    return generateNewWord()
+      .then(obj => {
+        expect(obj.newLength).toBe(obj.newPool.length);
+      })
+  });
+
 });
 
