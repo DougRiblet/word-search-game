@@ -25,4 +25,11 @@ describe('Reducer', () => {
     expect(reducer(initialState, action)).toEqual(mocks.afterGuessWrong);
   });
 
+  test('handles REQUEST_NEW_GAME action properly', () => {
+    const action = {
+      type: types.REQUEST_NEW_GAME,
+    };
+    expect(reducer(initialState, action)).toEqual(mocks.afterRequestNewGame);
+  });
+
 })

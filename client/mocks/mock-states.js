@@ -24,3 +24,20 @@ export const afterGuessWrong = {
   foundlength: 0,
   showmissed: false,
 };
+
+export const afterRequestNewGame = {
+  allownew: false,
+  isfetching: true,
+  timer: false,
+  currentseven: '',
+  poolfour: [],
+  foundfour: [],
+  wrongfour: [],
+  poollength: 2,
+  foundlength: 0,
+  showmissed: false,
+};
+
+
+
+
