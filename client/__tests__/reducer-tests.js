@@ -17,4 +17,12 @@ describe('Reducer', () => {
     expect(reducer(initialState, action)).toEqual(mocks.afterGuessRight);
   });
 
+  test('handles GUESS_WRONG action properly', () => {
+    const action = {
+      type: types.GUESS_WRONG,
+      newwrong: ['JYZL'],
+    };
+    expect(reducer(initialState, action)).toEqual(mocks.afterGuessWrong);
+  });
+
 })

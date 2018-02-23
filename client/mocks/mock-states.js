@@ -12,3 +12,15 @@ export const afterGuessRight = {
   showmissed: false,
 };
 
+export const afterGuessWrong = {
+  allownew: true,
+  isfetching: false,
+  timer: false,
+  currentseven: 'JEEZELY',
+  poolfour: ['JEEZ', 'EELY'],
+  foundfour: [],
+  wrongfour: ['JYZL'],
+  poollength: 2,
+  foundlength: 0,
+  showmissed: false,
+};
