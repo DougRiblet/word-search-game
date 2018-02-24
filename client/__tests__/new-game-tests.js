@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import Utils from 'react-dom/test-utils'; 
 import NewButton from '../components/New-Game/new-game-present';
 
 describe('New Game', () => {
@@ -16,4 +17,15 @@ describe('New Game', () => {
     const div = document.createElement('div');
     ReactDOM.render(<NewButton newGame={() => newGame()} allownew={true} />, div);
   });
+
+  test('calls newGame when button is clicked', () => {
+    const newGame = jest.fn();
+    const wrapper = mount(
+      <NewButton newGame={newGame} allownew={true} />
+    );
+    const butt = wrapper.find('#new-game-button');
+    butt.simulate('click');
+    expect(newGame).toHaveBeenCalled();
+  });
+
 });

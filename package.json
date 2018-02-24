@@ -11,6 +11,9 @@
     "flow": "flow",
     "lint": "eslint --ext .jsx client"
   },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./enzyme_adapter.js"
+  },
   "author": "Doug Riblet",
   "license": "ISC",
   "dependencies": {
