@@ -1,7 +1,25 @@
+// @flow
+
 import React from 'react';
 
-export default class InputFour extends React.Component {
-  constructor(props) {
+type Props = {
+  poolfour: Array<string>,
+  foundfour: Array<string>,
+  wrongfour: Array<string>,
+  guessRight: (Array<string>, Array<string>) => mixed,
+  guessWrong: (Array<string>) => mixed,
+};
+
+type State = {
+  guess: string,
+};
+
+export default class InputFour extends React.Component<Props, State> {
+
+  handleSubmit: Function;
+  handleChange: Function;
+
+  constructor(props: Props) {
     super(props);
     this.state = {
       guess: '',
@@ -10,11 +28,11 @@ export default class InputFour extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+  handleChange(event: SyntheticInputEvent<*>) {
     this.setState({ guess: event.target.value.toUpperCase() });
   }
 
-  handleSubmit(event) {
+  handleSubmit(event: SyntheticInputEvent<*>) {
     if (this.props.poolfour.includes(this.state.guess)) {
       const newpool = this.props.poolfour.filter(x => x !== this.state.guess);
       const newfound = this.props.foundfour.concat(this.state.guess);
