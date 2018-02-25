@@ -29,10 +29,12 @@ body {
   width: 900px;
   margin: 0px;
   padding: 4px 40px;
-  min-height: 100px;
+  min-height: 70px;
   text-align: left;
   background-color: #bbbbbb;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500; }
   #controls-container button {
     width: 160px;
     padding: 5px 10px;
@@ -43,6 +45,17 @@ body {
   #controls-container form {
     display: inline-block;
     margin-left: 150px; }
+
+#timer-container {
+  width: 900px;
+  margin: 0px;
+  padding: 4px 240px 4px 40px;
+  min-height: 70px;
+  text-align: right;
+  background-color: white;
+  box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500; }
 
 #gameboard-container {
   display: grid;

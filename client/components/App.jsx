@@ -3,6 +3,7 @@ import Header from './Header';
 import Controls from './Controls';
 import Gameboard from './Gameboard';
 import Footer from './Footer';
+import Timer from './Timer';
 
 const App = () => (
   <div>
@@ -11,6 +12,7 @@ const App = () => (
     </header>
     <main>
       <Controls />
+      <Timer />
       <Gameboard />
     </main>
     <footer>
