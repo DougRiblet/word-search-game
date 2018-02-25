@@ -1,11 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`New Game Snapshot 1`] = `
-<button
-  disabled={true}
-  id="new-game-button"
-  onClick={undefined}
+exports[`Input Four Snapshot 1`] = `
+<div
+  id="input-four"
 >
-  New Game
-</button>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      id="inputguess"
+      maxLength="4"
+      minLength="4"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </form>
+</div>
 `;

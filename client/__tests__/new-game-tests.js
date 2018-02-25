@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import Utils from 'react-dom/test-utils'; 
 import NewButton from '../components/New-Game/new-game-present';
 
 describe('New Game', () => {

@@ -15,6 +15,10 @@ const reducer = (state: ftState, action: Object): ftState => {
       return Object.assign({}, state, {
         wrongfour: action.newwrong,
       });
+    case types.TOGGLE_TIMER:
+      return Object.assign({}, state, {
+        timer: !state.timer,
+      });
     case types.END_GAME:
       return Object.assign({}, state, {
         allownew: true,

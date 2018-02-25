@@ -40,6 +40,9 @@ body {
     background-color: #552521;
     color: white;
     border-radius: 2px; }
+  #controls-container form {
+    display: inline-block;
+    margin-left: 150px; }
 
 #gameboard-container {
   display: grid;

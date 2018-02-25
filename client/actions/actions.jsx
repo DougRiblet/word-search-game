@@ -15,6 +15,10 @@ export const guessWrong = (newwrong: Array<string>) => ({
   newwrong,
 });
 
+export const toggleTimer = () => ({
+  type: types.TOGGLE_TIMER,
+});
+
 export const endGame = () => ({
   type: types.END_GAME,
 });
