@@ -1,8 +1,9 @@
 import React from 'react';
+import TimerClock from './Timer-Clock';
 
 const Timer = () => (
   <div id='timer-container'>
-    #timer#
+    <TimerClock /> 
   </div>
 );
 
