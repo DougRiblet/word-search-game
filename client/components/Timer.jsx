@@ -3,7 +3,7 @@ import TimerClock from './Timer-Clock';
 
 const Timer = () => (
   <div id='timer-container'>
-    <TimerClock /> 
+    <TimerClock />
   </div>
 );
 

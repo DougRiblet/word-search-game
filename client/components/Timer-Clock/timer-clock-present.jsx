@@ -9,7 +9,7 @@ type Props = {
 };
 
 const TimerClock = ({ newGame, allownew, timer }: Props) => {
-  let timerClass = timer ? 'timer-show' : 'timer-hide';
+  const timerClass = timer ? 'timer-show' : 'timer-hide';
 
   return (
     <span

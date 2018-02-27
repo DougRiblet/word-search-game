@@ -15,10 +15,6 @@ type State = {
 };
 
 export default class InputFour extends React.Component<Props, State> {
-
-  handleSubmit: Function;
-  handleChange: Function;
-
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -28,10 +24,15 @@ export default class InputFour extends React.Component<Props, State> {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  handleSubmit: Function;
+  handleChange: Function;
+
+  // eslint-disable-next-line no-undef
   handleChange(event: SyntheticInputEvent<*>) {
     this.setState({ guess: event.target.value.toUpperCase() });
   }
 
+  // eslint-disable-next-line no-undef
   handleSubmit(event: SyntheticInputEvent<*>) {
     if (this.props.poolfour.includes(this.state.guess)) {
       const newpool = this.props.poolfour.filter(x => x !== this.state.guess);

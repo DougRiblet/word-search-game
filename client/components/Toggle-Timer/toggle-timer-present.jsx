@@ -10,8 +10,8 @@ type Props = {
 
 const ToggleTimer = ({ toggleTimer, timer, allownew }: Props) => (
   <form>
-    <label>
-      Timer: 
+    <label htmlFor='timer-choice'>
+      Timer:
       <input
         type='checkbox'
         name='timer-choice'
