@@ -5,6 +5,7 @@ import present from './timer-clock-present';
 
 const mapStateToProps = state => ({
   allownew: state.allownew,
+  timer: state.timer,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({ newGame }, dispatch);
