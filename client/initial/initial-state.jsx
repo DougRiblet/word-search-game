@@ -5,6 +5,8 @@ const initialState: ftState = {
   allownew: true,
   isfetching: false,
   timer: false,
+  isclicking: false,
+  secondsleft: 0,
   currentseven: 'JEEZELY',
   poolfour: ['JEEZ', 'EELY'],
   foundfour: [],
