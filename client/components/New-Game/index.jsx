@@ -5,6 +5,7 @@ import present from './new-game-present';
 
 const mapStateToProps = state => ({
   allownew: state.allownew,
+  timer: state.timer,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({ newGame }, dispatch);

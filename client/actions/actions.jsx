@@ -27,23 +27,40 @@ const requestNewGame = () => ({
   type: types.REQUEST_NEW_GAME,
 });
 
-const receiveNewGame = (newseven: string, newpool: Array<string>, newlength: number, newsecs: number) => ({
-  type: types.RECEIVE_NEW_GAME,
+const receiveNewTimedGame = (newseven: string, newpool: Array<string>, newlength: number, newsecs: number) => ({
+  type: types.RECEIVE_NEW_TIMED_GAME,
   newseven,
   newpool,
   newlength,
   newsecs,
 });
 
+const receiveNewUntimedGame = (newseven: string, newpool: Array<string>, newlength: number) => ({
+  type: types.RECEIVE_NEW_UNTIMED_GAME,
+  newseven,
+  newpool,
+  newlength,
+});
+
 /* eslint-disable func-names, no-console */
 
-export function newGame() {
-  return function (dispatch: Dispatch<*>) {
-    dispatch(requestNewGame());
-    generateNewWord()
-      .then(res => dispatch(receiveNewGame(res.newSeven, res.newPool, res.newLength, res.newSecs)))
-      .catch(err => console.log(err.message));
-  };
+export function newGame(timed) {
+  if (timed) {
+    return function (dispatch: Dispatch<*>) {
+      dispatch(requestNewGame());
+      generateNewWord()
+        .then(res => dispatch(receiveNewTimedGame(res.newSeven, res.newPool, res.newLength, res.newSecs)))
+        .catch(err => console.log(err.message));
+    };
+  } else {
+    return function (dispatch: Dispatch<*>) {
+      dispatch(requestNewGame());
+      generateNewWord()
+        .then(res => dispatch(receiveNewUntimedGame(res.newSeven, res.newPool, res.newLength)))
+        .catch(err => console.log(err.message));
+    };
+  }
+
 }
 
 /* eslint-enable func-names, no-console */

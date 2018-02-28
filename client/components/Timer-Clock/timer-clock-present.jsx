@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import TimerFormat from './timer-format';
 
 type Props = {
   newGame: () => mixed,
@@ -14,11 +15,11 @@ const TimerClock = ({ newGame, allownew, timer, isclicking, secondsleft }: Props
   const timerClass = timer ? 'timer-show' : 'timer-hide';
 
   return (
-    <span
+    <div
       className={timerClass}
     >
-      0:00
-    </span>
+      <TimerFormat secondsleft={secondsleft} />
+    </div>
   );
 };
 

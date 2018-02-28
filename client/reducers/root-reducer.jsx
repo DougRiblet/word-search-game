@@ -29,18 +29,33 @@ const reducer = (state: ftState, action: Object): ftState => {
       return Object.assign({}, state, {
         allownew: false,
         isfetching: true,
+        isclicking: false,
         currentseven: '',
         poolfour: [],
         foundfour: [],
         wrongfour: [],
         showmissed: false,
       });
-    case types.RECEIVE_NEW_GAME:
+    case types.RECEIVE_NEW_TIMED_GAME:
       return Object.assign({}, state, {
         allownew: false,
         isfetching: false,
         isclicking: true,
         secondsleft: action.newsecs,
+        currentseven: action.newseven,
+        poolfour: action.newpool,
+        foundfour: [],
+        wrongfour: [],
+        poollength: action.newlength,
+        foundlength: 0,
+        showmissed: false,
+      });
+    case types.RECEIVE_NEW_UNTIMED_GAME:
+      return Object.assign({}, state, {
+        allownew: false,
+        isfetching: false,
+        isclicking: false,
+        secondsleft: 0,
         currentseven: action.newseven,
         poolfour: action.newpool,
         foundfour: [],
