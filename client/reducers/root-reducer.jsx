@@ -22,6 +22,7 @@ const reducer = (state: ftState, action: Object): ftState => {
     case types.END_GAME:
       return Object.assign({}, state, {
         allownew: true,
+        isclicking: false,
         showmissed: true,
       });
     case types.REQUEST_NEW_GAME:
@@ -38,6 +39,8 @@ const reducer = (state: ftState, action: Object): ftState => {
       return Object.assign({}, state, {
         allownew: false,
         isfetching: false,
+        isclicking: true,
+        secondsleft: action.newsecs,
         currentseven: action.newseven,
         poolfour: action.newpool,
         foundfour: [],

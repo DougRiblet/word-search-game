@@ -5,6 +5,8 @@ import present from './timer-clock-present';
 
 const mapStateToProps = state => ({
   allownew: state.allownew,
+  isclicking: state.isclicking,
+  secondsleft: state.secondsleft,
   timer: state.timer,
 });
 

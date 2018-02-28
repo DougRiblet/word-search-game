@@ -29,7 +29,8 @@ const generateNewWord = () => {
   });
 
   let newLength = newPool.length;
-  let output = {newSeven, newPool, newLength};
+  let newSecs = 10 + (newLength * 5);
+  let output = {newSeven, newPool, newLength, newSecs};
 
   return new Promise(
     (resolve, reject) => {

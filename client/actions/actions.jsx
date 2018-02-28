@@ -27,11 +27,12 @@ const requestNewGame = () => ({
   type: types.REQUEST_NEW_GAME,
 });
 
-const receiveNewGame = (newseven: string, newpool: Array<string>, newlength: number) => ({
+const receiveNewGame = (newseven: string, newpool: Array<string>, newlength: number, newsecs: number) => ({
   type: types.RECEIVE_NEW_GAME,
   newseven,
   newpool,
   newlength,
+  newsecs,
 });
 
 /* eslint-disable func-names, no-console */
@@ -40,7 +41,7 @@ export function newGame() {
   return function (dispatch: Dispatch<*>) {
     dispatch(requestNewGame());
     generateNewWord()
-      .then(res => dispatch(receiveNewGame(res.newSeven, res.newPool, res.newLength)))
+      .then(res => dispatch(receiveNewGame(res.newSeven, res.newPool, res.newLength, res.newSecs)))
       .catch(err => console.log(err.message));
   };
 }

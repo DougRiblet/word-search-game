@@ -38,6 +38,7 @@ describe('Reducer', () => {
       newseven: 'QAWWALI',
       newpool: ['WAIL', 'WALI', 'WAWL'],
       newlength: 3,
+      newsecs: 0,
     };
     expect(reducer(initialState, action)).toEqual(mocks.afterReceiveNewGame);
   });

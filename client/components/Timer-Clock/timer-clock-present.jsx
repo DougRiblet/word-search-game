@@ -6,9 +6,11 @@ type Props = {
   newGame: () => mixed,
   allownew: boolean,
   timer: boolean,
+  isclicking: boolean,
+  secondsleft: number,
 };
 
-const TimerClock = ({ newGame, allownew, timer }: Props) => {
+const TimerClock = ({ newGame, allownew, timer, isclicking, secondsleft }: Props) => {
   const timerClass = timer ? 'timer-show' : 'timer-hide';
 
   return (
