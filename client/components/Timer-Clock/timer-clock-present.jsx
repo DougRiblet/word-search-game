@@ -2,23 +2,32 @@
 
 import React from 'react';
 import TimerFormat from './timer-format';
+import TimerCountdown from './timer-countdown';
 
 type Props = {
-  newGame: () => mixed,
-  allownew: boolean,
+  tickTock: () => mixed,
   timer: boolean,
   isclicking: boolean,
   secondsleft: number,
 };
 
-const TimerClock = ({ newGame, allownew, timer, isclicking, secondsleft }: Props) => {
+const TimerClock = ({
+  tickTock,
+  timer,
+  isclicking,
+  secondsleft,
+}: Props) => {
   const timerClass = timer ? 'timer-show' : 'timer-hide';
 
   return (
     <div
       className={timerClass}
     >
-      <TimerFormat secondsleft={secondsleft} />
+      { isclicking
+        ? <TimerCountdown tickTock={tickTock} secondsleft={secondsleft} />
+        : <TimerFormat secondsleft={secondsleft} />
+      }
+
     </div>
   );
 };

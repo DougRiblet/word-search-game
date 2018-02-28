@@ -19,6 +19,10 @@ const reducer = (state: ftState, action: Object): ftState => {
       return Object.assign({}, state, {
         timer: !state.timer,
       });
+    case types.TICK_TOCK:
+      return Object.assign({}, state, {
+        secondsleft: state.secondsleft - 1,
+      });
     case types.END_GAME:
       return Object.assign({}, state, {
         allownew: true,

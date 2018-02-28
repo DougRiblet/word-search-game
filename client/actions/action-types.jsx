@@ -7,3 +7,4 @@ export const RECEIVE_NEW_TIMED_GAME: string = 'RECEIVE_NEW_TIMED_GAME';
 export const RECEIVE_NEW_UNTIMED_GAME: string = 'RECEIVE_NEW_UNTIMED_GAME';
 export const END_GAME: string = 'END_GAME';
 export const TOGGLE_TIMER: string = 'TOGGLE_TIMER';
+export const TICK_TOCK: string = 'TICK_TOCK';

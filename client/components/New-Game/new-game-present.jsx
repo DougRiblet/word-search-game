@@ -3,7 +3,7 @@
 import React from 'react';
 
 type Props = {
-  newGame: () => mixed,
+  newGame: (boolean) => mixed,
   allownew: boolean,
   timer: boolean,
 };

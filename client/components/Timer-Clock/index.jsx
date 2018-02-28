@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { newGame } from '../../actions/actions';
+import { tickTock } from '../../actions/actions';
 import present from './timer-clock-present';
 
 const mapStateToProps = state => ({
-  allownew: state.allownew,
   isclicking: state.isclicking,
   secondsleft: state.secondsleft,
   timer: state.timer,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({ newGame }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ tickTock }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(present);
