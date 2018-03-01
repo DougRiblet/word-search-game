@@ -63,4 +63,12 @@ describe('Reducer', () => {
     expect(reducer(prestate, action)).toEqual(mocks.afterReceiveNewUntimedGame);
   });
 
+  test('handles TOGGLE_TIMER correctly',() => {
+    const action = {
+      type: types.TOGGLE_TIMER,
+    };
+    expect(reducer(initialState, {}).timer).toEqual(false);
+    expect(reducer(initialState, action).timer).toEqual(true);
+  });
+
 });
