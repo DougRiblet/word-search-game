@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { tickTock } from '../../actions/actions';
+import { tickTock, endGame } from '../../actions/actions';
 import present from './timer-clock-present';
 
 const mapStateToProps = state => ({
@@ -9,6 +9,9 @@ const mapStateToProps = state => ({
   timer: state.timer,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({ tickTock }, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  tickTock,
+  endGame,
+}, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(present);

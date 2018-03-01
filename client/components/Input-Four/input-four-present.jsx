@@ -3,6 +3,7 @@
 import React from 'react';
 
 type Props = {
+  allownew: boolean,
   poolfour: Array<string>,
   foundfour: Array<string>,
   wrongfour: Array<string>,
@@ -54,6 +55,7 @@ export default class InputFour extends React.Component<Props, State> {
           <input
             id='inputguess'
             type='text'
+            disabled={this.props.allownew}
             value={this.state.guess}
             minLength='4'
             maxLength='4'

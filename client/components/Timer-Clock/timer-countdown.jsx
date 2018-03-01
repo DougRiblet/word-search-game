@@ -4,19 +4,19 @@ import React from 'react';
 import TimerFormat from './timer-format';
 
 type Props = {
-  tickTock: () => mixed,
+  tick2: () => mixed,
   secondsleft: number,
 };
 
 export default class TimerCountdown extends React.Component<Props> {
   componentDidMount() {
-    this.ticker = setInterval(() => {
+    this.tickerID = setInterval(() => {
       this.props.tick2();
     }, 1000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.ticker);
+    clearInterval(this.tickerID);
   }
 
   render() {

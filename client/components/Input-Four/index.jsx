@@ -4,6 +4,7 @@ import { guessRight, guessWrong } from '../../actions/actions';
 import present from './input-four-present';
 
 const mapStateToProps = state => ({
+  allownew: state.allownew,
   poolfour: state.poolfour,
   foundfour: state.foundfour,
   wrongfour: state.wrongfour,
