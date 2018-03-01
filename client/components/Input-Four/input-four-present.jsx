@@ -25,7 +25,7 @@ export default class InputFour extends React.Component<Props, State> {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: Props) {
     if (!this.props.allownew && prevProps.allownew) {
       this.textInput.focus();
     }
