@@ -25,6 +25,12 @@ export default class InputFour extends React.Component<Props, State> {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    if (!this.props.allownew && prevProps.allownew) {
+      this.textInput.focus();
+    }
+  }
+
   handleSubmit: Function;
   handleChange: Function;
 
@@ -55,6 +61,7 @@ export default class InputFour extends React.Component<Props, State> {
           <input
             id='inputguess'
             type='text'
+            ref={(input) => { this.textInput = input; }}
             disabled={this.props.allownew}
             value={this.state.guess}
             minLength='4'
