@@ -44,11 +44,26 @@ export const afterRequestNewGame = {
   showmissed: false,
 };
 
-export const afterReceiveNewGame = {
+export const afterReceiveNewTimedGame = {
+  allownew: false,
+  isfetching: false,
+  timer: true,
+  isclicking: true,
+  secondsleft: 25,
+  currentseven: 'QAWWALI',
+  poolfour: ['WAIL', 'WALI', 'WAWL'],
+  foundfour: [],
+  wrongfour: [],
+  poollength: 3,
+  foundlength: 0,
+  showmissed: false,
+};
+
+export const afterReceiveNewUntimedGame = {
   allownew: false,
   isfetching: false,
   timer: false,
-  isclicking: true,
+  isclicking: false,
   secondsleft: 0,
   currentseven: 'QAWWALI',
   poolfour: ['WAIL', 'WALI', 'WAWL'],

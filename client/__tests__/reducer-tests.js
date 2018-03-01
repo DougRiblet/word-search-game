@@ -32,15 +32,35 @@ describe('Reducer', () => {
     expect(reducer(initialState, action)).toEqual(mocks.afterRequestNewGame);
   });
 
-  test('handles RECEIVE_NEW_GAME action properly', () => {
+  test('handles RECEIVE_NEW_TIMED_GAME action properly', () => {
     const action = {
-      type: types.RECEIVE_NEW_GAME,
+      type: types.RECEIVE_NEW_TIMED_GAME,
+      newseven: 'QAWWALI',
+      newpool: ['WAIL', 'WALI', 'WAWL'],
+      newlength: 3,
+      newsecs: 25,
+    };
+    let prestate = Object.assign({}, initialState);
+    prestate.allownew = false;
+    prestate.isfetching = true;
+    prestate.timer = true;
+
+    expect(reducer(prestate, action)).toEqual(mocks.afterReceiveNewTimedGame);
+  });
+
+  test('handles RECEIVE_NEW_UNTIMED_GAME action properly', () => {
+    const action = {
+      type: types.RECEIVE_NEW_UNTIMED_GAME,
       newseven: 'QAWWALI',
       newpool: ['WAIL', 'WALI', 'WAWL'],
       newlength: 3,
       newsecs: 0,
     };
-    expect(reducer(initialState, action)).toEqual(mocks.afterReceiveNewGame);
+    let prestate = Object.assign({}, initialState);
+    prestate.allownew = false;
+    prestate.isfetching = true;
+
+    expect(reducer(prestate, action)).toEqual(mocks.afterReceiveNewUntimedGame);
   });
 
 });
