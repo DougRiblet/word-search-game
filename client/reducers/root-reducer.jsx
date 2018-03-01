@@ -18,6 +18,7 @@ const reducer = (state: ftState, action: Object): ftState => {
     case types.TOGGLE_TIMER:
       return Object.assign({}, state, {
         timer: !state.timer,
+        secondsleft: 0,
       });
     case types.TICK_TOCK:
       return Object.assign({}, state, {

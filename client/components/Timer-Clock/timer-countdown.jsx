@@ -10,15 +10,13 @@ type Props = {
 
 export default class TimerCountdown extends React.Component<Props> {
   componentDidMount() {
-    this.ticker = setInterval(this.decrementSecs, 1000);
+    this.ticker = setInterval(() => {
+      this.props.tick2();
+    }, 1000);
   }
 
-  componentDidUnmount() {
+  componentWillUnmount() {
     clearInterval(this.ticker);
-  }
-
-  decrementSecs() {
-    this.props.tickTock();
   }
 
   render() {

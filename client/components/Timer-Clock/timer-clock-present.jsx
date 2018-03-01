@@ -18,13 +18,13 @@ const TimerClock = ({
   secondsleft,
 }: Props) => {
   const timerClass = timer ? 'timer-show' : 'timer-hide';
-
+  const tick2 = () => tickTock();
   return (
     <div
       className={timerClass}
     >
       { isclicking
-        ? <TimerCountdown tickTock={tickTock} secondsleft={secondsleft} />
+        ? <TimerCountdown tick2={tick2} secondsleft={secondsleft} />
         : <TimerFormat secondsleft={secondsleft} />
       }
 
