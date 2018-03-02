@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import NewButton from '../components/New-Game/new-game-present';
 
 describe('New Game', () => {
@@ -25,6 +25,14 @@ describe('New Game', () => {
     const butt = wrapper.find('#new-game-button');
     butt.simulate('click');
     expect(newGame).toHaveBeenCalled();
+  });
+
+  test('displays correct button text', () => {
+    const newGame = jest.fn();
+    const wrapper = shallow(
+      <NewButton newGame={newGame} allownew={true} />
+    );
+    expect(wrapper.text()).toEqual('New Game');
   });
 
 });

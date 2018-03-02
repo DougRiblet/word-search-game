@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
-import Utils from 'react-dom/test-utils'; 
+import { shallow, mount } from 'enzyme';
 import EndButton from '../components/End-Game/end-game-present';
 
 describe('End Game', () => {
@@ -26,6 +25,14 @@ describe('End Game', () => {
     const butt = wrapper.find('#end-game-button');
     butt.simulate('click');
     expect(endGame).toHaveBeenCalled();
+  });
+
+  test('displays correct button text', () => {
+    const endGame = jest.fn();
+    const wrapper = shallow(
+      <EndButton endGame={endGame} allownew={false} />
+    );
+    expect(wrapper.text()).toEqual('End Game');
   });
 
 });
