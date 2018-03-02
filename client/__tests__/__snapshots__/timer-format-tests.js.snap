@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Timer Clock Snapshot with timer off 1`] = `
+<span>
+  2
+  :
+  20
+</span>
+`;
