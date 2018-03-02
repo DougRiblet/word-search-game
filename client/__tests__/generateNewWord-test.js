@@ -10,6 +10,7 @@ describe('Generate New Word', () => {
             newSeven: expect.any(String),
             newPool: expect.any(Array),
             newLength: expect.any(Number),
+            newSecs: expect.any(Number),
           })
         )
       })
