@@ -7,14 +7,24 @@ import AnswersCount from '../components/Answers-Count/answers-count-present';
 describe('Answers Count', () => {
   test('Snapshot', () => {
     const AnswersCount_tree = renderer.create(
-      <AnswersCount poollength={14} foundlength={8} />
+      <AnswersCount
+      poollength={14}
+      foundlength={8}
+      allownew={false}
+      endGame={() => endGame()}
+    />
     ).toJSON();
     expect(AnswersCount_tree).toMatchSnapshot();
   });
 
   test('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<AnswersCount poollength={14} foundlength={8} />, div);
+    ReactDOM.render(<AnswersCount
+      poollength={14}
+      foundlength={8}
+      allownew={false}
+      endGame={() => endGame()}
+    />, div);
   });
 
   test('displays two counts correctly', () => {
