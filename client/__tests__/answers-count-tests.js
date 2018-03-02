@@ -16,4 +16,11 @@ describe('Answers Count', () => {
     const div = document.createElement('div');
     ReactDOM.render(<AnswersCount poollength={14} foundlength={8} />, div);
   });
+
+  test('displays two counts correctly', () => {
+    const wrapper = shallow(<AnswersCount poollength={14} foundlength={8} />);
+    expect(wrapper.text()).toEqual('8 of 14');
+    expect(wrapper.html()).toEqual('<div id="answers-count">8 of 14</div>');
+  });
+
 });

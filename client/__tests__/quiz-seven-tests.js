@@ -21,6 +21,6 @@ describe('Quiz Seven', () => {
     const wrapper = shallow(<CurrentSeven currentseven='JEEZELY' />);
     expect(wrapper.text()).toEqual('JEEZELY');
     expect(wrapper.html()).toEqual('<div id="quiz-seven"><h1>JEEZELY</h1></div>');
-  })
+  });
 
 });
