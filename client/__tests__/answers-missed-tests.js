@@ -18,4 +18,23 @@ describe('Answers Missed', () => {
     const div = document.createElement('div');
     ReactDOM.render(<AnswersMissed poolfour={dummystring} showmissed={true} />, div);
   });
+
+  test('displays nothing when showmissed is false', () => {
+    const dummystring = 'ABCD EFGH MNOP QVWY';
+    const wrapper = shallow(
+      <AnswersMissed poolfour={dummystring} showmissed={false} />
+    );
+    expect(wrapper.text()).toEqual('');
+    expect(wrapper.html()).toEqual('<div id="answers-missed"></div>');
+  });
+
+  test('displays missed words when showmissed is true', () => {
+    const dummystring = 'MNOP QVWY';
+    const wrapper = shallow(
+      <AnswersMissed poolfour={dummystring} showmissed={true} />
+    );
+    expect(wrapper.text()).toEqual('MNOP QVWY');
+    expect(wrapper.html()).toEqual('<div id="answers-missed">MNOP QVWY</div>');
+  });
+
 });
