@@ -13,6 +13,7 @@ exports[`Input Four Snapshot 1`] = `
       maxLength="4"
       minLength="4"
       onChange={[Function]}
+      size="5"
       type="text"
       value=""
     />

@@ -66,6 +66,7 @@ export default class InputFour extends React.Component<Props, State> {
             value={this.state.guess}
             minLength='4'
             maxLength='4'
+            size='5'
             onChange={this.handleChange}
           />
         </form>

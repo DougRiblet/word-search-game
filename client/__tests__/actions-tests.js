@@ -24,4 +24,25 @@ describe('Action Creators', () => {
     expect(actions.guessWrong(dummyB1)).toEqual(expectedAction);
   });
 
+  test('call action to toggle timer', () => {
+    const expectedAction = {
+      type: types.TOGGLE_TIMER,
+    };
+    expect(actions.toggleTimer()).toEqual(expectedAction);
+  });
+
+  test('call action to tick tock clock', () => {
+    const expectedAction = {
+      type: types.TICK_TOCK,
+    };
+    expect(actions.tickTock()).toEqual(expectedAction);
+  });
+
+  test('call action to end game', () => {
+    const expectedAction = {
+      type: types.END_GAME,
+    };
+    expect(actions.endGame()).toEqual(expectedAction);
+  });
+
 });
