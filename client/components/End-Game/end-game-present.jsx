@@ -8,13 +8,15 @@ type Props = {
 };
 
 const EndButton = ({ endGame, allownew }: Props) => (
-  <button
-    id='end-game-button'
-    disabled={allownew}
-    onClick={endGame}
-  >
-    End Game
-  </button>
+  <div id='endgame'>
+    <button
+      id='end-game-button'
+      disabled={allownew}
+      onClick={endGame}
+    >
+      End Game
+    </button>
+  </div>
 );
 
 export default EndButton;

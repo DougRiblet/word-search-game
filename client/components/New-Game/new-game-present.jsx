@@ -11,13 +11,15 @@ type Props = {
 const NewButton = ({ newGame, allownew, timer }: Props) => {
   const handleClick = () => newGame(timer);
   return (
-    <button
-      id='new-game-button'
-      disabled={!allownew}
-      onClick={handleClick}
-    >
-      New Game
-    </button>
+    <div id='newgame'>
+      <button
+        id='new-game-button'
+        disabled={!allownew}
+        onClick={handleClick}
+      >
+        New Game
+      </button>
+    </div>
   );
 };
 

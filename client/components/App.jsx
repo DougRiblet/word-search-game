@@ -1,8 +1,6 @@
 import React from 'react';
 import Header from './Header';
-import Controls from './Controls';
 import Gameboard from './Gameboard';
-import Footer from './Footer';
 import Timer from './Timer';
 
 const App = () => (
@@ -11,13 +9,11 @@ const App = () => (
       <Header />
     </header>
     <main>
-      <Controls />
-      <Timer />
-      <Gameboard />
+      <div id='main-container'>
+        <Timer />
+        <Gameboard />
+      </div>
     </main>
-    <footer>
-      <Footer />
-    </footer>
   </div>
 );
 

@@ -1,8 +1,15 @@
 import React from 'react';
+import Logo from './Logo';
+import NewGameButton from './New-Game';
+import EndGameButton from './End-Game';
+import ToggleTimer from './Toggle-Timer';
 
 const Header = () => (
   <div id='header-container'>
-    <h2>Jeezely</h2>
+    <Logo />
+    <NewGameButton />
+    <EndGameButton />
+    <ToggleTimer />
   </div>
 );
 
