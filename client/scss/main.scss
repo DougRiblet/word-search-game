@@ -4,14 +4,20 @@
 $font_family: 'Roboto Mono', monospace;
 $font_weight: 500;
 $app_width: 900px;
+$button_color: #552521;
 
 @mixin buttonx() {
   width: 160px;
   padding: 5px 10px;
-  margin-right: 40px;
-  background-color: #552521;
+  background-color: $button_color;
   color: white;
   border-radius: 2px;
+  position: absolute;
+  left: 10px;
+  bottom: 20px;
+  &:hover {
+    background-color: lighten($button_color, 20%);
+  }
 }
 
 body {
@@ -28,6 +34,8 @@ body {
   background-color: white;
   display: block;
   box-sizing: border-box;
+  font-family: $font_family;
+  font-weight: $font_weight;
 }
 
 #header-container {
@@ -46,9 +54,10 @@ body {
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row: 1;
+  position: relative;
   h2 {
-    font-family: $font_family;
-    font-weight: $font_weight;
+    // font-family: $font_family;
+    // font-weight: $font_weight;
     color: white;
   }
 }
@@ -58,6 +67,7 @@ body {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row: 1;
+  position: relative;
   button {
     @include buttonx();
   }
@@ -68,6 +78,7 @@ body {
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row: 1;
+  position: relative;
   button {
     @include buttonx();
   }
@@ -78,6 +89,7 @@ body {
   grid-column-start: 4;
   grid-column-end: 5;
   grid-row: 1;
+  position: relative;
 }
 
 #main-container {
@@ -98,8 +110,8 @@ body {
   text-align: right;
   background-color: white;
   box-sizing: border-box;
-  font-family: $font_family;
-  font-weight: $font_weight;
+  // font-family: $font_family;
+  // font-weight: $font_weight;
 }
 
 #gameboard-container {
@@ -111,8 +123,8 @@ body {
   text-align: left;
   background-color: white;
   box-sizing: border-box;
-  font-family: $font_family;
-  font-weight: $font_weight;
+  // font-family: $font_family;
+  // font-weight: $font_weight;
 }
 
 #quiz-seven {

@@ -11,7 +11,9 @@ body {
   padding: 0px;
   background-color: white;
   display: block;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 500; }
 
 #header-container {
   display: grid;
@@ -27,43 +29,53 @@ body {
   padding: 10px 20px;
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row: 1; }
+  grid-row: 1;
+  position: relative; }
   #logo h2 {
-    font-family: "Roboto Mono", monospace;
-    font-weight: 500;
     color: white; }
 
 #newgame {
   padding: 10px 20px;
   grid-column-start: 2;
   grid-column-end: 3;
-  grid-row: 1; }
+  grid-row: 1;
+  position: relative; }
   #newgame button {
     width: 160px;
     padding: 5px 10px;
-    margin-right: 40px;
     background-color: #552521;
     color: white;
-    border-radius: 2px; }
+    border-radius: 2px;
+    position: absolute;
+    left: 10px;
+    bottom: 20px; }
+    #newgame button:hover {
+      background-color: #9e453e; }
 
 #endgame {
   padding: 10px 20px;
   grid-column-start: 3;
   grid-column-end: 4;
-  grid-row: 1; }
+  grid-row: 1;
+  position: relative; }
   #endgame button {
     width: 160px;
     padding: 5px 10px;
-    margin-right: 40px;
     background-color: #552521;
     color: white;
-    border-radius: 2px; }
+    border-radius: 2px;
+    position: absolute;
+    left: 10px;
+    bottom: 20px; }
+    #endgame button:hover {
+      background-color: #9e453e; }
 
 #toggletimer {
   padding: 10px 20px;
   grid-column-start: 4;
   grid-column-end: 5;
-  grid-row: 1; }
+  grid-row: 1;
+  position: relative; }
 
 #main-container {
   width: 900px;
@@ -81,9 +93,7 @@ body {
   min-height: 50px;
   text-align: right;
   background-color: white;
-  box-sizing: border-box;
-  font-family: "Roboto Mono", monospace;
-  font-weight: 500; }
+  box-sizing: border-box; }
 
 #gameboard-container {
   display: grid;
@@ -93,9 +103,7 @@ body {
   padding: 4px 40px;
   text-align: left;
   background-color: white;
-  box-sizing: border-box;
-  font-family: "Roboto Mono", monospace;
-  font-weight: 500; }
+  box-sizing: border-box; }
 
 #quiz-seven {
   grid-column-start: 2;
