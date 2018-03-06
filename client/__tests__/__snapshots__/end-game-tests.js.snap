@@ -1,11 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`End Game Snapshot 1`] = `
-<button
-  disabled={false}
-  id="end-game-button"
-  onClick={[Function]}
+<div
+  id="endgame"
 >
-  End Game
-</button>
+  <button
+    disabled={false}
+    id="end-game-button"
+    onClick={[Function]}
+  >
+    End Game
+  </button>
+</div>
 `;

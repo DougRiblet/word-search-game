@@ -42,10 +42,11 @@ body {
   position: relative; }
   #newgame button {
     width: 160px;
+    height: 48px;
     padding: 5px 10px;
     background-color: #552521;
     color: white;
-    border-radius: 2px;
+    border-radius: 10px;
     position: absolute;
     left: 10px;
     bottom: 20px; }
@@ -60,10 +61,11 @@ body {
   position: relative; }
   #endgame button {
     width: 160px;
+    height: 48px;
     padding: 5px 10px;
     background-color: #552521;
     color: white;
-    border-radius: 2px;
+    border-radius: 10px;
     position: absolute;
     left: 10px;
     bottom: 20px; }
