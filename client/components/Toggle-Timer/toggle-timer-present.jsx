@@ -11,16 +11,15 @@ type Props = {
 const ToggleTimer = ({ toggleTimer, timer, allownew }: Props) => (
   <div id='toggletimer'>
     <div id='togglecheck'>
-      <label htmlFor='timer-choice'>
-        <input
-          type='checkbox'
-          name='timer-choice'
-          id='timer-choice'
-          checked={timer}
-          disabled={!allownew}
-          onChange={toggleTimer}
-        />
-      </label>
+      <input
+        type='checkbox'
+        name='timer-choice'
+        id='timer-choice'
+        checked={timer}
+        disabled={!allownew}
+        onChange={toggleTimer}
+      />
+      <label htmlFor='timer-choice' />
     </div>
   </div>
 );

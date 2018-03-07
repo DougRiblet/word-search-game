@@ -11,14 +11,14 @@ $button_color: #552521;
   height: 48px;
   position: absolute;
   left: 10px;
+  bottom: 20px;
+  border-radius: 10px;
 }
 
 @mixin buttonx() {
   padding: 5px 10px;
   background-color: $button_color;
   color: white;
-  border-radius: 10px;
-  bottom: 20px;
   &:hover {
     background-color: lighten($button_color, 20%);
   }
@@ -95,7 +95,42 @@ body {
   grid-row: 1;
   position: relative;
   #togglecheck {
-    
+    @include button_check();
+    background-color: $button_color;
+    &:before {
+      content: 'Timed';
+      position: absolute;
+      left: 1px;
+      bottom: 1px;
+      color: white;
+    }
+    &:after {
+      content: 'Untimed';
+      position: absolute;
+      left: 101px;
+      bottom: 1px;
+      color: white;
+    }
+    label {
+      display: block;
+      width: 36px;
+      height: 22px;
+      border-radius: 10px;
+
+      transition: all .5s ease;
+      cursor: pointer;
+      position: absolute;
+      z-index: 1;
+      left: 12px;
+      bottom: 1px;
+      background: yellow;
+    }
+    input[type=checkbox] {
+      visibility: hidden;
+      &:checked + label {
+      left: 102px;
+    }
+    }
   }
 }
 
