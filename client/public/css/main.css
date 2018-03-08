@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono:500");
 body {
-  background-color: #aabbee;
+  background-color: #e7e9ee;
   padding: 0px;
   margin: 0px;
   text-align: center; }
@@ -10,6 +10,8 @@ body {
   margin: 0px auto;
   padding: 0px;
   background-color: white;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
   display: block;
   box-sizing: border-box;
   font-family: "Roboto Mono", monospace;
@@ -18,11 +20,11 @@ body {
 #header-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 900px;
+  width: 898px;
   margin: 0px auto;
   padding: 0px;
   text-align: left;
-  background-color: #191979;
+  background-color: #293979;
   box-sizing: border-box; }
 
 #logo {
@@ -42,16 +44,24 @@ body {
   position: relative; }
   #newgame button {
     width: 160px;
-    height: 48px;
+    height: 40px;
     position: absolute;
     left: 10px;
     bottom: 20px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    font-size: 1em;
     border-radius: 10px;
+    box-sizing: border-box;
     padding: 5px 10px;
-    background-color: #552521;
+    background-color: #cc883f;
+    border: 2px solid #5a3a18;
     color: white; }
     #newgame button:hover {
-      background-color: #9e453e; }
+      background-color: #d9a66f; }
+    #newgame button:disabled {
+      background-color: #5a3a18;
+      color: gray; }
 
 #endgame {
   padding: 10px 20px;
@@ -61,16 +71,24 @@ body {
   position: relative; }
   #endgame button {
     width: 160px;
-    height: 48px;
+    height: 40px;
     position: absolute;
     left: 10px;
     bottom: 20px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    font-size: 1em;
     border-radius: 10px;
+    box-sizing: border-box;
     padding: 5px 10px;
-    background-color: #552521;
+    background-color: #cc883f;
+    border: 2px solid #5a3a18;
     color: white; }
     #endgame button:hover {
-      background-color: #9e453e; }
+      background-color: #d9a66f; }
+    #endgame button:disabled {
+      background-color: #5a3a18;
+      color: gray; }
 
 #toggletimer {
   padding: 10px 20px;
@@ -80,52 +98,55 @@ body {
   position: relative; }
   #toggletimer #togglecheck {
     width: 160px;
-    height: 48px;
+    height: 40px;
     position: absolute;
     left: 10px;
     bottom: 20px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    font-size: 1em;
     border-radius: 10px;
-    background-color: #552521; }
+    box-sizing: border-box;
+    background-color: #cc883f;
+    border: 6px solid #5a3a18; }
     #toggletimer #togglecheck:before {
       content: 'Timed';
       position: absolute;
-      left: 1px;
-      bottom: 1px;
+      left: 6px;
+      bottom: 4px;
       color: white; }
     #toggletimer #togglecheck:after {
       content: 'Untimed';
       position: absolute;
-      left: 101px;
-      bottom: 1px;
+      left: 78px;
+      bottom: 4px;
       color: white; }
     #toggletimer #togglecheck label {
       display: block;
-      width: 36px;
-      height: 22px;
-      border-radius: 10px;
+      width: 72px;
+      height: 28px;
+      border-radius: 4px;
       transition: all .5s ease;
       cursor: pointer;
       position: absolute;
       z-index: 1;
-      left: 12px;
-      bottom: 1px;
-      background: yellow; }
+      left: 0px;
+      bottom: 0px;
+      background: #5a3a18; }
     #toggletimer #togglecheck input[type=checkbox] {
       visibility: hidden; }
       #toggletimer #togglecheck input[type=checkbox]:checked + label {
-        left: 102px; }
+        left: 76px; }
 
 #main-container {
-  width: 900px;
+  width: 898px;
   padding: 0;
   margin: 0 auto;
-  border-left: 1px solid #999999;
-  border-right: 1px solid #999999;
   background-color: white;
   min-height: 95vh; }
 
 #timer-container {
-  width: 900px;
+  width: 898px;
   margin: 0px;
   padding: 4px 240px 4px 40px;
   min-height: 50px;
@@ -136,7 +157,7 @@ body {
 #gameboard-container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  width: 900px;
+  width: 898px;
   margin: 0px;
   padding: 4px 40px;
   text-align: left;
@@ -163,6 +184,7 @@ body {
   grid-row: 3;
   border-top: 2px solid darkgreen;
   padding: 10px;
+  font-size: 1.25em;
   min-height: 100px; }
 
 #answers-right {
@@ -172,6 +194,7 @@ body {
   color: darkgreen;
   border-top: 2px solid darkgreen;
   padding: 10px;
+  font-size: 1.25em;
   min-height: 100px; }
 
 #answers-missed {
@@ -180,6 +203,7 @@ body {
   grid-row: 4;
   border-top: 2px solid #666666;
   padding: 10px;
+  font-size: 1.25em;
   min-height: 40px; }
 
 #answers-wrong {
@@ -189,6 +213,7 @@ body {
   color: #aa0000;
   border-top: 2px solid #666666;
   padding: 10px;
+  font-size: 1.25em;
   min-height: 40px; }
 
 #inputguess {

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Logo = () => (
   <div id='logo'>
-    <h2>JZLY</h2>
+    <h2>J</h2>
   </div>
 );
 
