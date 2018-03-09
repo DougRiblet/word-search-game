@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import NewButton from '../components/New-Game/new-game-present';
 
 describe('New Game', () => {
@@ -19,7 +19,7 @@ describe('New Game', () => {
 
   test('calls newGame when button is clicked', () => {
     const newGame = jest.fn();
-    const wrapper = mount(
+    const wrapper = shallow(
       <NewButton newGame={newGame} allownew={true} />
     );
     const butt = wrapper.find('#new-game-button');

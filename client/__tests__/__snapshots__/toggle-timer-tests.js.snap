@@ -7,18 +7,17 @@ exports[`New Game Snapshot 1`] = `
   <div
     id="togglecheck"
   >
+    <input
+      checked={false}
+      disabled={false}
+      id="timer-choice"
+      name="timer-choice"
+      onChange={[Function]}
+      type="checkbox"
+    />
     <label
       htmlFor="timer-choice"
-    >
-      <input
-        checked={false}
-        disabled={false}
-        id="timer-choice"
-        name="timer-choice"
-        onChange={[MockFunction]}
-        type="checkbox"
-      />
-    </label>
+    />
   </div>
 </div>
 `;
