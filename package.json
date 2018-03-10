@@ -12,7 +12,10 @@
     "lint": "eslint --ext .jsx client"
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./enzyme_adapter.js"
+    "setupTestFrameworkScriptFile": "./enzyme_adapter.js",
+    "setupFiles": [
+      "raf/polyfill"
+    ]
   },
   "author": "Doug Riblet",
   "license": "ISC",
