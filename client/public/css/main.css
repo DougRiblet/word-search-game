@@ -148,7 +148,7 @@ body {
 #timer-container {
   width: 898px;
   margin: 0px;
-  padding: 4px 240px 4px 40px;
+  padding: 4px 160px 4px 40px;
   min-height: 50px;
   text-align: right;
   background-color: white;
@@ -224,8 +224,10 @@ body {
 
 .timer-show {
   opacity: 1;
+  font-size: 125%;
   transition: opacity 500ms; }
 
 .timer-hide {
   opacity: 0;
+  font-size: 125%;
   transition: opacity 500ms; }
