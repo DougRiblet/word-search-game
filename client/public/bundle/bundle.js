@@ -60,11 +60,25 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 29);
+/******/ 	return __webpack_require__(__webpack_require__.s = 32);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(35);
+} else {
+  module.exports = __webpack_require__(36);
+}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -257,21 +271,38 @@ process.umask = function () {
 };
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
 
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(32);
-} else {
-  module.exports = __webpack_require__(33);
-}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.connect = exports.connectAdvanced = exports.createProvider = exports.Provider = undefined;
+
+var _Provider = __webpack_require__(44);
+
+var _Provider2 = _interopRequireDefault(_Provider);
+
+var _connectAdvanced = __webpack_require__(23);
+
+var _connectAdvanced2 = _interopRequireDefault(_connectAdvanced);
+
+var _connect = __webpack_require__(50);
+
+var _connect2 = _interopRequireDefault(_connect);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.Provider = _Provider2.default;
+exports.createProvider = _Provider.createProvider;
+exports.connectAdvanced = _connectAdvanced2.default;
+exports.connect = _connect2.default;
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -313,7 +344,173 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 3 */
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
+
+var _createStore = __webpack_require__(24);
+
+var _createStore2 = _interopRequireDefault(_createStore);
+
+var _combineReducers = __webpack_require__(65);
+
+var _combineReducers2 = _interopRequireDefault(_combineReducers);
+
+var _bindActionCreators = __webpack_require__(66);
+
+var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
+
+var _applyMiddleware = __webpack_require__(67);
+
+var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
+
+var _compose = __webpack_require__(27);
+
+var _compose2 = _interopRequireDefault(_compose);
+
+var _warning = __webpack_require__(26);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/*
+* This is a dummy function to check if the function name has been altered by minification.
+* If the function has been minified and NODE_ENV !== 'production', warn the user.
+*/
+function isCrushed() {}
+
+if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
+  (0, _warning2.default)('You are currently using minified code outside of NODE_ENV === \'production\'. ' + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
+}
+
+exports.createStore = _createStore2.default;
+exports.combineReducers = _combineReducers2.default;
+exports.bindActionCreators = _bindActionCreators2.default;
+exports.applyMiddleware = _applyMiddleware2.default;
+exports.compose = _compose2.default;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.endGame = exports.tickTock = exports.toggleTimer = exports.guessWrong = exports.guessRight = undefined;
+exports.newGame = newGame;
+
+var _actionTypes = __webpack_require__(30);
+
+var types = _interopRequireWildcard(_actionTypes);
+
+var _generateNewWord = __webpack_require__(78);
+
+var _generateNewWord2 = _interopRequireDefault(_generateNewWord);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var guessRight = exports.guessRight = function guessRight(newpool, newfound) {
+  return {
+    type: types.GUESS_RIGHT,
+    newpool: newpool,
+    newfound: newfound
+  };
+};
+
+var guessWrong = exports.guessWrong = function guessWrong(newwrong) {
+  return {
+    type: types.GUESS_WRONG,
+    newwrong: newwrong
+  };
+};
+
+var toggleTimer = exports.toggleTimer = function toggleTimer() {
+  return {
+    type: types.TOGGLE_TIMER
+  };
+};
+
+var tickTock = exports.tickTock = function tickTock() {
+  return {
+    type: types.TICK_TOCK
+  };
+};
+
+var endGame = exports.endGame = function endGame() {
+  return {
+    type: types.END_GAME
+  };
+};
+
+var requestNewGame = function requestNewGame() {
+  return {
+    type: types.REQUEST_NEW_GAME
+  };
+};
+
+// eslint-disable-next-line max-len
+var receiveNewTimedGame = function receiveNewTimedGame(newseven, newpool, newlength, newsecs) {
+  return {
+    type: types.RECEIVE_NEW_TIMED_GAME,
+    newseven: newseven,
+    newpool: newpool,
+    newlength: newlength,
+    newsecs: newsecs
+  };
+};
+
+// eslint-disable-next-line max-len
+var receiveNewUntimedGame = function receiveNewUntimedGame(newseven, newpool, newlength) {
+  return {
+    type: types.RECEIVE_NEW_UNTIMED_GAME,
+    newseven: newseven,
+    newpool: newpool,
+    newlength: newlength
+  };
+};
+
+/* eslint-disable func-names, no-console, max-len */
+
+function newGame(timed) {
+  if (timed) {
+    return function (dispatch) {
+      dispatch(requestNewGame());
+      (0, _generateNewWord2.default)().then(function (res) {
+        return dispatch(receiveNewTimedGame(res.newSeven, res.newPool, res.newLength, res.newSecs));
+      }).catch(function (err) {
+        return console.log(err.message);
+      });
+    };
+  }
+
+  return function (dispatch) {
+    dispatch(requestNewGame());
+    (0, _generateNewWord2.default)().then(function (res) {
+      return dispatch(receiveNewUntimedGame(res.newSeven, res.newPool, res.newLength));
+    }).catch(function (err) {
+      return console.log(err.message);
+    });
+  };
+}
+
+/* eslint-enable func-names, no-console, max-len */
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -409,7 +606,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 };
 
 /***/ }),
-/* 4 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -466,10 +663,10 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 5 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -490,10 +687,10 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 6 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -507,7 +704,7 @@ module.exports = emptyObject;
 
 
 
-var emptyFunction = __webpack_require__(2);
+var emptyFunction = __webpack_require__(3);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -559,10 +756,10 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 7 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -578,9 +775,9 @@ module.exports = warning;
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(4);
-  var warning = __webpack_require__(6);
-  var ReactPropTypesSecret = __webpack_require__(8);
+  var invariant = __webpack_require__(7);
+  var warning = __webpack_require__(9);
+  var ReactPropTypesSecret = __webpack_require__(11);
   var loggedTypeFailures = {};
 }
 
@@ -627,10 +824,10 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 }
 
 module.exports = checkPropTypes;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 8 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -648,7 +845,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 9 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -681,7 +878,7 @@ function warning(message) {
 }
 
 /***/ }),
-/* 10 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -691,15 +888,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _baseGetTag = __webpack_require__(51);
+var _baseGetTag = __webpack_require__(53);
 
 var _baseGetTag2 = _interopRequireDefault(_baseGetTag);
 
-var _getPrototype = __webpack_require__(56);
+var _getPrototype = __webpack_require__(58);
 
 var _getPrototype2 = _interopRequireDefault(_getPrototype);
 
-var _isObjectLike = __webpack_require__(58);
+var _isObjectLike = __webpack_require__(60);
 
 var _isObjectLike2 = _interopRequireDefault(_isObjectLike);
 
@@ -764,7 +961,7 @@ function isPlainObject(value) {
 exports.default = isPlainObject;
 
 /***/ }),
-/* 11 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -794,7 +991,7 @@ try {
 module.exports = g;
 
 /***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -833,7 +1030,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -848,7 +1045,7 @@ module.exports = ExecutionEnvironment;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__(2);
+var emptyFunction = __webpack_require__(3);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -911,10 +1108,10 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -957,7 +1154,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1030,7 +1227,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1045,7 +1242,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(34);
+var isTextNode = __webpack_require__(37);
 
 /*eslint-disable no-bitwise */
 
@@ -1073,7 +1270,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1103,7 +1300,7 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1128,16 +1325,16 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(43)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(45)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(44)();
+  module.exports = __webpack_require__(46)();
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 19 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1148,7 +1345,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.storeShape = exports.subscriptionShape = undefined;
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(21);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -1168,7 +1365,7 @@ var storeShape = exports.storeShape = _propTypes2.default.shape({
 });
 
 /***/ }),
-/* 20 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1182,21 +1379,21 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = connectAdvanced;
 
-var _hoistNonReactStatics = __webpack_require__(45);
+var _hoistNonReactStatics = __webpack_require__(47);
 
 var _hoistNonReactStatics2 = _interopRequireDefault(_hoistNonReactStatics);
 
-var _invariant = __webpack_require__(46);
+var _invariant = __webpack_require__(48);
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
-var _Subscription = __webpack_require__(47);
+var _Subscription = __webpack_require__(49);
 
 var _Subscription2 = _interopRequireDefault(_Subscription);
 
-var _PropTypes = __webpack_require__(19);
+var _PropTypes = __webpack_require__(22);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1506,65 +1703,10 @@ selectorFactory) {
     return (0, _hoistNonReactStatics2.default)(Connect, WrappedComponent);
   };
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.compose = exports.applyMiddleware = exports.bindActionCreators = exports.combineReducers = exports.createStore = undefined;
-
-var _createStore = __webpack_require__(22);
-
-var _createStore2 = _interopRequireDefault(_createStore);
-
-var _combineReducers = __webpack_require__(63);
-
-var _combineReducers2 = _interopRequireDefault(_combineReducers);
-
-var _bindActionCreators = __webpack_require__(64);
-
-var _bindActionCreators2 = _interopRequireDefault(_bindActionCreators);
-
-var _applyMiddleware = __webpack_require__(65);
-
-var _applyMiddleware2 = _interopRequireDefault(_applyMiddleware);
-
-var _compose = __webpack_require__(25);
-
-var _compose2 = _interopRequireDefault(_compose);
-
-var _warning = __webpack_require__(24);
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/*
-* This is a dummy function to check if the function name has been altered by minification.
-* If the function has been minified and NODE_ENV !== 'production', warn the user.
-*/
-function isCrushed() {}
-
-if (process.env.NODE_ENV !== 'production' && typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') {
-  (0, _warning2.default)('You are currently using minified code outside of NODE_ENV === \'production\'. ' + 'This means that you are running a slower development build of Redux. ' + 'You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify ' + 'or DefinePlugin for webpack (http://stackoverflow.com/questions/30030031) ' + 'to ensure you have the correct code for your production build.');
-}
-
-exports.createStore = _createStore2.default;
-exports.combineReducers = _combineReducers2.default;
-exports.bindActionCreators = _bindActionCreators2.default;
-exports.applyMiddleware = _applyMiddleware2.default;
-exports.compose = _compose2.default;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 22 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1579,11 +1721,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.default = createStore;
 
-var _isPlainObject = __webpack_require__(10);
+var _isPlainObject = __webpack_require__(13);
 
 var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-var _symbolObservable = __webpack_require__(59);
+var _symbolObservable = __webpack_require__(61);
 
 var _symbolObservable2 = _interopRequireDefault(_symbolObservable);
 
@@ -1836,7 +1978,7 @@ var ActionTypes = exports.ActionTypes = {
 }
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1846,7 +1988,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _root = __webpack_require__(52);
+var _root = __webpack_require__(54);
 
 var _root2 = _interopRequireDefault(_root);
 
@@ -1858,7 +2000,7 @@ var _Symbol = _root2.default.Symbol;
 exports.default = _Symbol;
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1891,7 +2033,7 @@ function warning(message) {
 }
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1935,7 +2077,7 @@ function compose() {
 }
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1948,7 +2090,7 @@ exports.wrapMapToPropsConstant = wrapMapToPropsConstant;
 exports.getDependsOnOwnProps = getDependsOnOwnProps;
 exports.wrapMapToPropsFunc = wrapMapToPropsFunc;
 
-var _verifyPlainObject = __webpack_require__(27);
+var _verifyPlainObject = __webpack_require__(29);
 
 var _verifyPlainObject2 = _interopRequireDefault(_verifyPlainObject);
 
@@ -2019,10 +2161,10 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
     return proxy;
   };
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2033,11 +2175,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = verifyPlainObject;
 
-var _isPlainObject = __webpack_require__(10);
+var _isPlainObject = __webpack_require__(13);
 
 var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-var _warning = __webpack_require__(9);
+var _warning = __webpack_require__(12);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -2050,287 +2192,107 @@ function verifyPlainObject(value, displayName, methodName) {
 }
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-/**
- * lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** Used as references for various `Number` constants. */
-var MAX_SAFE_INTEGER = 9007199254740991;
-
-/** `Object#toString` result references. */
-var argsTag = '[object Arguments]',
-    funcTag = '[object Function]',
-    genTag = '[object GeneratorFunction]';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/** Built-in value references. */
-var propertyIsEnumerable = objectProto.propertyIsEnumerable;
-
-/**
- * Checks if `value` is likely an `arguments` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an `arguments` object,
- *  else `false`.
- * @example
- *
- * _.isArguments(function() { return arguments; }());
- * // => true
- *
- * _.isArguments([1, 2, 3]);
- * // => false
- */
-function isArguments(value) {
-  // Safari 8.1 makes `arguments.callee` enumerable in strict mode.
-  return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') && (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
-}
-
-/**
- * Checks if `value` is array-like. A value is considered array-like if it's
- * not a function and has a `value.length` that's an integer greater than or
- * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
- * @example
- *
- * _.isArrayLike([1, 2, 3]);
- * // => true
- *
- * _.isArrayLike(document.body.children);
- * // => true
- *
- * _.isArrayLike('abc');
- * // => true
- *
- * _.isArrayLike(_.noop);
- * // => false
- */
-function isArrayLike(value) {
-  return value != null && isLength(value.length) && !isFunction(value);
-}
-
-/**
- * This method is like `_.isArrayLike` except that it also checks if `value`
- * is an object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an array-like object,
- *  else `false`.
- * @example
- *
- * _.isArrayLikeObject([1, 2, 3]);
- * // => true
- *
- * _.isArrayLikeObject(document.body.children);
- * // => true
- *
- * _.isArrayLikeObject('abc');
- * // => false
- *
- * _.isArrayLikeObject(_.noop);
- * // => false
- */
-function isArrayLikeObject(value) {
-  return isObjectLike(value) && isArrayLike(value);
-}
-
-/**
- * Checks if `value` is classified as a `Function` object.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a function, else `false`.
- * @example
- *
- * _.isFunction(_);
- * // => true
- *
- * _.isFunction(/abc/);
- * // => false
- */
-function isFunction(value) {
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in Safari 8-9 which returns 'object' for typed array and other constructors.
-  var tag = isObject(value) ? objectToString.call(value) : '';
-  return tag == funcTag || tag == genTag;
-}
-
-/**
- * Checks if `value` is a valid array-like length.
- *
- * **Note:** This method is loosely based on
- * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
- * @example
- *
- * _.isLength(3);
- * // => true
- *
- * _.isLength(Number.MIN_VALUE);
- * // => false
- *
- * _.isLength(Infinity);
- * // => false
- *
- * _.isLength('3');
- * // => false
- */
-function isLength(value) {
-  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-}
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value === 'undefined' ? 'undefined' : _typeof(value);
-  return !!value && (type == 'object' || type == 'function');
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) == 'object';
-}
-
-module.exports = isArguments;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var GUESS_RIGHT = exports.GUESS_RIGHT = 'GUESS_RIGHT';
+var GUESS_WRONG = exports.GUESS_WRONG = 'GUESS_WRONG';
+var REQUEST_NEW_GAME = exports.REQUEST_NEW_GAME = 'REQUEST_NEW_GAME';
+var RECEIVE_NEW_TIMED_GAME = exports.RECEIVE_NEW_TIMED_GAME = 'RECEIVE_NEW_TIMED_GAME';
+var RECEIVE_NEW_UNTIMED_GAME = exports.RECEIVE_NEW_UNTIMED_GAME = 'RECEIVE_NEW_UNTIMED_GAME';
+var END_GAME = exports.END_GAME = 'END_GAME';
+var TOGGLE_TIMER = exports.TOGGLE_TIMER = 'TOGGLE_TIMER';
+var TICK_TOCK = exports.TICK_TOCK = 'TICK_TOCK';
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _reactDom = __webpack_require__(30);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(41);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _redux = __webpack_require__(21);
+var TimerFormat = function TimerFormat(_ref) {
+  var secondsleft = _ref.secondsleft;
 
-var _reduxLogger = __webpack_require__(70);
+  var minutes = String(Math.floor(secondsleft / 60));
+  var remainder = secondsleft % 60;
+  var seconds = (remainder < 10 ? '0' : '') + String(remainder);
+  return _react2.default.createElement(
+    'span',
+    null,
+    minutes,
+    ':',
+    seconds
+  );
+};
+
+exports.default = TimerFormat;
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _reactDom = __webpack_require__(33);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(4);
+
+var _reduxLogger = __webpack_require__(72);
 
 var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 
-var _reduxPromise = __webpack_require__(71);
+var _reduxThunk = __webpack_require__(73);
 
-var _reduxPromise2 = _interopRequireDefault(_reduxPromise);
+var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _App = __webpack_require__(77);
+var _App = __webpack_require__(74);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _rootReducer = __webpack_require__(82);
+var _rootReducer = __webpack_require__(103);
 
 var _rootReducer2 = _interopRequireDefault(_rootReducer);
 
+var _initialState = __webpack_require__(104);
+
+var _initialState2 = _interopRequireDefault(_initialState);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var store = (0, _redux.createStore)(_rootReducer2.default, {}, (0, _redux.applyMiddleware)(_reduxLogger2.default, _reduxPromise2.default));
+var store = (0, _redux.createStore)(_rootReducer2.default, _initialState2.default, (0, _redux.applyMiddleware)(_reduxLogger2.default, _reduxThunk2.default));
 
-(0, _reactDom.render)(
-// <Provider store={store}>
-_react2.default.createElement(_App2.default, null),
-// </Provider>,
-document.getElementById('app'));
+(0, _reactDom.render)(_react2.default.createElement(
+  _reactRedux.Provider,
+  { store: store },
+  _react2.default.createElement(_App2.default, null)
+), document.getElementById('app'));
 
 /***/ }),
-/* 30 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2365,14 +2327,14 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(31);
+  module.exports = __webpack_require__(34);
 } else {
-  module.exports = __webpack_require__(36);
+  module.exports = __webpack_require__(39);
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 31 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2392,16 +2354,16 @@ if (process.env.NODE_ENV === 'production') {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var aa = __webpack_require__(1),
-    l = __webpack_require__(12),
-    B = __webpack_require__(3),
-    C = __webpack_require__(2),
-    ba = __webpack_require__(13),
-    da = __webpack_require__(14),
-    ea = __webpack_require__(15),
-    fa = __webpack_require__(16),
-    ia = __webpack_require__(17),
-    D = __webpack_require__(5);
+var aa = __webpack_require__(0),
+    l = __webpack_require__(15),
+    B = __webpack_require__(6),
+    C = __webpack_require__(3),
+    ba = __webpack_require__(16),
+    da = __webpack_require__(17),
+    ea = __webpack_require__(18),
+    fa = __webpack_require__(19),
+    ia = __webpack_require__(20),
+    D = __webpack_require__(8);
 function E(a) {
   for (var b = arguments.length - 1, c = "Minified React error #" + a + "; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d" + a, d = 0; d < b; d++) {
     c += "\x26args[]\x3d" + encodeURIComponent(arguments[d + 1]);
@@ -4369,7 +4331,7 @@ Z.injectIntoDevTools({ findFiberByHostInstance: pb, bundleType: 0, version: "16.
     Ug = Tg && Sg || Tg;module.exports = Ug["default"] ? Ug["default"] : Ug;
 
 /***/ }),
-/* 32 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4386,9 +4348,9 @@ Z.injectIntoDevTools({ findFiberByHostInstance: pb, bundleType: 0, version: "16.
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var m = __webpack_require__(3),
-    n = __webpack_require__(5),
-    p = __webpack_require__(2),
+var m = __webpack_require__(6),
+    n = __webpack_require__(8),
+    p = __webpack_require__(3),
     q = "function" === typeof Symbol && Symbol["for"],
     r = q ? Symbol["for"]("react.element") : 60103,
     t = q ? Symbol["for"]("react.call") : 60104,
@@ -4498,7 +4460,7 @@ var U = { Children: { map: function map(a, b, e) {
     W = V && U || V;module.exports = W["default"] ? W["default"] : W;
 
 /***/ }),
-/* 33 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4519,12 +4481,12 @@ if (process.env.NODE_ENV !== "production") {
   (function () {
     'use strict';
 
-    var _assign = __webpack_require__(3);
-    var emptyObject = __webpack_require__(5);
-    var invariant = __webpack_require__(4);
-    var warning = __webpack_require__(6);
-    var emptyFunction = __webpack_require__(2);
-    var checkPropTypes = __webpack_require__(7);
+    var _assign = __webpack_require__(6);
+    var emptyObject = __webpack_require__(8);
+    var invariant = __webpack_require__(7);
+    var warning = __webpack_require__(9);
+    var emptyFunction = __webpack_require__(3);
+    var checkPropTypes = __webpack_require__(10);
 
     // TODO: this is special because it gets imported during build.
 
@@ -5855,10 +5817,10 @@ if (process.env.NODE_ENV !== "production") {
     module.exports = react;
   })();
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 34 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5873,7 +5835,7 @@ if (process.env.NODE_ENV !== "production") {
  * @typechecks
  */
 
-var isNode = __webpack_require__(35);
+var isNode = __webpack_require__(38);
 
 /**
  * @param {*} object The object to check.
@@ -5886,7 +5848,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 35 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5917,7 +5879,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 36 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5928,7 +5890,7 @@ module.exports = isNode;
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var React=__webpack_require__(1);var invariant=__webpack_require__(4);var warning=__webpack_require__(6);var ExecutionEnvironment=__webpack_require__(12);var _assign=__webpack_require__(3);var emptyFunction=__webpack_require__(2);var EventListener=__webpack_require__(13);var getActiveElement=__webpack_require__(14);var shallowEqual=__webpack_require__(15);var containsNode=__webpack_require__(16);var focusNode=__webpack_require__(17);var emptyObject=__webpack_require__(5);var checkPropTypes=__webpack_require__(7);var hyphenateStyleName=__webpack_require__(37);var camelizeStyleName=__webpack_require__(39);/**
+ */var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};if(process.env.NODE_ENV!=="production"){(function(){'use strict';var React=__webpack_require__(0);var invariant=__webpack_require__(7);var warning=__webpack_require__(9);var ExecutionEnvironment=__webpack_require__(15);var _assign=__webpack_require__(6);var emptyFunction=__webpack_require__(3);var EventListener=__webpack_require__(16);var getActiveElement=__webpack_require__(17);var shallowEqual=__webpack_require__(18);var containsNode=__webpack_require__(19);var focusNode=__webpack_require__(20);var emptyObject=__webpack_require__(8);var checkPropTypes=__webpack_require__(10);var hyphenateStyleName=__webpack_require__(40);var camelizeStyleName=__webpack_require__(42);/**
  * WARNING: DO NOT manually require this module.
  * This is a replacement for `invariant(...)` used by the error code system
  * and will _only_ be required by the corresponding babel pass.
@@ -8898,10 +8860,10 @@ if(navigator.userAgent.indexOf('Chrome')>-1&&navigator.userAgent.indexOf('Edge')
 if(/^(https?|file):$/.test(protocol)){console.info('%cDownload the React DevTools '+'for a better development experience: '+'https://fb.me/react-devtools'+(protocol==='file:'?'\nYou might need to use a local HTTP server (instead of file://): '+'https://fb.me/react-devtools-faq':''),'font-weight:bold');}}}}var ReactDOM$2=Object.freeze({default:ReactDOM});var ReactDOM$3=ReactDOM$2&&ReactDOM||ReactDOM$2;// TODO: decide on the top-level export form.
 // This is hacky but makes it work with both Rollup and Jest.
 var reactDom=ReactDOM$3['default']?ReactDOM$3['default']:ReactDOM$3;module.exports=reactDom;})();}
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 37 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8916,7 +8878,7 @@ var reactDom=ReactDOM$3['default']?ReactDOM$3['default']:ReactDOM$3;module.expor
 
 
 
-var hyphenate = __webpack_require__(38);
+var hyphenate = __webpack_require__(41);
 
 var msPattern = /^ms-/;
 
@@ -8943,7 +8905,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 38 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8979,7 +8941,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 39 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8994,7 +8956,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(40);
+var camelize = __webpack_require__(43);
 
 var msPattern = /^-ms-/;
 
@@ -9022,7 +8984,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 40 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9057,38 +9019,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 41 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.connect = exports.connectAdvanced = exports.createProvider = exports.Provider = undefined;
-
-var _Provider = __webpack_require__(42);
-
-var _Provider2 = _interopRequireDefault(_Provider);
-
-var _connectAdvanced = __webpack_require__(20);
-
-var _connectAdvanced2 = _interopRequireDefault(_connectAdvanced);
-
-var _connect = __webpack_require__(48);
-
-var _connect2 = _interopRequireDefault(_connect);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.Provider = _Provider2.default;
-exports.createProvider = _Provider.createProvider;
-exports.connectAdvanced = _connectAdvanced2.default;
-exports.connect = _connect2.default;
-
-/***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9102,15 +9033,15 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.createProvider = createProvider;
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
-var _propTypes = __webpack_require__(18);
+var _propTypes = __webpack_require__(21);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _PropTypes = __webpack_require__(19);
+var _PropTypes = __webpack_require__(22);
 
-var _warning = __webpack_require__(9);
+var _warning = __webpack_require__(12);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -9195,10 +9126,10 @@ function createProvider() {
 }
 
 exports.default = createProvider();
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9213,13 +9144,13 @@ exports.default = createProvider();
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var emptyFunction = __webpack_require__(2);
-var invariant = __webpack_require__(4);
-var warning = __webpack_require__(6);
-var assign = __webpack_require__(3);
+var emptyFunction = __webpack_require__(3);
+var invariant = __webpack_require__(7);
+var warning = __webpack_require__(9);
+var assign = __webpack_require__(6);
 
-var ReactPropTypesSecret = __webpack_require__(8);
-var checkPropTypes = __webpack_require__(7);
+var ReactPropTypesSecret = __webpack_require__(11);
+var checkPropTypes = __webpack_require__(10);
 
 module.exports = function (isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -9720,10 +9651,10 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
   return ReactPropTypes;
 };
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 44 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9736,9 +9667,9 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
 
 
-var emptyFunction = __webpack_require__(2);
-var invariant = __webpack_require__(4);
-var ReactPropTypesSecret = __webpack_require__(8);
+var emptyFunction = __webpack_require__(3);
+var invariant = __webpack_require__(7);
+var ReactPropTypesSecret = __webpack_require__(11);
 
 module.exports = function () {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -9782,7 +9713,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9855,7 +9786,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 };
 
 /***/ }),
-/* 46 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9907,10 +9838,10 @@ var invariant = function invariant(condition, format, a, b, c, d, e, f) {
 };
 
 module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 47 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10017,7 +9948,7 @@ var Subscription = function () {
 exports.default = Subscription;
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10031,27 +9962,27 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.createConnect = createConnect;
 
-var _connectAdvanced = __webpack_require__(20);
+var _connectAdvanced = __webpack_require__(23);
 
 var _connectAdvanced2 = _interopRequireDefault(_connectAdvanced);
 
-var _shallowEqual = __webpack_require__(49);
+var _shallowEqual = __webpack_require__(51);
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-var _mapDispatchToProps = __webpack_require__(50);
+var _mapDispatchToProps = __webpack_require__(52);
 
 var _mapDispatchToProps2 = _interopRequireDefault(_mapDispatchToProps);
 
-var _mapStateToProps = __webpack_require__(66);
+var _mapStateToProps = __webpack_require__(68);
 
 var _mapStateToProps2 = _interopRequireDefault(_mapStateToProps);
 
-var _mergeProps = __webpack_require__(67);
+var _mergeProps = __webpack_require__(69);
 
 var _mergeProps2 = _interopRequireDefault(_mergeProps);
 
-var _selectorFactory = __webpack_require__(68);
+var _selectorFactory = __webpack_require__(70);
 
 var _selectorFactory2 = _interopRequireDefault(_selectorFactory);
 
@@ -10167,7 +10098,7 @@ function createConnect() {
 exports.default = createConnect();
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10212,7 +10143,7 @@ function shallowEqual(objA, objB) {
 }
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10228,9 +10159,9 @@ exports.whenMapDispatchToPropsIsFunction = whenMapDispatchToPropsIsFunction;
 exports.whenMapDispatchToPropsIsMissing = whenMapDispatchToPropsIsMissing;
 exports.whenMapDispatchToPropsIsObject = whenMapDispatchToPropsIsObject;
 
-var _redux = __webpack_require__(21);
+var _redux = __webpack_require__(4);
 
-var _wrapMapToProps = __webpack_require__(26);
+var _wrapMapToProps = __webpack_require__(28);
 
 function whenMapDispatchToPropsIsFunction(mapDispatchToProps) {
   return typeof mapDispatchToProps === 'function' ? (0, _wrapMapToProps.wrapMapToPropsFunc)(mapDispatchToProps, 'mapDispatchToProps') : undefined;
@@ -10251,7 +10182,7 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 exports.default = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10261,15 +10192,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Symbol2 = __webpack_require__(23);
+var _Symbol2 = __webpack_require__(25);
 
 var _Symbol3 = _interopRequireDefault(_Symbol2);
 
-var _getRawTag = __webpack_require__(54);
+var _getRawTag = __webpack_require__(56);
 
 var _getRawTag2 = _interopRequireDefault(_getRawTag);
 
-var _objectToString = __webpack_require__(55);
+var _objectToString = __webpack_require__(57);
 
 var _objectToString2 = _interopRequireDefault(_objectToString);
 
@@ -10299,7 +10230,7 @@ function baseGetTag(value) {
 exports.default = baseGetTag;
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10311,7 +10242,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _freeGlobal = __webpack_require__(53);
+var _freeGlobal = __webpack_require__(55);
 
 var _freeGlobal2 = _interopRequireDefault(_freeGlobal);
 
@@ -10326,7 +10257,7 @@ var root = _freeGlobal2.default || freeSelf || Function('return this')();
 exports.default = root;
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10342,10 +10273,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var freeGlobal = (typeof global === 'undefined' ? 'undefined' : _typeof(global)) == 'object' && global && global.Object === Object && global;
 
 exports.default = freeGlobal;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10355,7 +10286,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Symbol2 = __webpack_require__(23);
+var _Symbol2 = __webpack_require__(25);
 
 var _Symbol3 = _interopRequireDefault(_Symbol2);
 
@@ -10407,7 +10338,7 @@ function getRawTag(value) {
 exports.default = getRawTag;
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10440,7 +10371,7 @@ function objectToString(value) {
 exports.default = objectToString;
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10450,7 +10381,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _overArg = __webpack_require__(57);
+var _overArg = __webpack_require__(59);
 
 var _overArg2 = _interopRequireDefault(_overArg);
 
@@ -10462,7 +10393,7 @@ var getPrototype = (0, _overArg2.default)(Object.getPrototypeOf, Object);
 exports.default = getPrototype;
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10488,7 +10419,7 @@ function overArg(func, transform) {
 exports.default = overArg;
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10531,16 +10462,16 @@ function isObjectLike(value) {
 exports.default = isObjectLike;
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = __webpack_require__(60);
+module.exports = __webpack_require__(62);
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10550,7 +10481,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _ponyfill = __webpack_require__(62);
+var _ponyfill = __webpack_require__(64);
 
 var _ponyfill2 = _interopRequireDefault(_ponyfill);
 
@@ -10574,10 +10505,10 @@ if (typeof self !== 'undefined') {
 
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11), __webpack_require__(61)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14), __webpack_require__(63)(module)))
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10607,7 +10538,7 @@ module.exports = function (module) {
 };
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10636,7 +10567,7 @@ function symbolObservablePonyfill(root) {
 };
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10647,13 +10578,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = combineReducers;
 
-var _createStore = __webpack_require__(22);
+var _createStore = __webpack_require__(24);
 
-var _isPlainObject = __webpack_require__(10);
+var _isPlainObject = __webpack_require__(13);
 
 var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
 
-var _warning = __webpack_require__(24);
+var _warning = __webpack_require__(26);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -10785,10 +10716,10 @@ function combineReducers(reducers) {
     return hasChanged ? nextState : state;
   };
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10850,7 +10781,7 @@ function bindActionCreators(actionCreators, dispatch) {
 }
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10861,7 +10792,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = applyMiddleware;
 
-var _compose = __webpack_require__(25);
+var _compose = __webpack_require__(27);
 
 var _compose2 = _interopRequireDefault(_compose);
 
@@ -10923,7 +10854,7 @@ function applyMiddleware() {
 }
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10935,7 +10866,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.whenMapStateToPropsIsFunction = whenMapStateToPropsIsFunction;
 exports.whenMapStateToPropsIsMissing = whenMapStateToPropsIsMissing;
 
-var _wrapMapToProps = __webpack_require__(26);
+var _wrapMapToProps = __webpack_require__(28);
 
 function whenMapStateToPropsIsFunction(mapStateToProps) {
   return typeof mapStateToProps === 'function' ? (0, _wrapMapToProps.wrapMapToPropsFunc)(mapStateToProps, 'mapStateToProps') : undefined;
@@ -10950,7 +10881,7 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 exports.default = [whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing];
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10964,7 +10895,7 @@ exports.wrapMergePropsFunc = wrapMergePropsFunc;
 exports.whenMergePropsIsFunction = whenMergePropsIsFunction;
 exports.whenMergePropsIsOmitted = whenMergePropsIsOmitted;
 
-var _verifyPlainObject = __webpack_require__(27);
+var _verifyPlainObject = __webpack_require__(29);
 
 var _verifyPlainObject2 = _interopRequireDefault(_verifyPlainObject);
 
@@ -11021,10 +10952,10 @@ function whenMergePropsIsOmitted(mergeProps) {
 }
 
 exports.default = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11037,7 +10968,7 @@ exports.impureFinalPropsSelectorFactory = impureFinalPropsSelectorFactory;
 exports.pureFinalPropsSelectorFactory = pureFinalPropsSelectorFactory;
 exports.default = finalPropsSelectorFactory;
 
-var _verifySubselectors = __webpack_require__(69);
+var _verifySubselectors = __webpack_require__(71);
 
 var _verifySubselectors2 = _interopRequireDefault(_verifySubselectors);
 
@@ -11147,10 +11078,10 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 
   return selectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, options);
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11161,7 +11092,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = verifySubselectors;
 
-var _warning = __webpack_require__(9);
+var _warning = __webpack_require__(12);
 
 var _warning2 = _interopRequireDefault(_warning);
 
@@ -11184,7 +11115,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 }
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11476,87 +11407,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         r = e.getState;return "function" == typeof t || "function" == typeof r ? S()({ dispatch: t, getState: r }) : void console.error("\n[redux-logger v3] BREAKING CHANGE\n[redux-logger v3] Since 3.0.0 redux-logger exports by default logger with default settings.\n[redux-logger v3] Change\n[redux-logger v3] import createLogger from 'redux-logger'\n[redux-logger v3] to\n[redux-logger v3] import { createLogger } from 'redux-logger'\n");
   };e.defaults = L, e.createLogger = S, e.logger = T, e.default = T, Object.defineProperty(e, "__esModule", { value: !0 });
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
-
-/***/ }),
-/* 71 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
-};
-
-exports['default'] = promiseMiddleware;
-
-var _fluxStandardAction = __webpack_require__(72);
-
-function isPromise(val) {
-  return val && typeof val.then === 'function';
-}
-
-function promiseMiddleware(_ref) {
-  var dispatch = _ref.dispatch;
-
-  return function (next) {
-    return function (action) {
-      if (!_fluxStandardAction.isFSA(action)) {
-        return isPromise(action) ? action.then(dispatch) : next(action);
-      }
-
-      return isPromise(action.payload) ? action.payload.then(function (result) {
-        return dispatch(_extends({}, action, { payload: result }));
-      }, function (error) {
-        return dispatch(_extends({}, action, { payload: error, error: true }));
-      }) : next(action);
-    };
-  };
-}
-
-module.exports = exports['default'];
-
-/***/ }),
-/* 72 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.isFSA = isFSA;
-exports.isError = isError;
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { 'default': obj };
-}
-
-var _lodashIsplainobject = __webpack_require__(73);
-
-var _lodashIsplainobject2 = _interopRequireDefault(_lodashIsplainobject);
-
-var validKeys = ['type', 'payload', 'error', 'meta'];
-
-function isValidKey(key) {
-  return validKeys.indexOf(key) > -1;
-}
-
-function isFSA(action) {
-  return _lodashIsplainobject2['default'](action) && typeof action.type !== 'undefined' && Object.keys(action).every(isValidKey);
-}
-
-function isError(action) {
-  return action.error === true;
-}
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
 
 /***/ }),
 /* 73 */
@@ -11565,110 +11416,27 @@ function isError(action) {
 "use strict";
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+exports.__esModule = true;
+function createThunkMiddleware(extraArgument) {
+  return function (_ref) {
+    var dispatch = _ref.dispatch,
+        getState = _ref.getState;
+    return function (next) {
+      return function (action) {
+        if (typeof action === 'function') {
+          return action(dispatch, getState, extraArgument);
+        }
 
-/**
- * lodash 3.2.0 (Custom Build) <https://lodash.com/>
- * Build: `lodash modern modularize exports="npm" -o ./`
- * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <https://lodash.com/license>
- */
-var baseFor = __webpack_require__(74),
-    isArguments = __webpack_require__(28),
-    keysIn = __webpack_require__(75);
-
-/** `Object#toString` result references. */
-var objectTag = '[object Object]';
-
-/**
- * Checks if `value` is object-like.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- */
-function isObjectLike(value) {
-  return !!value && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) == 'object';
+        return next(action);
+      };
+    };
+  };
 }
 
-/** Used for native method references. */
-var objectProto = Object.prototype;
+var thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
 
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objToString = objectProto.toString;
-
-/**
- * The base implementation of `_.forIn` without support for callback
- * shorthands and `this` binding.
- *
- * @private
- * @param {Object} object The object to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @returns {Object} Returns `object`.
- */
-function baseForIn(object, iteratee) {
-  return baseFor(object, iteratee, keysIn);
-}
-
-/**
- * Checks if `value` is a plain object, that is, an object created by the
- * `Object` constructor or one with a `[[Prototype]]` of `null`.
- *
- * **Note:** This method assumes objects created by the `Object` constructor
- * have no inherited enumerable properties.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a plain object, else `false`.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- * }
- *
- * _.isPlainObject(new Foo);
- * // => false
- *
- * _.isPlainObject([1, 2, 3]);
- * // => false
- *
- * _.isPlainObject({ 'x': 0, 'y': 0 });
- * // => true
- *
- * _.isPlainObject(Object.create(null));
- * // => true
- */
-function isPlainObject(value) {
-  var Ctor;
-
-  // Exit early for non `Object` objects.
-  if (!(isObjectLike(value) && objToString.call(value) == objectTag && !isArguments(value)) || !hasOwnProperty.call(value, 'constructor') && (Ctor = value.constructor, typeof Ctor == 'function' && !(Ctor instanceof Ctor))) {
-    return false;
-  }
-  // IE < 9 iterates inherited properties before own properties. If the first
-  // iterated property is an object's own property then there are no inherited
-  // enumerable properties.
-  var result;
-  // In most environments an object's own properties are iterated before
-  // its inherited properties. If the last iterated property is an object's
-  // own property then there are no inherited enumerable properties.
-  baseForIn(value, function (subValue, key) {
-    result = key;
-  });
-  return result === undefined || hasOwnProperty.call(value, result);
-}
-
-module.exports = isPlainObject;
+exports['default'] = thunk;
 
 /***/ }),
 /* 74 */
@@ -11677,54 +11445,51 @@ module.exports = isPlainObject;
 "use strict";
 
 
-/**
- * lodash 3.0.3 (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <https://lodash.com/license>
- */
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/**
- * The base implementation of `baseForIn` and `baseForOwn` which iterates
- * over `object` properties returned by `keysFunc` invoking `iteratee` for
- * each property. Iteratee functions may exit iteration early by explicitly
- * returning `false`.
- *
- * @private
- * @param {Object} object The object to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
- * @param {Function} keysFunc The function to get the keys of `object`.
- * @returns {Object} Returns `object`.
- */
-var baseFor = createBaseFor();
+var _react = __webpack_require__(0);
 
-/**
- * Creates a base function for methods like `_.forIn`.
- *
- * @private
- * @param {boolean} [fromRight] Specify iterating from right to left.
- * @returns {Function} Returns the new base function.
- */
-function createBaseFor(fromRight) {
-  return function (object, iteratee, keysFunc) {
-    var index = -1,
-        iterable = Object(object),
-        props = keysFunc(object),
-        length = props.length;
+var _react2 = _interopRequireDefault(_react);
 
-    while (length--) {
-      var key = props[fromRight ? length : ++index];
-      if (iteratee(iterable[key], key, iterable) === false) {
-        break;
-      }
-    }
-    return object;
-  };
-}
+var _Header = __webpack_require__(75);
 
-module.exports = baseFor;
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Gameboard = __webpack_require__(86);
+
+var _Gameboard2 = _interopRequireDefault(_Gameboard);
+
+var _Timer = __webpack_require__(99);
+
+var _Timer2 = _interopRequireDefault(_Timer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var App = function App() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'header',
+      null,
+      _react2.default.createElement(_Header2.default, null)
+    ),
+    _react2.default.createElement(
+      'main',
+      null,
+      _react2.default.createElement(
+        'div',
+        { id: 'main-container' },
+        _react2.default.createElement(_Timer2.default, null),
+        _react2.default.createElement(_Gameboard2.default, null)
+      )
+    )
+  );
+};
+
+exports.default = App;
 
 /***/ }),
 /* 75 */
@@ -11733,138 +11498,44 @@ module.exports = baseFor;
 "use strict";
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/**
- * lodash 3.0.8 (Custom Build) <https://lodash.com/>
- * Build: `lodash modern modularize exports="npm" -o ./`
- * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <https://lodash.com/license>
- */
-var isArguments = __webpack_require__(28),
-    isArray = __webpack_require__(76);
+var _react = __webpack_require__(0);
 
-/** Used to detect unsigned integer values. */
-var reIsUint = /^\d+$/;
+var _react2 = _interopRequireDefault(_react);
 
-/** Used for native method references. */
-var objectProto = Object.prototype;
+var _Logo = __webpack_require__(76);
 
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
+var _Logo2 = _interopRequireDefault(_Logo);
 
-/**
- * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
- * of an array-like value.
- */
-var MAX_SAFE_INTEGER = 9007199254740991;
+var _NewGame = __webpack_require__(77);
 
-/**
- * Checks if `value` is a valid array-like index.
- *
- * @private
- * @param {*} value The value to check.
- * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
- * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
- */
-function isIndex(value, length) {
-  value = typeof value == 'number' || reIsUint.test(value) ? +value : -1;
-  length = length == null ? MAX_SAFE_INTEGER : length;
-  return value > -1 && value % 1 == 0 && value < length;
-}
+var _NewGame2 = _interopRequireDefault(_NewGame);
 
-/**
- * Checks if `value` is a valid array-like length.
- *
- * **Note:** This function is based on [`ToLength`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength).
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
- */
-function isLength(value) {
-  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-}
+var _EndGame = __webpack_require__(82);
 
-/**
- * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
- * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(1);
- * // => false
- */
-function isObject(value) {
-  // Avoid a V8 JIT bug in Chrome 19-20.
-  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
-  var type = typeof value === 'undefined' ? 'undefined' : _typeof(value);
-  return !!value && (type == 'object' || type == 'function');
-}
+var _EndGame2 = _interopRequireDefault(_EndGame);
 
-/**
- * Creates an array of the own and inherited enumerable property names of `object`.
- *
- * **Note:** Non-object values are coerced to objects.
- *
- * @static
- * @memberOf _
- * @category Object
- * @param {Object} object The object to query.
- * @returns {Array} Returns the array of property names.
- * @example
- *
- * function Foo() {
- *   this.a = 1;
- *   this.b = 2;
- * }
- *
- * Foo.prototype.c = 3;
- *
- * _.keysIn(new Foo);
- * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
- */
-function keysIn(object) {
-  if (object == null) {
-    return [];
-  }
-  if (!isObject(object)) {
-    object = Object(object);
-  }
-  var length = object.length;
-  length = length && isLength(length) && (isArray(object) || isArguments(object)) && length || 0;
+var _ToggleTimer = __webpack_require__(84);
 
-  var Ctor = object.constructor,
-      index = -1,
-      isProto = typeof Ctor == 'function' && Ctor.prototype === object,
-      result = Array(length),
-      skipIndexes = length > 0;
+var _ToggleTimer2 = _interopRequireDefault(_ToggleTimer);
 
-  while (++index < length) {
-    result[index] = index + '';
-  }
-  for (var key in object) {
-    if (!(skipIndexes && isIndex(key, length)) && !(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
-      result.push(key);
-    }
-  }
-  return result;
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = keysIn;
+var Header = function Header() {
+  return _react2.default.createElement(
+    'div',
+    { id: 'header-container' },
+    _react2.default.createElement(_Logo2.default, null),
+    _react2.default.createElement(_NewGame2.default, null),
+    _react2.default.createElement(_EndGame2.default, null),
+    _react2.default.createElement(_ToggleTimer2.default, null)
+  );
+};
+
+exports.default = Header;
 
 /***/ }),
 /* 76 */
@@ -11873,185 +11544,29 @@ module.exports = keysIn;
 "use strict";
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-/**
- * lodash 3.0.4 (Custom Build) <https://lodash.com/>
- * Build: `lodash modern modularize exports="npm" -o ./`
- * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <https://lodash.com/license>
- */
+var _react = __webpack_require__(0);
 
-/** `Object#toString` result references. */
-var arrayTag = '[object Array]',
-    funcTag = '[object Function]';
+var _react2 = _interopRequireDefault(_react);
 
-/** Used to detect host constructors (Safari > 5). */
-var reIsHostCtor = /^\[object .+?Constructor\]$/;
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/**
- * Checks if `value` is object-like.
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- */
-function isObjectLike(value) {
-  return !!value && (typeof value === 'undefined' ? 'undefined' : _typeof(value)) == 'object';
-}
-
-/** Used for native method references. */
-var objectProto = Object.prototype;
-
-/** Used to resolve the decompiled source of functions. */
-var fnToString = Function.prototype.toString;
-
-/** Used to check objects for own properties. */
-var hasOwnProperty = objectProto.hasOwnProperty;
-
-/**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objToString = objectProto.toString;
-
-/** Used to detect if a method is native. */
-var reIsNative = RegExp('^' + fnToString.call(hasOwnProperty).replace(/[\\^$.*+?()[\]{}|]/g, '\\$&').replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$');
-
-/* Native method references for those with the same name as other `lodash` methods. */
-var nativeIsArray = getNative(Array, 'isArray');
-
-/**
- * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
- * of an array-like value.
- */
-var MAX_SAFE_INTEGER = 9007199254740991;
-
-/**
- * Gets the native function at `key` of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {string} key The key of the method to get.
- * @returns {*} Returns the function if it's native, else `undefined`.
- */
-function getNative(object, key) {
-  var value = object == null ? undefined : object[key];
-  return isNative(value) ? value : undefined;
-}
-
-/**
- * Checks if `value` is a valid array-like length.
- *
- * **Note:** This function is based on [`ToLength`](http://ecma-international.org/ecma-262/6.0/#sec-tolength).
- *
- * @private
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
- */
-function isLength(value) {
-  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
-}
-
-/**
- * Checks if `value` is classified as an `Array` object.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isArray([1, 2, 3]);
- * // => true
- *
- * _.isArray(function() { return arguments; }());
- * // => false
- */
-var isArray = nativeIsArray || function (value) {
-  return isObjectLike(value) && isLength(value.length) && objToString.call(value) == arrayTag;
+var Logo = function Logo() {
+  return _react2.default.createElement(
+    'div',
+    { id: 'logo' },
+    _react2.default.createElement(
+      'h2',
+      null,
+      'J'
+    )
+  );
 };
 
-/**
- * Checks if `value` is classified as a `Function` object.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isFunction(_);
- * // => true
- *
- * _.isFunction(/abc/);
- * // => false
- */
-function isFunction(value) {
-  // The use of `Object#toString` avoids issues with the `typeof` operator
-  // in older versions of Chrome and Safari which return 'function' for regexes
-  // and Safari 8 equivalents which return 'object' for typed array constructors.
-  return isObject(value) && objToString.call(value) == funcTag;
-}
-
-/**
- * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
- * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(1);
- * // => false
- */
-function isObject(value) {
-  // Avoid a V8 JIT bug in Chrome 19-20.
-  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
-  var type = typeof value === 'undefined' ? 'undefined' : _typeof(value);
-  return !!value && (type == 'object' || type == 'function');
-}
-
-/**
- * Checks if `value` is a native function.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a native function, else `false`.
- * @example
- *
- * _.isNative(Array.prototype.push);
- * // => true
- *
- * _.isNative(_);
- * // => false
- */
-function isNative(value) {
-  if (value == null) {
-    return false;
-  }
-  if (isFunction(value)) {
-    return reIsNative.test(fnToString.call(value));
-  }
-  return isObjectLike(value) && reIsHostCtor.test(value);
-}
-
-module.exports = isArray;
+exports.default = Logo;
 
 /***/ }),
 /* 77 */
@@ -12064,75 +11579,30 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _reactRedux = __webpack_require__(2);
 
-var _react = __webpack_require__(1);
+var _redux = __webpack_require__(4);
 
-var _react2 = _interopRequireDefault(_react);
+var _actions = __webpack_require__(5);
 
-var _Header = __webpack_require__(78);
+var _newGamePresent = __webpack_require__(81);
 
-var _Header2 = _interopRequireDefault(_Header);
-
-var _Controls = __webpack_require__(79);
-
-var _Controls2 = _interopRequireDefault(_Controls);
-
-var _Gameboard = __webpack_require__(80);
-
-var _Gameboard2 = _interopRequireDefault(_Gameboard);
-
-var _Footer = __webpack_require__(81);
-
-var _Footer2 = _interopRequireDefault(_Footer);
+var _newGamePresent2 = _interopRequireDefault(_newGamePresent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    allownew: state.allownew,
+    timer: state.timer
+  };
+};
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return (0, _redux.bindActionCreators)({ newGame: _actions.newGame }, dispatch);
+};
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var App = function (_Component) {
-  _inherits(App, _Component);
-
-  function App() {
-    _classCallCheck(this, App);
-
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-  }
-
-  _createClass(App, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'header',
-          null,
-          _react2.default.createElement(_Header2.default, null)
-        ),
-        _react2.default.createElement(
-          'main',
-          null,
-          _react2.default.createElement(_Controls2.default, null),
-          _react2.default.createElement(_Gameboard2.default, null)
-        ),
-        _react2.default.createElement(
-          'footer',
-          null,
-          _react2.default.createElement(_Footer2.default, null)
-        )
-      );
-    }
-  }]);
-
-  return App;
-}(_react.Component);
-
-exports.default = App;
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_newGamePresent2.default);
 
 /***/ }),
 /* 78 */
@@ -12145,53 +11615,63 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _allFours = __webpack_require__(79);
 
-var _react = __webpack_require__(1);
+var _allFours2 = _interopRequireDefault(_allFours);
 
-var _react2 = _interopRequireDefault(_react);
+var _selectSevens = __webpack_require__(80);
+
+var _selectSevens2 = _interopRequireDefault(_selectSevens);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Header = function (_Component) {
-  _inherits(Header, _Component);
-
-  function Header() {
-    _classCallCheck(this, Header);
-
-    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-  }
-
-  _createClass(Header, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { id: "header-container" },
-        _react2.default.createElement(
-          "h1",
-          null,
-          "Jeezely ",
-          _react2.default.createElement(
-            "small",
-            null,
-            "word search game"
-          )
-        )
-      );
+var testFour = function testFour(alphaSeven, four) {
+  var alphaFour = four.split('').sort();
+  var indexInSeven = 0;
+  var match = 0;
+  for (var i = 0; i < 4; i += 1) {
+    for (var j = indexInSeven; j < 7; j += 1) {
+      if (alphaFour[i] === alphaSeven[j]) {
+        match += 1;
+        indexInSeven = j + 1;
+        break;
+      }
     }
-  }]);
+  }
+  return match === 4;
+};
 
-  return Header;
-}(_react.Component);
+var generateNewWord = function generateNewWord() {
+  var newSeven = _selectSevens2.default[Math.floor(Math.random() * _selectSevens2.default.length)];
+  var alphaSeven = newSeven.split('').sort();
+  var newPool = [];
 
-exports.default = Header;
+  _allFours2.default.forEach(function (item) {
+    if (testFour(alphaSeven, item)) {
+      newPool.push(item);
+    }
+  });
+
+  var newLength = newPool.length;
+  var newSecs = 10 + newLength * 5;
+  var output = {
+    newSeven: newSeven,
+    newPool: newPool,
+    newLength: newLength,
+    newSecs: newSecs
+  };
+
+  return new Promise(function (resolve, reject) {
+    if (output) {
+      resolve(output);
+    } else {
+      var reason = new Error('Error starting new game');
+      reject(reason);
+    }
+  });
+};
+
+exports.default = generateNewWord;
 
 /***/ }),
 /* 79 */
@@ -12203,49 +11683,9 @@ exports.default = Header;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var fours = ['AAHS', 'AALS', 'ABAS', 'ABBA', 'ABBE', 'ABED', 'ABET', 'ABLE', 'ABLY', 'ABOS', 'ABRI', 'ABUT', 'ABYE', 'ABYS', 'ACAI', 'ACED', 'ACES', 'ACHE', 'ACHY', 'ACID', 'ACME', 'ACNE', 'ACRE', 'ACRO', 'ACTA', 'ACTS', 'ACYL', 'ADDS', 'ADIT', 'ADOS', 'ADZE', 'AEON', 'AERO', 'AERY', 'AFAR', 'AFRO', 'AGAR', 'AGAS', 'AGED', 'AGEE', 'AGER', 'AGES', 'AGHA', 'AGIN', 'AGIO', 'AGLU', 'AGLY', 'AGMA', 'AGOG', 'AGON', 'AGRO', 'AGUE', 'AHED', 'AHEM', 'AHIS', 'AHOY', 'AIDE', 'AIDS', 'AILS', 'AIMS', 'AINS', 'AIRN', 'AIRS', 'AIRT', 'AIRY', 'AITS', 'AJAR', 'AJEE', 'AJIS', 'AKEE', 'AKIN', 'ALAE', 'ALAN', 'ALAR', 'ALAS', 'ALBA', 'ALBS', 'ALEC', 'ALEE', 'ALEF', 'ALES', 'ALFA', 'ALGA', 'ALIF', 'ALIT', 'ALKY', 'ALLS', 'ALLY', 'ALMA', 'ALME', 'ALMS', 'ALOE', 'ALOW', 'ALPS', 'ALSO', 'ALTO', 'ALTS', 'ALUM', 'AMAH', 'AMAS', 'AMBO', 'AMEN', 'AMIA', 'AMID', 'AMIE', 'AMIN', 'AMIR', 'AMIS', 'AMMO', 'AMOK', 'AMPS', 'AMUS', 'AMYL', 'ANAL', 'ANAS', 'ANDS', 'ANES', 'ANEW', 'ANGA', 'ANIL', 'ANIS', 'ANKH', 'ANNA', 'ANOA', 'ANON', 'ANSA', 'ANTA', 'ANTE', 'ANTI', 'ANTS', 'ANUS', 'APED', 'APER', 'APES', 'APEX', 'APOD', 'APOS', 'APPS', 'APSE', 'AQUA', 'ARAK', 'ARBS', 'ARCH', 'ARCO', 'ARCS', 'AREA', 'AREG', 'ARES', 'ARFS', 'ARGH', 'ARIA', 'ARID', 'ARIL', 'ARKS', 'ARMS', 'ARMY', 'ARSE', 'ARTS', 'ARTY', 'ARUM', 'ARVO', 'ARYL', 'ASCI', 'ASEA', 'ASHY', 'ASKS', 'ASPS', 'ATAP', 'ATES', 'ATMA', 'ATOM', 'ATOP', 'AUGH', 'AUKS', 'AULD', 'AUNT', 'AURA', 'AUTO', 'AVER', 'AVES', 'AVID', 'AVOS', 'AVOW', 'AWAY', 'AWED', 'AWEE', 'AWES', 'AWLS', 'AWNS', 'AWNY', 'AWOL', 'AWRY', 'AXAL', 'AXED', 'AXEL', 'AXES', 'AXIL', 'AXIS', 'AXLE', 'AXON', 'AYAH', 'AYES', 'AYIN', 'AZAN', 'AZON', 'BAAL', 'BAAS', 'BABA', 'BABE', 'BABU', 'BABY', 'BACH', 'BACK', 'BADE', 'BADS', 'BAFF', 'BAGS', 'BAHT', 'BAIL', 'BAIT', 'BAKE', 'BALD', 'BALE', 'BALK', 'BALL', 'BALM', 'BALS', 'BAMS', 'BANC', 'BAND', 'BANE', 'BANG', 'BANI', 'BANK', 'BANS', 'BAPS', 'BARB', 'BARD', 'BARE', 'BARF', 'BARK', 'BARM', 'BARN', 'BARS', 'BASE', 'BASH', 'BASK', 'BASS', 'BAST', 'BATE', 'BATH', 'BATS', 'BATT', 'BAUD', 'BAWD', 'BAWK', 'BAWL', 'BAWN', 'BAYS', 'BAZZ', 'BEAD', 'BEAK', 'BEAL', 'BEAM', 'BEAN', 'BEAR', 'BEAT', 'BEAU', 'BECK', 'BEDS', 'BEDU', 'BEEF', 'BEEN', 'BEEP', 'BEER', 'BEES', 'BEET', 'BEGS', 'BELL', 'BELS', 'BELT', 'BEMA', 'BEND', 'BENE', 'BENS', 'BENT', 'BERG', 'BERK', 'BERM', 'BEST', 'BETA', 'BETH', 'BETS', 'BEVY', 'BEYS', 'BHUT', 'BIAS', 'BIBB', 'BIBE', 'BIBS', 'BICE', 'BIDE', 'BIDI', 'BIDS', 'BIER', 'BIFF', 'BIGS', 'BIKE', 'BILE', 'BILK', 'BILL', 'BIMA', 'BIND', 'BINE', 'BING', 'BINS', 'BINT', 'BIOG', 'BIOS', 'BIRD', 'BIRK', 'BIRL', 'BIRO', 'BIRR', 'BISE', 'BISH', 'BISK', 'BITE', 'BITS', 'BITT', 'BIZE', 'BLAB', 'BLAE', 'BLAG', 'BLAH', 'BLAM', 'BLAT', 'BLAW', 'BLEB', 'BLED', 'BLET', 'BLEW', 'BLIN', 'BLIP', 'BLOB', 'BLOC', 'BLOG', 'BLOT', 'BLOW', 'BLUB', 'BLUE', 'BLUR', 'BOAR', 'BOAS', 'BOAT', 'BOBO', 'BOBS', 'BOCK', 'BODE', 'BODS', 'BODY', 'BOFF', 'BOGS', 'BOGY', 'BOHO', 'BOIL', 'BOLA', 'BOLD', 'BOLE', 'BOLL', 'BOLO', 'BOLT', 'BOMB', 'BOND', 'BONE', 'BONG', 'BONK', 'BONY', 'BOOB', 'BOOK', 'BOOM', 'BOON', 'BOOR', 'BOOS', 'BOOT', 'BOPS', 'BORA', 'BORE', 'BORK', 'BORN', 'BORT', 'BOSH', 'BOSK', 'BOSS', 'BOTA', 'BOTH', 'BOTS', 'BOTT', 'BOUT', 'BOWL', 'BOWS', 'BOXY', 'BOYO', 'BOYS', 'BOZO', 'BRAD', 'BRAE', 'BRAG', 'BRAN', 'BRAS', 'BRAT', 'BRAW', 'BRAY', 'BRED', 'BREE', 'BREN', 'BREW', 'BRIE', 'BRIG', 'BRIM', 'BRIN', 'BRIO', 'BRIS', 'BRIT', 'BROO', 'BROS', 'BROW', 'BRRR', 'BRUT', 'BRUX', 'BUBO', 'BUBS', 'BUBU', 'BUCK', 'BUDS', 'BUFF', 'BUGS', 'BUHL', 'BUHR', 'BULB', 'BULK', 'BULL', 'BUMF', 'BUMP', 'BUMS', 'BUNA', 'BUND', 'BUNG', 'BUNK', 'BUNN', 'BUNS', 'BUNT', 'BUOY', 'BURA', 'BURB', 'BURD', 'BURG', 'BURK', 'BURL', 'BURN', 'BURP', 'BURR', 'BURS', 'BURY', 'BUSH', 'BUSK', 'BUSS', 'BUST', 'BUSY', 'BUTE', 'BUTS', 'BUTT', 'BUYS', 'BUZZ', 'BYES', 'BYRE', 'BYRL', 'BYTE', 'CABS', 'CACA', 'CADE', 'CADI', 'CADS', 'CAFE', 'CAFF', 'CAFS', 'CAGE', 'CAGY', 'CAID', 'CAIN', 'CAKE', 'CAKY', 'CALF', 'CALK', 'CALL', 'CALM', 'CALO', 'CALS', 'CALX', 'CAME', 'CAMI', 'CAMO', 'CAMP', 'CAMS', 'CANE', 'CANS', 'CANT', 'CAPE', 'CAPH', 'CAPO', 'CAPS', 'CARB', 'CARD', 'CARE', 'CARK', 'CARL', 'CARN', 'CARP', 'CARR', 'CARS', 'CART', 'CASA', 'CASE', 'CASH', 'CASK', 'CAST', 'CATE', 'CATS', 'CAUL', 'CAVA', 'CAVE', 'CAVY', 'CAWS', 'CAYS', 'CAZH', 'CECA', 'CEDE', 'CEDI', 'CEES', 'CEIL', 'CELL', 'CELS', 'CELT', 'CENT', 'CEPE', 'CEPS', 'CERE', 'CERO', 'CERT', 'CESS', 'CETE', 'CHAD', 'CHAI', 'CHAM', 'CHAO', 'CHAP', 'CHAR', 'CHAT', 'CHAW', 'CHAY', 'CHEF', 'CHEM', 'CHEW', 'CHEZ', 'CHIA', 'CHIC', 'CHID', 'CHIN', 'CHIP', 'CHIS', 'CHIT', 'CHOC', 'CHON', 'CHOP', 'CHOW', 'CHUB', 'CHUG', 'CHUM', 'CIAO', 'CIGS', 'CINE', 'CINQ', 'CION', 'CIRE', 'CIST', 'CITE', 'CITY', 'CLAD', 'CLAG', 'CLAM', 'CLAN', 'CLAP', 'CLAW', 'CLAY', 'CLEF', 'CLEG', 'CLEW', 'CLIP', 'CLIT', 'CLOD', 'CLOG', 'CLON', 'CLOP', 'CLOT', 'CLOY', 'CLUB', 'CLUE', 'COAL', 'COAT', 'COAX', 'COBB', 'COBS', 'COCA', 'COCK', 'COCO', 'CODA', 'CODE', 'CODS', 'COED', 'COFF', 'COFT', 'COGS', 'COHO', 'COIF', 'COIL', 'COIN', 'COIR', 'COKE', 'COKY', 'COLA', 'COLD', 'COLE', 'COLS', 'COLT', 'COLY', 'COMA', 'COMB', 'COME', 'COMM', 'COMP', 'CONE', 'CONI', 'CONK', 'CONN', 'CONS', 'CONY', 'COOF', 'COOK', 'COOL', 'COON', 'COOP', 'COOS', 'COOT', 'COPE', 'COPS', 'COPY', 'CORD', 'CORE', 'CORF', 'CORK', 'CORM', 'CORN', 'CORS', 'CORY', 'COSH', 'COSS', 'COST', 'COSY', 'COTE', 'COTS', 'COUP', 'COVE', 'COWL', 'COWS', 'COWY', 'COXA', 'COYS', 'COZY', 'CRAB', 'CRAG', 'CRAM', 'CRAP', 'CRAW', 'CRED', 'CREW', 'CRIB', 'CRIP', 'CRIS', 'CRIT', 'CROC', 'CROP', 'CROW', 'CRUD', 'CRUS', 'CRUX', 'CUBE', 'CUBS', 'CUDS', 'CUED', 'CUES', 'CUFF', 'CUIF', 'CUKE', 'CULL', 'CULM', 'CULT', 'CUMS', 'CUNT', 'CUPS', 'CURB', 'CURD', 'CURE', 'CURF', 'CURL', 'CURN', 'CURR', 'CURS', 'CURT', 'CUSK', 'CUSP', 'CUSS', 'CUTE', 'CUTS', 'CWMS', 'CYAN', 'CYMA', 'CYME', 'CYST', 'CZAR', 'DABS', 'DACE', 'DADA', 'DADO', 'DADS', 'DAFF', 'DAFT', 'DAGO', 'DAGS', 'DAHL', 'DAHS', 'DAIS', 'DAKS', 'DALE', 'DALS', 'DAME', 'DAMN', 'DAMP', 'DAMS', 'DANG', 'DANK', 'DANS', 'DAPS', 'DARB', 'DARE', 'DARK', 'DARN', 'DART', 'DASH', 'DATA', 'DATE', 'DATO', 'DAUB', 'DAUT', 'DAVY', 'DAWK', 'DAWN', 'DAWS', 'DAWT', 'DAYS', 'DAZE', 'DEAD', 'DEAF', 'DEAL', 'DEAN', 'DEAR', 'DEBS', 'DEBT', 'DECK', 'DECO', 'DEED', 'DEEM', 'DEEP', 'DEER', 'DEES', 'DEET', 'DEFI', 'DEFT', 'DEFY', 'DEIL', 'DEKE', 'DELE', 'DELF', 'DELI', 'DELL', 'DELS', 'DELT', 'DEME', 'DEMO', 'DEMY', 'DENE', 'DENI', 'DENS', 'DENT', 'DENY', 'DEPS', 'DERE', 'DERM', 'DESI', 'DESK', 'DEVA', 'DEVI', 'DEVS', 'DEWS', 'DEWY', 'DEXY', 'DEYS', 'DHAK', 'DHAL', 'DHOW', 'DIAL', 'DIBS', 'DICE', 'DICK', 'DIDO', 'DIDY', 'DIED', 'DIEL', 'DIES', 'DIET', 'DIFF', 'DIFS', 'DIGS', 'DIKE', 'DILL', 'DIME', 'DIMS', 'DINE', 'DING', 'DINK', 'DINO', 'DINS', 'DINT', 'DIOL', 'DIPS', 'DIPT', 'DIRE', 'DIRK', 'DIRL', 'DIRT', 'DISC', 'DISH', 'DISK', 'DISS', 'DITA', 'DITE', 'DITS', 'DITZ', 'DIVA', 'DIVE', 'DJIN', 'DOAT', 'DOBE', 'DOBY', 'DOCK', 'DOCS', 'DODO', 'DOER', 'DOES', 'DOFF', 'DOGE', 'DOGS', 'DOGY', 'DOHS', 'DOIT', 'DOJO', 'DOLE', 'DOLL', 'DOLS', 'DOLT', 'DOME', 'DOMS', 'DONA', 'DONE', 'DONG', 'DONS', 'DOOB', 'DOOM', 'DOOR', 'DOPA', 'DOPE', 'DOPY', 'DORE', 'DORK', 'DORM', 'DORP', 'DORR', 'DORS', 'DORY', 'DOSA', 'DOSE', 'DOSH', 'DOSS', 'DOST', 'DOTE', 'DOTH', 'DOTS', 'DOTY', 'DOUM', 'DOUR', 'DOUT', 'DOUX', 'DOVE', 'DOWN', 'DOWS', 'DOXY', 'DOZE', 'DOZY', 'DRAB', 'DRAG', 'DRAM', 'DRAT', 'DRAW', 'DRAY', 'DREE', 'DREG', 'DREK', 'DREW', 'DRIB', 'DRIP', 'DROP', 'DRUB', 'DRUG', 'DRUM', 'DRYS', 'DUAD', 'DUAL', 'DUBS', 'DUCE', 'DUCI', 'DUCK', 'DUCT', 'DUDE', 'DUDS', 'DUEL', 'DUES', 'DUET', 'DUFF', 'DUGS', 'DUIT', 'DUKE', 'DULL', 'DULY', 'DUMA', 'DUMB', 'DUMP', 'DUNE', 'DUNG', 'DUNK', 'DUNS', 'DUNT', 'DUOS', 'DUPE', 'DUPS', 'DURA', 'DURE', 'DURN', 'DURO', 'DURR', 'DUSK', 'DUST', 'DUTY', 'DYAD', 'DYED', 'DYER', 'DYES', 'DYKE', 'DYNE', 'EACH', 'EARL', 'EARN', 'EARS', 'EASE', 'EAST', 'EASY', 'EATH', 'EATS', 'EAUX', 'EAVE', 'EBBS', 'EBON', 'ECHE', 'ECHO', 'ECHT', 'ECOS', 'ECRU', 'ECUS', 'EDDO', 'EDDY', 'EDGE', 'EDGY', 'EDHS', 'EDIT', 'EEEW', 'EELS', 'EELY', 'EERY', 'EFFS', 'EFTS', 'EGAD', 'EGAL', 'EGER', 'EGGS', 'EGGY', 'EGIS', 'EGOS', 'EIDE', 'EKED', 'EKES', 'EKKA', 'ELAN', 'ELDS', 'ELHI', 'ELKS', 'ELLS', 'ELMS', 'ELMY', 'ELSE', 'EMES', 'EMEU', 'EMIC', 'EMIR', 'EMIT', 'EMMY', 'EMOS', 'EMUS', 'EMYD', 'ENDS', 'ENGS', 'ENOL', 'ENOW', 'ENUF', 'ENVY', 'EONS', 'EPEE', 'EPHA', 'EPIC', 'EPOS', 'ERAS', 'ERGO', 'ERGS', 'ERNE', 'ERNS', 'EROS', 'ERRS', 'ERST', 'ERUV', 'ESES', 'ESNE', 'ESPY', 'ESSE', 'ESTS', 'ETAS', 'ETCH', 'ETHS', 'ETIC', 'ETNA', 'ETUI', 'EURO', 'EVEN', 'EVER', 'EVES', 'EVIL', 'EWER', 'EWES', 'EXAM', 'EXEC', 'EXED', 'EXES', 'EXIT', 'EXON', 'EXPO', 'EYAS', 'EYED', 'EYEN', 'EYER', 'EYES', 'EYNE', 'EYRA', 'EYRE', 'EYRY', 'FABS', 'FACE', 'FACT', 'FADE', 'FADO', 'FADS', 'FAFF', 'FAGS', 'FAHS', 'FAIL', 'FAIN', 'FAIR', 'FAKE', 'FALL', 'FALX', 'FAME', 'FANE', 'FANG', 'FANO', 'FANS', 'FARD', 'FARE', 'FARL', 'FARM', 'FARO', 'FART', 'FASH', 'FAST', 'FATE', 'FATS', 'FAUN', 'FAUX', 'FAVA', 'FAVE', 'FAWN', 'FAYS', 'FAZE', 'FEAL', 'FEAR', 'FEAT', 'FECK', 'FEDS', 'FEEB', 'FEED', 'FEEL', 'FEES', 'FEET', 'FEHS', 'FELL', 'FELT', 'FEME', 'FEMS', 'FEND', 'FENS', 'FEOD', 'FERE', 'FERN', 'FESS', 'FEST', 'FETA', 'FETE', 'FETS', 'FEUD', 'FEUS', 'FIAR', 'FIAT', 'FIBS', 'FICE', 'FICO', 'FIDO', 'FIDS', 'FIEF', 'FIFE', 'FIGS', 'FILA', 'FILE', 'FILK', 'FILL', 'FILM', 'FILO', 'FILS', 'FIND', 'FINE', 'FINK', 'FINO', 'FINS', 'FIRE', 'FIRM', 'FIRN', 'FIRS', 'FISC', 'FISH', 'FIST', 'FITS', 'FIVE', 'FIXT', 'FIZZ', 'FLAB', 'FLAG', 'FLAK', 'FLAM', 'FLAN', 'FLAP', 'FLAT', 'FLAW', 'FLAX', 'FLAY', 'FLEA', 'FLED', 'FLEE', 'FLEW', 'FLEX', 'FLEY', 'FLIC', 'FLIP', 'FLIR', 'FLIT', 'FLOC', 'FLOE', 'FLOG', 'FLOP', 'FLOW', 'FLUB', 'FLUE', 'FLUS', 'FLUX', 'FOAL', 'FOAM', 'FOBS', 'FOCI', 'FOES', 'FOGS', 'FOGY', 'FOHN', 'FOIL', 'FOIN', 'FOLD', 'FOLK', 'FOND', 'FONS', 'FONT', 'FOOD', 'FOOL', 'FOOS', 'FOOT', 'FOPS', 'FORA', 'FORB', 'FORD', 'FORE', 'FORK', 'FORM', 'FORT', 'FOSS', 'FOUL', 'FOUR', 'FOWL', 'FOXY', 'FOYS', 'FOZY', 'FRAE', 'FRAG', 'FRAP', 'FRAT', 'FRAY', 'FREE', 'FRET', 'FRIG', 'FRIT', 'FRIZ', 'FROE', 'FROG', 'FROM', 'FROW', 'FRUG', 'FUBS', 'FUCI', 'FUCK', 'FUDS', 'FUEL', 'FUGS', 'FUGU', 'FUJI', 'FULL', 'FUME', 'FUMY', 'FUND', 'FUNK', 'FUNS', 'FURL', 'FURS', 'FURY', 'FUSE', 'FUSS', 'FUTZ', 'FUZE', 'FUZZ', 'FYCE', 'FYKE', 'GABS', 'GABY', 'GACH', 'GADI', 'GADS', 'GAED', 'GAEN', 'GAES', 'GAFF', 'GAGA', 'GAGE', 'GAGS', 'GAIN', 'GAIT', 'GALA', 'GALE', 'GALL', 'GALS', 'GAMA', 'GAMB', 'GAME', 'GAMP', 'GAMS', 'GAMY', 'GANE', 'GANG', 'GAOL', 'GAPE', 'GAPS', 'GAPY', 'GARB', 'GARS', 'GASH', 'GASP', 'GAST', 'GATE', 'GATS', 'GAUD', 'GAUM', 'GAUN', 'GAUR', 'GAVE', 'GAWK', 'GAWP', 'GAYS', 'GAZE', 'GEAN', 'GEAR', 'GECK', 'GEDS', 'GEED', 'GEEK', 'GEES', 'GEEZ', 'GELD', 'GELS', 'GELT', 'GEMS', 'GENE', 'GENS', 'GENT', 'GENU', 'GERM', 'GEST', 'GETA', 'GETS', 'GEUM', 'GHAT', 'GHEE', 'GHIS', 'GIBE', 'GIBS', 'GIDS', 'GIED', 'GIEN', 'GIES', 'GIFS', 'GIFT', 'GIGA', 'GIGS', 'GILD', 'GILL', 'GILT', 'GIMP', 'GINK', 'GINS', 'GIPS', 'GIRD', 'GIRL', 'GIRN', 'GIRO', 'GIRT', 'GIST', 'GITE', 'GITS', 'GIVE', 'GLAD', 'GLAM', 'GLED', 'GLEE', 'GLEG', 'GLEN', 'GLEY', 'GLIA', 'GLIB', 'GLIM', 'GLOB', 'GLOM', 'GLOP', 'GLOW', 'GLUE', 'GLUG', 'GLUM', 'GLUT', 'GNAR', 'GNAT', 'GNAW', 'GNUS', 'GOAD', 'GOAL', 'GOAS', 'GOAT', 'GOBO', 'GOBS', 'GOBY', 'GODS', 'GOER', 'GOES', 'GOGO', 'GOJI', 'GOLD', 'GOLF', 'GONE', 'GONG', 'GOOD', 'GOOF', 'GOOK', 'GOON', 'GOOP', 'GOOS', 'GORE', 'GORM', 'GORP', 'GORY', 'GOSH', 'GOTH', 'GOUT', 'GOWD', 'GOWK', 'GOWN', 'GOYS', 'GRAB', 'GRAD', 'GRAM', 'GRAN', 'GRAT', 'GRAY', 'GREE', 'GREW', 'GREY', 'GRID', 'GRIG', 'GRIM', 'GRIN', 'GRIP', 'GRIT', 'GRIZ', 'GROG', 'GROK', 'GROT', 'GROW', 'GRUB', 'GRUE', 'GRUM', 'GUAN', 'GUAR', 'GUCK', 'GUDE', 'GUFF', 'GUID', 'GULF', 'GULL', 'GULP', 'GULS', 'GUMS', 'GUNK', 'GUNS', 'GURU', 'GUSH', 'GUST', 'GUTS', 'GUVS', 'GUYS', 'GYBE', 'GYMS', 'GYNO', 'GYPO', 'GYPS', 'GYRE', 'GYRI', 'GYRO', 'GYVE', 'HAAF', 'HAAR', 'HABU', 'HACK', 'HADE', 'HADJ', 'HAED', 'HAEM', 'HAEN', 'HAES', 'HAET', 'HAFT', 'HAGS', 'HAHA', 'HAHS', 'HAIK', 'HAIL', 'HAIR', 'HAJI', 'HAJJ', 'HAKE', 'HAKU', 'HALE', 'HALF', 'HALL', 'HALM', 'HALO', 'HALT', 'HAME', 'HAMS', 'HAND', 'HANG', 'HANK', 'HANT', 'HAPS', 'HARD', 'HARE', 'HARK', 'HARL', 'HARM', 'HARP', 'HART', 'HASH', 'HASP', 'HAST', 'HATE', 'HATH', 'HATS', 'HAUL', 'HAUT', 'HAVE', 'HAWK', 'HAWS', 'HAYS', 'HAZE', 'HAZY', 'HEAD', 'HEAL', 'HEAP', 'HEAR', 'HEAT', 'HEBE', 'HECK', 'HEED', 'HEEL', 'HEFT', 'HEHS', 'HEIL', 'HEIR', 'HELD', 'HELL', 'HELM', 'HELO', 'HELP', 'HEME', 'HEMP', 'HEMS', 'HENS', 'HENT', 'HEPS', 'HERB', 'HERD', 'HERE', 'HERL', 'HERM', 'HERN', 'HERO', 'HERS', 'HEST', 'HETH', 'HETS', 'HEWN', 'HEWS', 'HICK', 'HIDE', 'HIED', 'HIES', 'HIGH', 'HIKE', 'HILA', 'HILI', 'HILL', 'HILT', 'HIMS', 'HIND', 'HINS', 'HINT', 'HIPS', 'HIRE', 'HISN', 'HISS', 'HIST', 'HITS', 'HIVE', 'HIYA', 'HMMM', 'HOAR', 'HOAX', 'HOBO', 'HOBS', 'HOCK', 'HODS', 'HOED', 'HOER', 'HOES', 'HOGG', 'HOGS', 'HOKE', 'HOLD', 'HOLE', 'HOLK', 'HOLM', 'HOLO', 'HOLP', 'HOLS', 'HOLT', 'HOLY', 'HOMA', 'HOME', 'HOMO', 'HOMS', 'HOMY', 'HONE', 'HONG', 'HONK', 'HONS', 'HOOD', 'HOOF', 'HOOK', 'HOOP', 'HOOT', 'HOPE', 'HOPS', 'HORA', 'HORK', 'HORN', 'HOSE', 'HOST', 'HOTS', 'HOUR', 'HOVE', 'HOWE', 'HOWF', 'HOWK', 'HOWL', 'HOWS', 'HOYA', 'HOYS', 'HUBS', 'HUCK', 'HUED', 'HUES', 'HUFF', 'HUGE', 'HUGS', 'HUIC', 'HULA', 'HULK', 'HULL', 'HUMP', 'HUMS', 'HUNG', 'HUNH', 'HUNK', 'HUNS', 'HUNT', 'HURL', 'HURT', 'HUSH', 'HUSK', 'HUTS', 'HWAN', 'HWYL', 'HYLA', 'HYMN', 'HYPE', 'HYPO', 'HYPS', 'HYTE', 'IAMB', 'IBEX', 'IBIS', 'ICED', 'ICES', 'ICHS', 'ICKS', 'ICKY', 'ICON', 'IDEA', 'IDEM', 'IDES', 'IDLE', 'IDLY', 'IDOL', 'IDYL', 'IFFY', 'IGGS', 'IGLU', 'IKAT', 'IKON', 'ILEA', 'ILEX', 'ILIA', 'ILKA', 'ILKS', 'ILLS', 'ILLY', 'IMAM', 'IMID', 'IMMY', 'IMPI', 'IMPS', 'INBY', 'INCH', 'INFO', 'INIA', 'INKS', 'INKY', 'INLY', 'INNS', 'INRO', 'INTI', 'INTO', 'IONS', 'IOTA', 'IRED', 'IRES', 'IRID', 'IRIS', 'IRKS', 'IRON', 'ISBA', 'ISLE', 'ISMS', 'ITCH', 'ITEM', 'IWIS', 'IXIA', 'IZAR', 'JABS', 'JACK', 'JADE', 'JAGG', 'JAGS', 'JAIL', 'JAKE', 'JAMB', 'JAMS', 'JANE', 'JAPE', 'JARL', 'JARS', 'JATO', 'JAUK', 'JAUP', 'JAVA', 'JAWS', 'JAYS', 'JAZZ', 'JEAN', 'JEED', 'JEEP', 'JEER', 'JEES', 'JEEZ', 'JEFE', 'JEHU', 'JELL', 'JEON', 'JERK', 'JESS', 'JEST', 'JETE', 'JETS', 'JEUX', 'JEWS', 'JIAO', 'JIBB', 'JIBE', 'JIBS', 'JIFF', 'JIGS', 'JILL', 'JILT', 'JIMP', 'JINK', 'JINN', 'JINS', 'JINX', 'JIRD', 'JISM', 'JIVE', 'JIVY', 'JIZZ', 'JOBS', 'JOCK', 'JOES', 'JOEY', 'JOGS', 'JOHN', 'JOIN', 'JOKE', 'JOKY', 'JOLE', 'JOLT', 'JOOK', 'JOSH', 'JOSS', 'JOTA', 'JOTS', 'JOUK', 'JOWL', 'JOWS', 'JOYS', 'JUBA', 'JUBE', 'JUCO', 'JUDO', 'JUDY', 'JUGA', 'JUGS', 'JUJU', 'JUKE', 'JUKU', 'JUMP', 'JUNK', 'JUPE', 'JURA', 'JURY', 'JUST', 'JUTE', 'JUTS', 'KAAS', 'KABS', 'KADI', 'KAES', 'KAFS', 'KAGU', 'KAIF', 'KAIL', 'KAIN', 'KAKA', 'KAKI', 'KALE', 'KAME', 'KAMI', 'KANA', 'KANE', 'KAON', 'KAPA', 'KAPH', 'KAPU', 'KARN', 'KART', 'KATA', 'KATS', 'KAVA', 'KAYO', 'KAYS', 'KBAR', 'KEAS', 'KECK', 'KEEF', 'KEEK', 'KEEL', 'KEEN', 'KEEP', 'KEET', 'KEFS', 'KEGS', 'KEIR', 'KELP', 'KELT', 'KEMP', 'KENO', 'KENS', 'KENT', 'KEPI', 'KEPS', 'KEPT', 'KERB', 'KERF', 'KERN', 'KETA', 'KETO', 'KEYS', 'KHAF', 'KHAN', 'KHAT', 'KHET', 'KHIS', 'KIBE', 'KICK', 'KIDS', 'KIEF', 'KIER', 'KIFS', 'KIKE', 'KILL', 'KILN', 'KILO', 'KILT', 'KINA', 'KIND', 'KINE', 'KING', 'KINK', 'KINO', 'KINS', 'KIPS', 'KIRK', 'KIRN', 'KIRS', 'KISS', 'KIST', 'KITE', 'KITH', 'KITS', 'KIVA', 'KIWI', 'KLIK', 'KNAP', 'KNAR', 'KNEE', 'KNEW', 'KNIT', 'KNOB', 'KNOP', 'KNOT', 'KNOW', 'KNUR', 'KOAN', 'KOAS', 'KOBO', 'KOBS', 'KOEL', 'KOHL', 'KOIS', 'KOJI', 'KOLA', 'KOLO', 'KONK', 'KOOK', 'KOPH', 'KOPS', 'KORA', 'KORE', 'KORS', 'KOSS', 'KOTO', 'KRAI', 'KRAY', 'KRIS', 'KUDO', 'KUDU', 'KUES', 'KUFI', 'KUNA', 'KUNE', 'KURU', 'KVAS', 'KYAK', 'KYAR', 'KYAT', 'KYES', 'KYTE', 'LABS', 'LACE', 'LACK', 'LACS', 'LACY', 'LADE', 'LADS', 'LADY', 'LAGS', 'LAHS', 'LAIC', 'LAID', 'LAIN', 'LAIR', 'LAKE', 'LAKH', 'LAKY', 'LALL', 'LAMA', 'LAMB', 'LAME', 'LAMP', 'LAMS', 'LAND', 'LANE', 'LANG', 'LANK', 'LAPS', 'LARD', 'LARI', 'LARK', 'LARN', 'LARS', 'LASE', 'LASH', 'LASS', 'LAST', 'LATE', 'LATH', 'LATI', 'LATS', 'LATU', 'LAUD', 'LAVA', 'LAVE', 'LAVS', 'LAWN', 'LAWS', 'LAYS', 'LAZE', 'LAZY', 'LEAD', 'LEAF', 'LEAK', 'LEAL', 'LEAN', 'LEAP', 'LEAR', 'LEAS', 'LECH', 'LEDE', 'LEEK', 'LEER', 'LEES', 'LEET', 'LEFT', 'LEGS', 'LEHR', 'LEIS', 'LEKE', 'LEKS', 'LEKU', 'LEND', 'LENO', 'LENS', 'LENT', 'LEPT', 'LESS', 'LEST', 'LETS', 'LEUD', 'LEVA', 'LEVO', 'LEVS', 'LEVY', 'LEWD', 'LEYS', 'LIAR', 'LIAS', 'LIBS', 'LICE', 'LICH', 'LICK', 'LIDO', 'LIDS', 'LIED', 'LIEF', 'LIEN', 'LIER', 'LIES', 'LIEU', 'LIFE', 'LIFT', 'LIKE', 'LILO', 'LILT', 'LILY', 'LIMA', 'LIMB', 'LIME', 'LIMN', 'LIMO', 'LIMP', 'LIMY', 'LINE', 'LING', 'LINK', 'LINN', 'LINO', 'LINS', 'LINT', 'LINY', 'LION', 'LIPA', 'LIPE', 'LIPO', 'LIPS', 'LIRA', 'LIRE', 'LIRI', 'LISP', 'LIST', 'LITE', 'LITS', 'LITU', 'LIVE', 'LOAD', 'LOAF', 'LOAM', 'LOAN', 'LOBE', 'LOBO', 'LOBS', 'LOCA', 'LOCH', 'LOCI', 'LOCK', 'LOCO', 'LODE', 'LOFT', 'LOGE', 'LOGO', 'LOGS', 'LOGY', 'LOID', 'LOIN', 'LOLL', 'LONE', 'LONG', 'LOOF', 'LOOK', 'LOOM', 'LOON', 'LOOP', 'LOOS', 'LOOT', 'LOPE', 'LOPS', 'LORD', 'LORE', 'LORN', 'LORY', 'LOSE', 'LOSS', 'LOST', 'LOTA', 'LOTH', 'LOTI', 'LOTO', 'LOTS', 'LOUD', 'LOUP', 'LOUR', 'LOUT', 'LOVE', 'LOWE', 'LOWN', 'LOWS', 'LUAU', 'LUBE', 'LUCE', 'LUCK', 'LUDE', 'LUDO', 'LUDS', 'LUES', 'LUFF', 'LUGE', 'LUGS', 'LULL', 'LULU', 'LUMA', 'LUMP', 'LUMS', 'LUNA', 'LUNE', 'LUNG', 'LUNK', 'LUNS', 'LUNT', 'LUNY', 'LURE', 'LURK', 'LUSH', 'LUST', 'LUTE', 'LUTZ', 'LUVS', 'LUXE', 'LWEI', 'LYCH', 'LYES', 'LYNX', 'LYRE', 'LYSE', 'MAAR', 'MABE', 'MACE', 'MACH', 'MACK', 'MACS', 'MADE', 'MADS', 'MAES', 'MAGE', 'MAGI', 'MAGS', 'MAID', 'MAIL', 'MAIM', 'MAIN', 'MAIR', 'MAKE', 'MAKI', 'MAKO', 'MALE', 'MALL', 'MALM', 'MALT', 'MAMA', 'MAMS', 'MANA', 'MANE', 'MANO', 'MANS', 'MANY', 'MAPS', 'MARA', 'MARC', 'MARE', 'MARK', 'MARL', 'MARS', 'MART', 'MASA', 'MASH', 'MASK', 'MASS', 'MAST', 'MATE', 'MATH', 'MATS', 'MATT', 'MAUD', 'MAUL', 'MAUN', 'MAUT', 'MAWN', 'MAWS', 'MAXI', 'MAYA', 'MAYO', 'MAYS', 'MAZE', 'MAZY', 'MEAD', 'MEAL', 'MEAN', 'MEAT', 'MECH', 'MEDS', 'MEED', 'MEEK', 'MEET', 'MEGA', 'MEGS', 'MELD', 'MELL', 'MELS', 'MELT', 'MEME', 'MEMO', 'MEMS', 'MEND', 'MENO', 'MENU', 'MEOU', 'MEOW', 'MERC', 'MERE', 'MERK', 'MERL', 'MESA', 'MESH', 'MESS', 'META', 'METE', 'METH', 'MEWL', 'MEWS', 'MEZE', 'MHOS', 'MIBS', 'MICA', 'MICE', 'MICK', 'MICS', 'MIDI', 'MIDS', 'MIEN', 'MIFF', 'MIGG', 'MIGS', 'MIKE', 'MILD', 'MILE', 'MILK', 'MILL', 'MILO', 'MILS', 'MILT', 'MIME', 'MINA', 'MIND', 'MINE', 'MINI', 'MINK', 'MINT', 'MINX', 'MIPS', 'MIRE', 'MIRI', 'MIRK', 'MIRS', 'MIRY', 'MISE', 'MISO', 'MISS', 'MIST', 'MITE', 'MITT', 'MITY', 'MIXT', 'MOAN', 'MOAS', 'MOAT', 'MOBS', 'MOCK', 'MOCS', 'MODE', 'MODI', 'MODS', 'MOFO', 'MOGS', 'MOHO', 'MOIL', 'MOJO', 'MOKE', 'MOLA', 'MOLD', 'MOLE', 'MOLL', 'MOLS', 'MOLT', 'MOLY', 'MOME', 'MOMI', 'MOMS', 'MONK', 'MONO', 'MONS', 'MONY', 'MOOD', 'MOOK', 'MOOL', 'MOON', 'MOOR', 'MOOS', 'MOOT', 'MOPE', 'MOPS', 'MOPY', 'MORA', 'MORE', 'MORN', 'MORS', 'MORT', 'MOSH', 'MOSK', 'MOSS', 'MOST', 'MOTE', 'MOTH', 'MOTS', 'MOTT', 'MOUE', 'MOVE', 'MOWN', 'MOWS', 'MOXA', 'MOZO', 'MUCH', 'MUCK', 'MUDS', 'MUFF', 'MUGG', 'MUGS', 'MULE', 'MULL', 'MUMM', 'MUMP', 'MUMS', 'MUMU', 'MUNG', 'MUNI', 'MUNS', 'MUON', 'MURA', 'MURE', 'MURK', 'MURR', 'MUSE', 'MUSH', 'MUSK', 'MUSO', 'MUSS', 'MUST', 'MUTE', 'MUTS', 'MUTT', 'MYCS', 'MYNA', 'MYTH', 'NAAN', 'NABE', 'NABS', 'NADA', 'NAES', 'NAFF', 'NAGA', 'NAGS', 'NAIF', 'NAIL', 'NALA', 'NAME', 'NANA', 'NANO', 'NANS', 'NAOI', 'NAOS', 'NAPA', 'NAPE', 'NAPS', 'NARC', 'NARD', 'NARK', 'NARY', 'NAVE', 'NAVS', 'NAVY', 'NAYS', 'NAZI', 'NEAP', 'NEAR', 'NEAT', 'NEBS', 'NECK', 'NEED', 'NEEM', 'NEEP', 'NEGS', 'NEIF', 'NEMA', 'NENE', 'NEON', 'NERD', 'NESS', 'NEST', 'NETS', 'NETT', 'NEUK', 'NEUM', 'NEVE', 'NEVI', 'NEWB', 'NEWS', 'NEWT', 'NEXT', 'NIBS', 'NICE', 'NICK', 'NIDE', 'NIDI', 'NIFF', 'NIGH', 'NILL', 'NILS', 'NIMS', 'NINE', 'NIPA', 'NIPS', 'NISI', 'NITE', 'NITS', 'NIXE', 'NIXY', 'NOBS', 'NOCK', 'NODE', 'NODI', 'NODS', 'NOEL', 'NOES', 'NOGG', 'NOGS', 'NOIL', 'NOIR', 'NOLO', 'NOMA', 'NOME', 'NOMS', 'NONA', 'NONE', 'NOOK', 'NOON', 'NOPE', 'NORI', 'NORM', 'NOSE', 'NOSH', 'NOSY', 'NOTA', 'NOTE', 'NOUN', 'NOUS', 'NOVA', 'NOWS', 'NOWT', 'NUBS', 'NUDE', 'NUFF', 'NUGS', 'NUKE', 'NULL', 'NUMB', 'NUNS', 'NURD', 'NURL', 'NUTS', 'NYAH', 'OAFS', 'OAKS', 'OAKY', 'OARS', 'OAST', 'OATH', 'OATS', 'OATY', 'OBAS', 'OBES', 'OBEY', 'OBIA', 'OBIS', 'OBIT', 'OBOE', 'OBOL', 'OCAS', 'OCHE', 'ODAH', 'ODAS', 'ODDS', 'ODEA', 'ODES', 'ODIC', 'ODOR', 'ODYL', 'OFAY', 'OFFA', 'OFFS', 'OGAM', 'OGEE', 'OGLE', 'OGRE', 'OHED', 'OHIA', 'OHMS', 'OIKS', 'OILS', 'OILY', 'OINK', 'OKAS', 'OKAY', 'OKEH', 'OKES', 'OKRA', 'OLDE', 'OLDS', 'OLDY', 'OLEA', 'OLEO', 'OLES', 'OLIO', 'OLLA', 'OMAS', 'OMEN', 'OMER', 'OMIT', 'ONCE', 'ONES', 'ONLY', 'ONOS', 'ONTO', 'ONUS', 'ONYX', 'OOHS', 'OOPS', 'OOTS', 'OOZE', 'OOZY', 'OPAH', 'OPAL', 'OPAS', 'OPED', 'OPEN', 'OPES', 'OPTS', 'OPUS', 'ORAD', 'ORAL', 'ORBS', 'ORBY', 'ORCA', 'ORCS', 'ORDO', 'ORES', 'ORGS', 'ORGY', 'ORLE', 'ORRA', 'ORTS', 'ORYX', 'ORZO', 'OSAR', 'OSES', 'OSSA', 'OTIC', 'OTTO', 'OUCH', 'OUDS', 'OUPH', 'OURS', 'OUST', 'OUTA', 'OUTS', 'OUZO', 'OVAL', 'OVEN', 'OVER', 'OVUM', 'OWED', 'OWES', 'OWLS', 'OWLY', 'OWNS', 'OWSE', 'OWTS', 'OXEN', 'OXER', 'OXES', 'OXIC', 'OXID', 'OXIM', 'OYER', 'OYES', 'OYEZ', 'PAAN', 'PACA', 'PACE', 'PACK', 'PACS', 'PACT', 'PACY', 'PADI', 'PADS', 'PAGE', 'PAID', 'PAIK', 'PAIL', 'PAIN', 'PAIR', 'PAKS', 'PALE', 'PALI', 'PALL', 'PALM', 'PALP', 'PALS', 'PALY', 'PAMS', 'PANE', 'PANG', 'PANS', 'PANT', 'PAPA', 'PAPS', 'PARA', 'PARD', 'PARE', 'PARK', 'PARR', 'PARS', 'PART', 'PASE', 'PASH', 'PASS', 'PAST', 'PATE', 'PATH', 'PATS', 'PATY', 'PAUA', 'PAVE', 'PAWL', 'PAWN', 'PAWS', 'PAYS', 'PEAG', 'PEAK', 'PEAL', 'PEAN', 'PEAR', 'PEAS', 'PEAT', 'PECH', 'PECK', 'PECS', 'PEDS', 'PEED', 'PEEK', 'PEEL', 'PEEN', 'PEEP', 'PEER', 'PEES', 'PEGS', 'PEHS', 'PEIN', 'PEKE', 'PELE', 'PELF', 'PELT', 'PEND', 'PENS', 'PENT', 'PEON', 'PEPO', 'PEPS', 'PERC', 'PERE', 'PERI', 'PERK', 'PERM', 'PERP', 'PERT', 'PERV', 'PESO', 'PEST', 'PETS', 'PEWS', 'PFFT', 'PFUI', 'PHAT', 'PHEW', 'PHIS', 'PHIZ', 'PHON', 'PHOS', 'PHOT', 'PHUT', 'PIAL', 'PIAN', 'PIAS', 'PICA', 'PICE', 'PICK', 'PICS', 'PIED', 'PIER', 'PIES', 'PIGS', 'PIKA', 'PIKE', 'PIKI', 'PILE', 'PILI', 'PILL', 'PILY', 'PIMA', 'PIMP', 'PINA', 'PINE', 'PING', 'PINK', 'PINS', 'PINT', 'PINY', 'PION', 'PIPA', 'PIPE', 'PIPS', 'PIPY', 'PIRN', 'PISH', 'PISO', 'PISS', 'PITA', 'PITH', 'PITS', 'PITY', 'PIXY', 'PLAN', 'PLAT', 'PLAY', 'PLEA', 'PLEB', 'PLED', 'PLEW', 'PLEX', 'PLIE', 'PLOD', 'PLOP', 'PLOT', 'PLOW', 'PLOY', 'PLUG', 'PLUM', 'PLUS', 'POCK', 'POCO', 'PODS', 'POEM', 'POET', 'POGO', 'POGY', 'POIS', 'POKE', 'POKY', 'POLE', 'POLL', 'POLO', 'POLS', 'POLY', 'POME', 'POMO', 'POMP', 'POMS', 'POND', 'PONE', 'PONG', 'PONS', 'PONY', 'POOD', 'POOF', 'POOH', 'POOL', 'POON', 'POOP', 'POOR', 'POOS', 'POPE', 'POPS', 'PORE', 'PORK', 'PORN', 'PORT', 'POSE', 'POSH', 'POST', 'POSY', 'POTS', 'POUF', 'POUR', 'POUT', 'POWS', 'POXY', 'PRAM', 'PRAO', 'PRAT', 'PRAU', 'PRAY', 'PREE', 'PREP', 'PREX', 'PREY', 'PREZ', 'PRIG', 'PRIM', 'PROA', 'PROB', 'PROD', 'PROF', 'PROG', 'PROM', 'PROP', 'PROS', 'PROW', 'PSIS', 'PSST', 'PTUI', 'PUBS', 'PUCE', 'PUCK', 'PUDS', 'PUDU', 'PUFF', 'PUGH', 'PUGS', 'PUJA', 'PUKE', 'PULA', 'PULE', 'PULI', 'PULK', 'PULL', 'PULP', 'PULS', 'PUMA', 'PUMP', 'PUNA', 'PUNG', 'PUNK', 'PUNS', 'PUNT', 'PUNY', 'PUPA', 'PUPS', 'PUPU', 'PURE', 'PURI', 'PURL', 'PURR', 'PURS', 'PUSH', 'PUSS', 'PUTS', 'PUTT', 'PUTZ', 'PYAS', 'PYES', 'PYIC', 'PYIN', 'PYRE', 'PYRO', 'QADI', 'QAID', 'QATS', 'QOPH', 'QUAD', 'QUAG', 'QUAI', 'QUAY', 'QUEY', 'QUID', 'QUIN', 'QUIP', 'QUIT', 'QUIZ', 'QUOD', 'RACE', 'RACK', 'RACY', 'RADS', 'RAFF', 'RAFT', 'RAGA', 'RAGE', 'RAGG', 'RAGI', 'RAGS', 'RAIA', 'RAID', 'RAIL', 'RAIN', 'RAIS', 'RAJA', 'RAKE', 'RAKI', 'RAKU', 'RALE', 'RAMI', 'RAMP', 'RAMS', 'RAND', 'RANG', 'RANI', 'RANK', 'RANT', 'RAPE', 'RAPS', 'RAPT', 'RARE', 'RASE', 'RASH', 'RASP', 'RATE', 'RATH', 'RATO', 'RATS', 'RAVE', 'RAWS', 'RAYA', 'RAYS', 'RAZE', 'RAZZ', 'READ', 'REAL', 'REAM', 'REAP', 'REAR', 'REBS', 'RECK', 'RECS', 'REDD', 'REDE', 'REDO', 'REDS', 'REED', 'REEF', 'REEK', 'REEL', 'REES', 'REFS', 'REFT', 'REGS', 'REIF', 'REIN', 'REIS', 'RELY', 'REMS', 'REND', 'RENO', 'RENT', 'REPO', 'REPP', 'REPS', 'RESH', 'REST', 'RETE', 'RETS', 'REVS', 'RHEA', 'RHOS', 'RHUS', 'RIAL', 'RIAS', 'RIBS', 'RICE', 'RICH', 'RICK', 'RIDE', 'RIDS', 'RIEL', 'RIFE', 'RIFF', 'RIFS', 'RIFT', 'RIGS', 'RILE', 'RILL', 'RIME', 'RIMS', 'RIMY', 'RIND', 'RING', 'RINK', 'RINS', 'RIOT', 'RIPE', 'RIPS', 'RISE', 'RISK', 'RITE', 'RITZ', 'RIVE', 'ROAD', 'ROAM', 'ROAN', 'ROAR', 'ROBE', 'ROBS', 'ROCK', 'ROCS', 'RODE', 'RODS', 'ROES', 'ROIL', 'ROLE', 'ROLF', 'ROLL', 'ROMP', 'ROMS', 'ROOD', 'ROOF', 'ROOK', 'ROOM', 'ROOS', 'ROOT', 'ROPE', 'ROPY', 'ROSE', 'ROSY', 'ROTA', 'ROTE', 'ROTI', 'ROTL', 'ROTO', 'ROTS', 'ROUE', 'ROUP', 'ROUT', 'ROUX', 'ROVE', 'ROWS', 'RUBE', 'RUBS', 'RUBY', 'RUCK', 'RUDD', 'RUDE', 'RUED', 'RUER', 'RUES', 'RUFF', 'RUGA', 'RUGS', 'RUIN', 'RUKH', 'RULE', 'RULY', 'RUMP', 'RUMS', 'RUNE', 'RUNG', 'RUNS', 'RUNT', 'RUSE', 'RUSH', 'RUSK', 'RUST', 'RUTH', 'RUTS', 'RYAS', 'RYES', 'RYKE', 'RYND', 'RYOT', 'RYUS', 'SABE', 'SABS', 'SACK', 'SACS', 'SADE', 'SADI', 'SAFE', 'SAGA', 'SAGE', 'SAGO', 'SAGS', 'SAGY', 'SAID', 'SAIL', 'SAIN', 'SAKE', 'SAKI', 'SALE', 'SALL', 'SALP', 'SALS', 'SALT', 'SAME', 'SAMP', 'SAND', 'SANE', 'SANG', 'SANK', 'SANS', 'SAPS', 'SARD', 'SARI', 'SARK', 'SASH', 'SASS', 'SATE', 'SATI', 'SAUL', 'SAVE', 'SAWN', 'SAWS', 'SAYS', 'SCAB', 'SCAD', 'SCAG', 'SCAM', 'SCAN', 'SCAR', 'SCAT', 'SCOP', 'SCOT', 'SCOW', 'SCRY', 'SCUD', 'SCUM', 'SCUP', 'SCUT', 'SEAL', 'SEAM', 'SEAR', 'SEAS', 'SEAT', 'SECS', 'SECT', 'SEED', 'SEEK', 'SEEL', 'SEEM', 'SEEN', 'SEEP', 'SEER', 'SEES', 'SEGO', 'SEGS', 'SEIF', 'SEIS', 'SELF', 'SELL', 'SELS', 'SEME', 'SEMI', 'SEND', 'SENE', 'SENT', 'SEPS', 'SEPT', 'SERA', 'SERE', 'SERF', 'SERS', 'SESH', 'SETA', 'SETS', 'SETT', 'SEVS', 'SEWN', 'SEWS', 'SEXT', 'SEXY', 'SHAD', 'SHAG', 'SHAH', 'SHAM', 'SHAT', 'SHAW', 'SHAY', 'SHEA', 'SHED', 'SHEN', 'SHES', 'SHEW', 'SHHH', 'SHIM', 'SHIN', 'SHIP', 'SHIT', 'SHIV', 'SHMO', 'SHOD', 'SHOE', 'SHOG', 'SHOO', 'SHOP', 'SHOT', 'SHOW', 'SHRI', 'SHUL', 'SHUN', 'SHUT', 'SHWA', 'SIAL', 'SIBB', 'SIBS', 'SICE', 'SICK', 'SICS', 'SIDE', 'SIDH', 'SIFT', 'SIGH', 'SIGN', 'SIGS', 'SIKA', 'SIKE', 'SILD', 'SILK', 'SILL', 'SILO', 'SILT', 'SIMA', 'SIMP', 'SIMS', 'SINE', 'SING', 'SINH', 'SINK', 'SINS', 'SIPE', 'SIPS', 'SIRE', 'SIRS', 'SITE', 'SITH', 'SITS', 'SIZE', 'SIZY', 'SKAG', 'SKAS', 'SKAT', 'SKED', 'SKEE', 'SKEG', 'SKEP', 'SKEW', 'SKID', 'SKIM', 'SKIN', 'SKIP', 'SKIS', 'SKIT', 'SKOL', 'SKRY', 'SKUA', 'SLAB', 'SLAG', 'SLAM', 'SLAP', 'SLAT', 'SLAW', 'SLAY', 'SLED', 'SLEW', 'SLID', 'SLIM', 'SLIP', 'SLIT', 'SLOB', 'SLOE', 'SLOG', 'SLOP', 'SLOT', 'SLOW', 'SLUB', 'SLUE', 'SLUG', 'SLUM', 'SLUR', 'SLUT', 'SMEW', 'SMIT', 'SMOG', 'SMUG', 'SMUT', 'SNAG', 'SNAP', 'SNAW', 'SNED', 'SNIB', 'SNIP', 'SNIT', 'SNOB', 'SNOG', 'SNOT', 'SNOW', 'SNUB', 'SNUG', 'SNYE', 'SOAK', 'SOAP', 'SOAR', 'SOBA', 'SOBS', 'SOCA', 'SOCK', 'SODA', 'SODS', 'SOFA', 'SOFT', 'SOHS', 'SOIL', 'SOJA', 'SOJU', 'SOKE', 'SOLA', 'SOLD', 'SOLE', 'SOLI', 'SOLO', 'SOLS', 'SOMA', 'SOME', 'SOMS', 'SONE', 'SONG', 'SONS', 'SOOK', 'SOON', 'SOOT', 'SOPH', 'SOPS', 'SORA', 'SORB', 'SORD', 'SORE', 'SORI', 'SORN', 'SORT', 'SOTH', 'SOTS', 'SOUK', 'SOUL', 'SOUP', 'SOUR', 'SOUS', 'SOWN', 'SOWS', 'SOYA', 'SOYS', 'SPAE', 'SPAM', 'SPAN', 'SPAR', 'SPAS', 'SPAT', 'SPAY', 'SPAZ', 'SPEC', 'SPED', 'SPEW', 'SPIC', 'SPIK', 'SPIN', 'SPIT', 'SPIV', 'SPOT', 'SPRY', 'SPUD', 'SPUE', 'SPUN', 'SPUR', 'SRIS', 'STAB', 'STAG', 'STAR', 'STAT', 'STAW', 'STAY', 'STEM', 'STEP', 'STET', 'STEW', 'STEY', 'STIR', 'STOA', 'STOB', 'STOP', 'STOT', 'STOW', 'STUB', 'STUD', 'STUM', 'STUN', 'STYE', 'SUBA', 'SUBS', 'SUCH', 'SUCK', 'SUDD', 'SUDS', 'SUED', 'SUER', 'SUES', 'SUET', 'SUGH', 'SUIT', 'SUKH', 'SUKS', 'SULK', 'SULU', 'SUMI', 'SUMO', 'SUMP', 'SUMS', 'SUMY', 'SUNG', 'SUNK', 'SUNN', 'SUNS', 'SUPE', 'SUPS', 'SUQS', 'SURA', 'SURD', 'SURE', 'SURF', 'SUSS', 'SWAB', 'SWAG', 'SWAM', 'SWAN', 'SWAP', 'SWAT', 'SWAY', 'SWIG', 'SWIM', 'SWOB', 'SWOP', 'SWOT', 'SWUM', 'SYBO', 'SYCE', 'SYKE', 'SYLI', 'SYNC', 'SYNE', 'SYPH', 'TABS', 'TABU', 'TACE', 'TACH', 'TACK', 'TACO', 'TACT', 'TADS', 'TAEL', 'TAGS', 'TAHR', 'TAIL', 'TAIN', 'TAKA', 'TAKE', 'TALA', 'TALC', 'TALE', 'TALI', 'TALK', 'TALL', 'TAME', 'TAMP', 'TAMS', 'TANG', 'TANK', 'TANS', 'TAOS', 'TAPA', 'TAPE', 'TAPS', 'TARE', 'TARN', 'TARO', 'TARP', 'TARS', 'TART', 'TASE', 'TASK', 'TASS', 'TATE', 'TATS', 'TAUS', 'TAUT', 'TAVS', 'TAWS', 'TAXA', 'TAXI', 'TEAK', 'TEAL', 'TEAM', 'TEAR', 'TEAS', 'TEAT', 'TECH', 'TECS', 'TEDS', 'TEED', 'TEEL', 'TEEM', 'TEEN', 'TEES', 'TEFF', 'TEGG', 'TEGS', 'TEGU', 'TEIN', 'TELA', 'TELE', 'TELL', 'TELS', 'TEMP', 'TEND', 'TENS', 'TENT', 'TEPA', 'TERM', 'TERN', 'TEST', 'TETH', 'TETS', 'TEWS', 'TEXT', 'THAE', 'THAN', 'THAT', 'THAW', 'THEE', 'THEM', 'THEN', 'THEW', 'THEY', 'THIN', 'THIO', 'THIR', 'THIS', 'THOU', 'THRO', 'THRU', 'THUD', 'THUG', 'THUS', 'TIAN', 'TICK', 'TICS', 'TIDE', 'TIDY', 'TIED', 'TIER', 'TIES', 'TIFF', 'TIKE', 'TIKI', 'TILE', 'TILL', 'TILS', 'TILT', 'TIME', 'TINE', 'TING', 'TINS', 'TINT', 'TINY', 'TIPI', 'TIPS', 'TIRE', 'TIRL', 'TIRO', 'TITI', 'TITS', 'TIVY', 'TIYN', 'TIZZ', 'TOAD', 'TOBY', 'TOCK', 'TOCO', 'TODS', 'TODY', 'TOEA', 'TOED', 'TOES', 'TOFF', 'TOFT', 'TOFU', 'TOGA', 'TOGS', 'TOIL', 'TOIT', 'TOKE', 'TOLA', 'TOLD', 'TOLE', 'TOLL', 'TOLT', 'TOLU', 'TOMB', 'TOME', 'TOMS', 'TONE', 'TONG', 'TONS', 'TONY', 'TOOK', 'TOOL', 'TOOM', 'TOON', 'TOOT', 'TOPE', 'TOPH', 'TOPI', 'TOPO', 'TOPS', 'TORA', 'TORC', 'TORE', 'TORI', 'TORN', 'TORO', 'TORR', 'TORS', 'TORT', 'TORY', 'TOSA', 'TOSH', 'TOSS', 'TOST', 'TOTE', 'TOTS', 'TOUR', 'TOUT', 'TOWN', 'TOWS', 'TOWY', 'TOYO', 'TOYS', 'TRAD', 'TRAM', 'TRAP', 'TRAY', 'TREE', 'TREF', 'TREK', 'TREM', 'TRES', 'TRET', 'TREY', 'TRIG', 'TRIM', 'TRIO', 'TRIP', 'TROD', 'TROG', 'TROP', 'TROT', 'TROU', 'TROW', 'TROY', 'TRUE', 'TRUG', 'TSAR', 'TSKS', 'TUBA', 'TUBE', 'TUBS', 'TUCK', 'TUFA', 'TUFF', 'TUFT', 'TUGS', 'TUIS', 'TULE', 'TUMP', 'TUMS', 'TUNA', 'TUNE', 'TUNG', 'TUNS', 'TUPS', 'TURD', 'TURF', 'TURK', 'TURN', 'TURR', 'TUSH', 'TUSK', 'TUTS', 'TUTU', 'TWAE', 'TWAS', 'TWAT', 'TWEE', 'TWIG', 'TWIN', 'TWIT', 'TWOS', 'TYEE', 'TYER', 'TYES', 'TYIN', 'TYKE', 'TYNE', 'TYPE', 'TYPO', 'TYPP', 'TYPY', 'TYRE', 'TYRO', 'TZAR', 'UDON', 'UDOS', 'UGHS', 'UGLY', 'UKES', 'ULAN', 'ULNA', 'ULUS', 'ULVA', 'UMBO', 'UMMA', 'UMPH', 'UMPS', 'UNAI', 'UNAU', 'UNBE', 'UNCI', 'UNCO', 'UNDE', 'UNDO', 'UNDY', 'UNIS', 'UNIT', 'UNTO', 'UPAS', 'UPBY', 'UPDO', 'UPON', 'URBS', 'URDS', 'UREA', 'URGE', 'URIC', 'URNS', 'URPS', 'URSA', 'URUS', 'USED', 'USER', 'USES', 'UTAS', 'UTES', 'UVEA', 'VACS', 'VAGI', 'VAIL', 'VAIN', 'VAIR', 'VALE', 'VAMP', 'VANE', 'VANG', 'VANS', 'VARA', 'VARS', 'VARY', 'VASA', 'VASE', 'VAST', 'VATS', 'VATU', 'VAUS', 'VAVS', 'VAWS', 'VEAL', 'VEEP', 'VEER', 'VEES', 'VEGA', 'VEIL', 'VEIN', 'VELA', 'VELD', 'VENA', 'VEND', 'VENT', 'VERA', 'VERB', 'VERT', 'VERY', 'VEST', 'VETO', 'VETS', 'VEXT', 'VIAL', 'VIBE', 'VICE', 'VIDE', 'VIDS', 'VIED', 'VIER', 'VIES', 'VIEW', 'VIFF', 'VIGA', 'VIGS', 'VILE', 'VILL', 'VIMS', 'VINA', 'VINE', 'VINO', 'VINS', 'VINY', 'VIOL', 'VIRL', 'VISA', 'VISE', 'VITA', 'VIVA', 'VIVE', 'VLEI', 'VLOG', 'VOES', 'VOGS', 'VOID', 'VOLE', 'VOLK', 'VOLT', 'VOTE', 'VOWS', 'VROW', 'VUGG', 'VUGH', 'VUGS', 'VULN', 'WAAH', 'WABS', 'WACK', 'WADE', 'WADI', 'WADS', 'WADY', 'WAES', 'WAFF', 'WAFT', 'WAGE', 'WAGS', 'WAIF', 'WAIL', 'WAIN', 'WAIR', 'WAIT', 'WAKE', 'WALE', 'WALI', 'WALK', 'WALL', 'WALY', 'WAME', 'WAND', 'WANE', 'WANK', 'WANS', 'WANT', 'WANY', 'WAPS', 'WARD', 'WARE', 'WARK', 'WARM', 'WARN', 'WARP', 'WARS', 'WART', 'WARY', 'WASH', 'WASP', 'WAST', 'WATS', 'WATT', 'WAUK', 'WAUL', 'WAUR', 'WAVE', 'WAVY', 'WAWL', 'WAWS', 'WAXY', 'WAYS', 'WEAK', 'WEAL', 'WEAN', 'WEAR', 'WEBS', 'WEDS', 'WEED', 'WEEK', 'WEEL', 'WEEN', 'WEEP', 'WEER', 'WEES', 'WEET', 'WEFT', 'WEIR', 'WEKA', 'WELD', 'WELL', 'WELT', 'WEND', 'WENS', 'WENT', 'WEPT', 'WERE', 'WERT', 'WEST', 'WETA', 'WETS', 'WHAM', 'WHAP', 'WHAT', 'WHEE', 'WHEN', 'WHET', 'WHEW', 'WHEY', 'WHID', 'WHIG', 'WHIM', 'WHIN', 'WHIP', 'WHIR', 'WHIT', 'WHIZ', 'WHOA', 'WHOM', 'WHOP', 'WHUP', 'WHYS', 'WICH', 'WICK', 'WIDE', 'WIFE', 'WIGS', 'WIKI', 'WILD', 'WILE', 'WILL', 'WILT', 'WILY', 'WIMP', 'WIND', 'WINE', 'WING', 'WINK', 'WINO', 'WINS', 'WINY', 'WIPE', 'WIRE', 'WIRY', 'WISE', 'WISH', 'WISP', 'WISS', 'WIST', 'WITE', 'WITH', 'WITS', 'WIVE', 'WOAD', 'WOES', 'WOGS', 'WOKE', 'WOKS', 'WOLD', 'WOLF', 'WOMB', 'WONK', 'WONS', 'WONT', 'WOOD', 'WOOF', 'WOOL', 'WOOS', 'WOPS', 'WORD', 'WORE', 'WORK', 'WORM', 'WORN', 'WORT', 'WOST', 'WOTS', 'WOVE', 'WOWS', 'WRAP', 'WREN', 'WRIT', 'WUSS', 'WYCH', 'WYES', 'WYLE', 'WYND', 'WYNN', 'WYNS', 'WYTE', 'XYST', 'YACK', 'YAFF', 'YAGE', 'YAGI', 'YAGS', 'YAKS', 'YALD', 'YAMS', 'YANG', 'YANK', 'YAPS', 'YARD', 'YARE', 'YARN', 'YAUD', 'YAUP', 'YAWL', 'YAWN', 'YAWP', 'YAWS', 'YAYS', 'YEAH', 'YEAN', 'YEAR', 'YEAS', 'YECH', 'YEGG', 'YELD', 'YELK', 'YELL', 'YELP', 'YENS', 'YEOW', 'YEPS', 'YERK', 'YETI', 'YETT', 'YEUK', 'YEWS', 'YIDS', 'YILL', 'YINS', 'YIPE', 'YIPS', 'YIRD', 'YIRR', 'YLEM', 'YOBS', 'YOCK', 'YODH', 'YODS', 'YOGA', 'YOGH', 'YOGI', 'YOKE', 'YOKS', 'YOLK', 'YOMP', 'YOND', 'YONI', 'YOOF', 'YORE', 'YOUR', 'YOUS', 'YOWE', 'YOWL', 'YOWS', 'YUAN', 'YUCA', 'YUCH', 'YUCK', 'YUGA', 'YUKS', 'YULE', 'YUPS', 'YURT', 'YUTZ', 'YUZU', 'YWIS', 'ZAGS', 'ZANY', 'ZAPS', 'ZARF', 'ZEAL', 'ZEBU', 'ZEDA', 'ZEDS', 'ZEES', 'ZEIN', 'ZEKS', 'ZEPS', 'ZERK', 'ZERO', 'ZEST', 'ZETA', 'ZIGS', 'ZILL', 'ZINC', 'ZINE', 'ZING', 'ZINS', 'ZIPS', 'ZITI', 'ZITS', 'ZIZZ', 'ZOEA', 'ZOIC', 'ZONA', 'ZONE', 'ZONK', 'ZOOM', 'ZOON', 'ZOOS', 'ZORI', 'ZOUK', 'ZYME'];
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Controls = function (_Component) {
-  _inherits(Controls, _Component);
-
-  function Controls() {
-    _classCallCheck(this, Controls);
-
-    return _possibleConstructorReturn(this, (Controls.__proto__ || Object.getPrototypeOf(Controls)).apply(this, arguments));
-  }
-
-  _createClass(Controls, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { id: "controls-container" },
-        _react2.default.createElement(
-          "p",
-          null,
-          "## CONTROLS ##"
-        )
-      );
-    }
-  }]);
-
-  return Controls;
-}(_react.Component);
-
-exports.default = Controls;
+exports.default = fours;
 
 /***/ }),
 /* 80 */
@@ -12257,49 +11697,9 @@ exports.default = Controls;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var sevens = ['ACRATIC', 'ADELGID', 'ADIOSES', 'ADLANDS', 'ADSUKIS', 'ADWARES', 'AERADIO', 'AETATIS', 'AGONISM', 'AIRBASE', 'AIRLOCK', 'AIRSIDE', 'AIRSOME', 'AIRTRAM', 'AIRVACS', 'AKEBIAS', 'AKRASIA', 'AKRATIC', 'ALCOOLS', 'ALCOPOP', 'ALIASED', 'ALIYOTH', 'ALLIAKS', 'AMAUTIK', 'AMAUTIS', 'AMENTUM', 'AMTRAKS', 'ANANDAS', 'ANIMATI', 'ANODISE', 'ANTHROS', 'APLANAT', 'APPRESS', 'AQUAFIT', 'ARCINGS', 'ARROCES', 'ARROZES', 'ARTIGIS', 'ARTSIES', 'ASHPANS', 'ASHRAMA', 'ASKARIS', 'ASPRAWL', 'ASTANGA', 'ATISHOO', 'BABACUS', 'BACCALA', 'BACCIES', 'BACKBAR', 'BACKFAT', 'BACKLOT', 'BADDISH', 'BAIDARS', 'BALAFON', 'BALINGS', 'BALLBOY', 'BALLIER', 'BALLSED', 'BALLSES', 'BANDIER', 'BANDURA', 'BARBOTS', 'BARGOON', 'BARMILY', 'BASSEST', 'BATARDS', 'BATATAS', 'BATSHIT', 'BATTILY', 'BAULKER', 'BAYSIDE', 'BAYWOPS', 'BAZZING', 'BEAGLED', 'BEAGLER', 'BEALING', 'BEARPAW', 'BEATBOX', 'BEAUTER', 'BEDHEAD', 'BEDREST', 'BEDSOCK', 'BEERILY', 'BEERNUT', 'BEHOOFS', 'BEIGEST', 'BEJASUS', 'BERBERS', 'BERDASH', 'BEVVIES', 'BIFIDUM', 'BIFOLDS', 'BIGUINE', 'BIJURAL', 'BIMINIS', 'BITTILY', 'BITWISE', 'BLAGGED', 'BLAGGER', 'BLAGUES', 'BLAHEST', 'BLAMMED', 'BLANKIE', 'BLEARER', 'BLEWITS', 'BLINGED', 'BLOGGED', 'BLOKIER', 'BODYMAN', 'BODYMEN', 'BOFFINY', 'BOGHOLE', 'BOGLAND', 'BOINGED', 'BOKKENS', 'BOLDING', 'BOMBORA', 'BONEBED', 'BONNIES', 'BONTBOK', 'BOOKBAG', 'BOONEST', 'BOPPIER', 'BOPPISH', 'BORAZON', 'BORONIA', 'BOSSEST', 'BOULTED', 'BOUTADE', 'BOVVERS', 'BOWHUNT', 'BOWSAWS', 'BOWSERS', 'BOWSMAN', 'BOWSMEN', 'BOWWOOD', 'BRAHMAN', 'BREGMAS', 'BREKKIE', 'BRIDIES', 'BRILLER', 'BROASTS', 'BROLGAS', 'BRUCITE', 'BRUTEST', 'BUDWOOD', 'BULGARS', 'BULKERS', 'BULLEYS', 'BUMBAGS', 'BUMBOYS', 'BUMWADS', 'BUNCHER', 'BUNCOES', 'BUNHEAD', 'BUNKIES', 'BUNYIPS', 'BURKHAS', 'BURPEES', 'BUSHIES', 'BUSHLOT', 'BUSTEES', 'BUTTLED', 'BUTTLES', 'BUZZIER', 'CABOVER', 'CACHACA', 'CAFARDS', 'CAGOULE', 'CAHOUNS', 'CAKEBOX', 'CALIXES', 'CALLOUT', 'CALLUNA', 'CALZONI', 'CAMCORD', 'CAMWOOD', 'CANINGS', 'CANTHIC', 'CAPEESH', 'CAPISCE', 'CAPRESE', 'CARDIOS', 'CARIBOO', 'CARINGS', 'CARTFUL', 'CARVERY', 'CASELAW', 'CAZHEST', 'CERESIN', 'CERVIDS', 'CHAINER', 'CHAMBRE', 'CHAPPAL', 'CHEVETS', 'CHICOTS', 'CHILLAX', 'CHINOIS', 'CHINSED', 'CHINSES', 'CHIPSET', 'CHITALS', 'CHOKEYS', 'CHOKIES', 'CHUCKER', 'CHUNDER', 'CHUPPOT', 'CHUSING', 'CIGGIES', 'CLITTER', 'CLOTBUR', 'CLUCKER', 'CLUMPER', 'CLUMPET', 'COADIES', 'COCKIES', 'CODEXES', 'CODINGS', 'COKINGS', 'COLBIES', 'COLTANS', 'COMFILY', 'COMMISH', 'COMSATS', 'CONNORS', 'CONURES', 'CORELLA', 'CORIUMS', 'CORMLET', 'CORNETT', 'COROZOS', 'COTEAUS', 'COVINES', 'COWLIKE', 'COWPUNK', 'COWTOWN', 'CRACKIE', 'CRETONS', 'CROFTED', 'CROTALE', 'CRUISEY', 'CSARDAS', 'CUBBING', 'CUEISTS', 'CULCHIE', 'CULMINA', 'CULSHIE', 'CUMMING', 'CURTANA', 'CYATHIA', 'DAMFOOL', 'DAMNEST', 'DANCIER', 'DANGEST', 'DANSAKS', 'DARNEST', 'DATINGS', 'DAYPACK', 'DAYSAIL', 'DAYWEAR', 'DEALIGN', 'DEBURRS', 'DEDENDA', 'DEHAIRS', 'DELINKS', 'DEMENTI', 'DEMINER', 'DEMISTS', 'DENTARY', 'DERECHO', 'DESCALE', 'DESEEDS', 'DESKILL', 'DETUNED', 'DETUNES', 'DEXTERS', 'DHANSAK', 'DHOLAKS', 'DHURRAS', 'DHYANAS', 'DIDDUMS', 'DIGICAM', 'DIMMISH', 'DININGS', 'DISCOES', 'DISKERS', 'DIVINGS', 'DJEMBES', 'DJIBBAH', 'DJIBBAS', 'DODDLES', 'DOGSKIN', 'DOGTAIL', 'DOILIED', 'DONAIRS', 'DONEGAL', 'DONGING', 'DONSHIP', 'DOODAHS', 'DORYMAN', 'DORYMEN', 'DOUCEST', 'DOUTING', 'DOWNILY', 'DREADER', 'DREARER', 'DROPTOP', 'DRUPELS', 'DRUTHER', 'DRYSUIT', 'DUALISE', 'DUALLIE', 'DUBSTEP', 'DUCKISH', 'DUDETTE', 'DUFFEST', 'DUFFING', 'DULCIAN', 'DUPATTA', 'DUPINGS', 'DUPIONS', 'DUPLETS', 'DUYKERS', 'EARHOLE', 'ECHAPPE', 'ECLOSED', 'ECLOSES', 'ECOGIFT', 'ECORCHE', 'ECOZONE', 'ECUMENE', 'EDAMAME', 'EENSIER', 'EGGIEST', 'EGOTIZE', 'ELDESTS', 'ELMWOOD', 'EMOCORE', 'ENDCAPS', 'ENJAMBS', 'ENSUITE', 'EPATERS', 'ESPOIRS', 'ETHANAL', 'ETRIERS', 'EUREKAS', 'EVENTER', 'EXEDRAS', 'EXTROPY', 'FACEOFF', 'FACTICE', 'FACTUMS', 'FAFFING', 'FAIRIER', 'FANBOYS', 'FANGIRL', 'FAUNIST', 'FAXABLE', 'FELTIER', 'FENINGS', 'FENNING', 'FETTLER', 'FIGTREE', 'FINESTS', 'FINNANS', 'FIREPIT', 'FIZZILY', 'FLATTIE', 'FLOREAT', 'FLOTELS', 'FLYLINE', 'FOGYDOM', 'FOILIST', 'FOODERY', 'FOOTBED', 'FOREXES', 'FRACKED', 'FRANKUM', 'FREEGAN', 'FRENEMY', 'FRICOTS', 'FROSHES', 'FUCKWIT', 'FUDGIER', 'FUNSTER', 'FURBALL', 'GACHERS', 'GACHING', 'GANGLED', 'GANGLES', 'GATCHED', 'GATCHER', 'GATCHES', 'GATELEG', 'GAUCHED', 'GAUCHES', 'GAWMOGE', 'GEEKISH', 'GELCOAT', 'GELLIES', 'GENISTA', 'GENLOCK', 'GENNING', 'GETOUTS', 'GHAZALS', 'GHERAOS', 'GINCHES', 'GITCHES', 'GLAMMED', 'GLAMMER', 'GLIOSES', 'GLIOSIS', 'GLISSES', 'GOATIER', 'GODWARD', 'GOITRED', 'GONCHES', 'GOOGLED', 'GOOGLES', 'GOOLIES', 'GOONDAS', 'GOONERY', 'GOTCHES', 'GOYISHE', 'GRAPLES', 'GROVIER', 'GUBBINS', 'GUILTED', 'GUINEPS', 'GULLERY', 'GUMMILY', 'GUNGIER', 'GUNGING', 'GUNKING', 'GUNNERA', 'GUNPORT', 'GUNTERS', 'GURDIES', 'GUTFULS', 'GYMSLIP', 'HACKERY', 'HAIRILY', 'HALFWIT', 'HALIERS', 'HALLALS', 'HAMATSA', 'HAMFATS', 'HARDISH', 'HASHTAG', 'HAULOUT', 'HAUTEST', 'HECKUVA', 'HECTICS', 'HEDARIM', 'HELISKI', 'HICCUPY', 'HICKEST', 'HOGGERY', 'HOISINS', 'HOMININ', 'HORKING', 'HORNDOG', 'HORSIES', 'HOTPOTS', 'HOUMMOS', 'HOUNGAN', 'HOUSIER', 'HRYVNYA', 'HUBLESS', 'HUGGIER', 'HUMINTS', 'HUMPIES', 'HYPERER', 'HYPOIDS', 'ICEFISH', 'ICEWINE', 'ICEWORM', 'IMMUNER', 'INAPTER', 'INBOXES', 'INDEEDY', 'INDUNAS', 'INEPTER', 'INFEEDS', 'INFILLS', 'INFULAE', 'INJERAS', 'INKJETS', 'INSULAE', 'IONISER', 'IRONIER', 'IRONISE', 'IVORIED', 'IVORIER', 'JANNEYS', 'JANNIED', 'JANNIES', 'JEEZELY', 'JEHADIS', 'JETPACK', 'JIBBAHS', 'JIHADIS', 'JIMSONS', 'JOBBIES', 'JOCKDOM', 'JOCKIER', 'JOCKISH', 'JOCOSER', 'JOGTROT', 'JOYPADS', 'JUDDERY', 'JUMARED', 'JUMBIES', 'KABADDI', 'KABOCHA', 'KABOOMS', 'KAIZENS', 'KAMOTIQ', 'KAPEYKA', 'KARAHIS', 'KATANAS', 'KATHUMP', 'KATSINA', 'KEMPIER', 'KERMODE', 'KETAINE', 'KIDLITS', 'KIPPAHS', 'KIRPANS', 'KISSIER', 'KITINGS', 'KNAIDEL', 'KNEIDEL', 'KOCHIAS', 'KONGONI', 'KUBASAS', 'KUDOSES', 'KUMISES', 'KYLIXES', 'LADDIER', 'LADDISM', 'LAIRAGE', 'LAIRIER', 'LAMPLIT', 'LANCHED', 'LANCHES', 'LANGUED', 'LARIGAN', 'LARNING', 'LASERED', 'LATTERS', 'LAWNING', 'LEGGIES', 'LEGHOLD', 'LETOUTS', 'LEUCONS', 'LEXISES', 'LIASSIC', 'LIATRIS', 'LIKABLY', 'LIMBOED', 'LIMBOES', 'LINCTUS', 'LINDIED', 'LINHAYS', 'LINNEYS', 'LINNIES', 'LIQUIDY', 'LISTBOX', 'LITHOES', 'LIVEYER', 'LOANEES', 'LOBTAIL', 'LOCHIAS', 'LOESSIC', 'LOGOFFS', 'LOGOUTS', 'LOIASES', 'LOIASIS', 'LOOKITS', 'LOPPETS', 'LORICAS', 'LORNEST', 'LOUNGEY', 'LOVIEST', 'LOVINGS', 'LOWBUSH', 'LOWPASS', 'LUCIDER', 'LUMPIAS', 'LUNATES', 'LUVVIES', 'LUVVING', 'LYTHRUM', 'MACHACA', 'MACHERS', 'MAHANTS', 'MAIDANS', 'MALWARE', 'MAMASAN', 'MAMILLA', 'MANDORA', 'MANKIER', 'MANUKAS', 'MAPLESS', 'MARCONI', 'MARGATE', 'MARSHED', 'MATRICS', 'MAUSIER', 'MAUZIER', 'MEAGRER', 'MECHOUI', 'MEDRESE', 'MELAENA', 'MEMETIC', 'MERCADO', 'MERGUEZ', 'MERONYM', 'MICKIES', 'MILDISH', 'MILINGS', 'MIMULUS', 'MINBARS', 'MINGILY', 'MISKEYS', 'MIXDOWN', 'MIXTAPE', 'MOBLOGS', 'MOJITOS', 'MOKSHAS', 'MONILIA', 'MONOSKI', 'MONTIES', 'MOONDOG', 'MOPHEAD', 'MOPPIER', 'MOREISH', 'MORNAYS', 'MOSCATO', 'MOSELLE', 'MOVANTS', 'MUCKLER', 'MUDBANK', 'MUDPIES', 'MUGSHOT', 'MUKHTAR', 'MUMPISH', 'MUMSIER', 'MUMSIES', 'MUNCHIE', 'MURAGES', 'MUSHRAT', 'MUTATOR', 'MYLODON', 'MYOMERE', 'NAFFEST', 'NAGWARE', 'NANCIER', 'NANNIED', 'NANOBOT', 'NARDOOS', 'NARKIER', 'NAVARIN', 'NEARISH', 'NECKLET', 'NEMESIA', 'NESTFUL', 'NETBALL', 'NETBOOK', 'NETFULS', 'NETSURF', 'NIAGARA', 'NIBLETS', 'NIFFIER', 'NIFFING', 'NIQAABS', 'NOCEBOS', 'NONANES', 'NOONERS', 'NORTENA', 'NORTENO', 'NOTATOR', 'NOTELET', 'NOVATED', 'NOVATES', 'NUMDAHS', 'NUMMIER', 'NUMNAHS', 'NUNCHUK', 'NUTBARS', 'NYLONED', 'NYMPHED', 'OATIEST', 'OCHREAS', 'ODONATA', 'OFFEREE', 'OMERTAS', 'ONLIEST', 'ONOMAST', 'ORACIES', 'ORATURE', 'OREBODY', 'OROGENS', 'OUGIYAS', 'OUTSTEP', 'OWLIEST', 'OXAZOLE', 'OXHERDS', 'OXHIDES', 'PACINGS', 'PACZKIS', 'PADRONA', 'PAEONIC', 'PALSIER', 'PANDANS', 'PANEERS', 'PANINIS', 'PANLIKE', 'PANNIST', 'PAPULAS', 'PARATHA', 'PARKIER', 'PARKINS', 'PARKOUR', 'PARTERS', 'PASHKAS', 'PASKHAS', 'PASTILY', 'PATONCE', 'PATOOTS', 'PATTEST', 'PAYDOWN', 'PAYSLIP', 'PAYWALL', 'PEDWAYS', 'PEEPBOS', 'PEGTOPS', 'PELHAMS', 'PEPITAS', 'PERCIDS', 'PEROGIE', 'PEROGIS', 'PERVIER', 'PEWTERY', 'PHARMAS', 'PHARMER', 'PHASERS', 'PHISHED', 'PHISHER', 'PHISHES', 'PHIZZES', 'PHONERS', 'PHOTINO', 'PHYSIOS', 'PIANOLA', 'PICKLER', 'PICKNEY', 'PIEINGS', 'PIFFLER', 'PILLBUG', 'PILLOCK', 'PINCURL', 'PINKIER', 'PINLESS', 'PINSPOT', 'PINTUCK', 'PINYINS', 'PIPLESS', 'PISSIER', 'PLAYSET', 'PLEROMA', 'PLONKER', 'PLUMERY', 'PLUSHED', 'PODCAST', 'PODUNKS', 'POGOING', 'POLACKS', 'POLYBAG', 'PONCIER', 'PONGALS', 'PONGIER', 'POOBAHS', 'POOFIER', 'POOPIER', 'POPOUTS', 'POPPIER', 'POPSTER', 'PORCHED', 'POSIEST', 'PRATIES', 'PRECIPS', 'PRENUPS', 'PREPOSE', 'PREZZIE', 'PRONEST', 'PROPYNE', 'PROSIFY', 'PRUNIER', 'PSIONIC', 'PUBBING', 'PUDEURS', 'PUKIEST', 'PUNCTUM', 'PUTLOCK', 'PYSANKA', 'PYSANKY', 'QAMUTIK', 'QAWWALI', 'QIGONGS', 'QUIFFED', 'QUILLOW', 'QUINZIE', 'RABASKA', 'RACINOS', 'RADDEST', 'RADIOES', 'RAGEFUL', 'RAGHEAD', 'RAGTAIL', 'RAGWORM', 'RAILBED', 'RAILMAN', 'RAILMEN', 'RASSLER', 'RATTILY', 'RAVIEST', 'RAZZIAS', 'RAZZLES', 'REBASED', 'REBASES', 'REBRAND', 'REDDIER', 'REEBOKS', 'REGIFTS', 'REISHIS', 'REMIXER', 'REMOULD', 'RENEGUE', 'REORGED', 'REPOINT', 'RESCUEE', 'RESKINS', 'RETABLO', 'RIBBIES', 'RIBBITS', 'RIBEYES', 'RIFFAGE', 'RIGIDER', 'RIKISHI', 'RINDING', 'RIVULUS', 'ROBATAS', 'ROBINIA', 'ROCKILY', 'RODNEYS', 'ROLLIES', 'ROLLUPS', 'ROOIBOS', 'ROPINGS', 'ROSACES', 'ROSELLA', 'ROTINIS', 'RUCOLAS', 'RUDDIED', 'RUDDIES', 'RUDISTS', 'RUGRATS', 'RUMDUMS', 'RUMNESS', 'RUMPOTS', 'RUSSULA', 'SABICUS', 'SABKHAS', 'SABLEST', 'SABOTED', 'SADDISH', 'SALMONY', 'SALTERY', 'SALWARS', 'SAMBOES', 'SAMIEST', 'SANGHAS', 'SANYASI', 'SAPELES', 'SAPIDER', 'SARANGI', 'SARKILY', 'SARNIES', 'SATCOMS', 'SATINED', 'SATSANG', 'SAXISTS', 'SCARVED', 'SCHLONG', 'SCHMUTZ', 'SCHTUPS', 'SCHVITZ', 'SCRAVEL', 'SCRAWBS', 'SCRITCH', 'SCRUMMY', 'SCRUMPY', 'SCRYERS', 'SEAFOAM', 'SEAKALE', 'SELFIES', 'SENESCE', 'SENITIS', 'SERVERY', 'SEXPERT', 'SEXTING', 'SHADDUP', 'SHAGGER', 'SHAHADA', 'SHAHEED', 'SHAHIDS', 'SHAIKHS', 'SHALWAR', 'SHAMALS', 'SHAMBAS', 'SHARIAT', 'SHASTAS', 'SHAYKHS', 'SHEHNAI', 'SHEITEL', 'SHEMALE', 'SHENAIS', 'SHEROES', 'SHIKARA', 'SHIKRAS', 'SHINOLA', 'SHIRTED', 'SHITBAG', 'SHITCAN', 'SHITTER', 'SHIURIM', 'SHLEPPY', 'SHLONGS', 'SHMATTE', 'SHMEERS', 'SHMOOZY', 'SHMUCKY', 'SHOCHET', 'SHOCHUS', 'SHROOMS', 'SIBSHIP', 'SIDDHAS', 'SIDDHIS', 'SIDEDLY', 'SIKSIKS', 'SIMCHAS', 'SINKFUL', 'SINNETS', 'SITREPS', 'SKEDDED', 'SKIDPAD', 'SKIMMIA', 'SKOLING', 'SKRYING', 'SKYGLOW', 'SKYLESS', 'SLAHALS', 'SLEAZED', 'SLEAZOS', 'SLURVES', 'SMARMED', 'SMILIER', 'SMILIES', 'SMOKEYS', 'SMOKIES', 'SMOOTHE', 'SMRITIS', 'SNAGGER', 'SNAGGLE', 'SNAKISH', 'SNARFLE', 'SNOGGER', 'SNOOSES', 'SNUGGLY', 'SOLERAS', 'SOMBRER', 'SOMONIS', 'SOONISH', 'SOPPILY', 'SORTALS', 'SOUPILY', 'SOURGUM', 'SOUSERS', 'SOWBACK', 'SOWBUGS', 'SOWINGS', 'SOYMEAL', 'SPALTED', 'SPECTED', 'SPILITE', 'SPITTLY', 'SPLODGY', 'SPLURTS', 'SPOONER', 'SPOORER', 'SPRITZY', 'SPUDGEL', 'SPYWARE', 'SQUADDY', 'SQUIDGY', 'SQUIRLS', 'STAKERS', 'STEAMIE', 'STEPDAD', 'STEPMOM', 'STERANE', 'STERNED', 'STEVIAS', 'STEWPOT', 'STICKIE', 'STINGES', 'STONKED', 'STONKER', 'STOVING', 'STRINES', 'STRIPEY', 'STROBED', 'STYLOPS', 'SUDOKUS', 'SUETIER', 'SUNBEDS', 'SUNCARE', 'SUNKERS', 'SUNSTAR', 'SUNTRAP', 'SWIFTIE', 'SWILERS', 'SWILING', 'SWIPERS', 'SWOPPER', 'SYNTONE', 'SYNTYPE', 'TAENITE', 'TAGETES', 'TAGINES', 'TAHINAS', 'TAJINES', 'TALBOTS', 'TALCIER', 'TANGOES', 'TAPINGS', 'TAPLESS', 'TARTUFI', 'TARTUFO', 'TATHATA', 'TAXISES', 'TEENDOM', 'TEEVEES', 'TEGULAE', 'TENNESI', 'TEPACHE', 'TERESES', 'TERETES', 'TERROIR', 'TETROSE', 'TEXTERS', 'TEXTING', 'THRASHY', 'THYMOMA', 'TIGNONS', 'TINSELY', 'TITCHES', 'TITCHIE', 'TOADLET', 'TOCKING', 'TOECLIP', 'TOERAGS', 'TOODLED', 'TOODLES', 'TOOLSET', 'TORPEFY', 'TORQUEY', 'TORUSES', 'TOSTONE', 'TOTTIES', 'TOUPIES', 'TOUTONS', 'TOYLAND', 'TOYTOWN', 'TRANKED', 'TRANNIE', 'TRIALED', 'TRICITY', 'TRIFFID', 'TRIGAMY', 'TRIMPOT', 'TRIPMAN', 'TRIPMEN', 'TRUNCAL', 'TSOTSIS', 'TUNINGS', 'TUNKETS', 'TURNIPY', 'TUSKIER', 'TWEENIE', 'TWISTOR', 'TWONESS', 'TYCHISM', 'TYPINGS', 'UDDERED', 'ULTISOL', 'UMPTIER', 'UNBLIND', 'UNCARED', 'UNGREEN', 'UNGROUP', 'UNGULED', 'UNHASPS', 'UNIBROW', 'UNICOMS', 'UNMOULD', 'UNOAKED', 'UNRIVET', 'UNROPES', 'UNSAFER', 'UNTHAWS', 'UNTONED', 'UNWAGED', 'UPALONG', 'UPSELLS', 'UPSKILL', 'URGINGS', 'UROGRAM', 'URTEXTE', 'VAGUISH', 'VALLUMS', 'VANITAS', 'VARROAS', 'VASEFUL', 'VEINOUS', 'VERMINS', 'VERONAL', 'VERSALS', 'VERSINS', 'VESICAS', 'VIDALIA', 'VIDEOED', 'VIDIOTS', 'VIELLES', 'VIFFING', 'VIHUELA', 'VIRGERS', 'VITELLI', 'VIVERID', 'VLOGGED', 'VLOGGER', 'VODCAST', 'VOLTING', 'VOWELED', 'VUGULAR', 'VULNING', 'WACKOES', 'WAKINGS', 'WALKIES', 'WALLEYS', 'WARBIRD', 'WAREZES', 'WARGAME', 'WASHBAG', 'WAYANGS', 'WAYMARK', 'WEBINAR', 'WEBZINE', 'WEEDBED', 'WEEJUNS', 'WEEPILY', 'WHATCHA', 'WHIPPIT', 'WHOOMPH', 'WHOOMPS', 'WHOSESO', 'WHOSITS', 'WIGGERS', 'WINGNUT', 'WINKLER', 'WITTERS', 'WOGGLES', 'WONKERY', 'WONKILY', 'WONKISH', 'WOOABLE', 'WOODRAT', 'WOONERF', 'WOOPIES', 'WORKTOP', 'WORLDER', 'WOTCHER', 'WRENTIT', 'WRISTED', 'WRISTER', 'YACHTIE', 'YAFFLES', 'YAPPIER', 'YOBBERY', 'YOBBIER', 'YOBBISH', 'YOGISMS', 'YOGOURT', 'YOMPING', 'YONDERS', 'YUKATAS', 'ZAIDEHS', 'ZAIDIES', 'ZETETIC', 'ZIPOLAS', 'ZIPPILY', 'ZONINGS'];
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Gameboard = function (_Component) {
-  _inherits(Gameboard, _Component);
-
-  function Gameboard() {
-    _classCallCheck(this, Gameboard);
-
-    return _possibleConstructorReturn(this, (Gameboard.__proto__ || Object.getPrototypeOf(Gameboard)).apply(this, arguments));
-  }
-
-  _createClass(Gameboard, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { id: "gameboard-container" },
-        _react2.default.createElement(
-          "p",
-          null,
-          "## GAMEBOARD ##"
-        )
-      );
-    }
-  }]);
-
-  return Gameboard;
-}(_react.Component);
-
-exports.default = Gameboard;
+exports.default = sevens;
 
 /***/ }),
 /* 81 */
@@ -12312,9 +11712,358 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NewButton = function NewButton(_ref) {
+  var newGame = _ref.newGame,
+      allownew = _ref.allownew,
+      timer = _ref.timer;
+
+  var handleClick = function handleClick() {
+    return newGame(timer);
+  };
+  return _react2.default.createElement(
+    'div',
+    { id: 'newgame' },
+    _react2.default.createElement(
+      'button',
+      {
+        id: 'new-game-button',
+        disabled: !allownew,
+        onClick: handleClick
+      },
+      'New Game'
+    )
+  );
+};
+
+exports.default = NewButton;
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(4);
+
+var _actions = __webpack_require__(5);
+
+var _endGamePresent = __webpack_require__(83);
+
+var _endGamePresent2 = _interopRequireDefault(_endGamePresent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    allownew: state.allownew
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return (0, _redux.bindActionCreators)({ endGame: _actions.endGame }, dispatch);
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_endGamePresent2.default);
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var EndButton = function EndButton(_ref) {
+  var endGame = _ref.endGame,
+      allownew = _ref.allownew;
+  return _react2.default.createElement(
+    'div',
+    { id: 'endgame' },
+    _react2.default.createElement(
+      'button',
+      {
+        id: 'end-game-button',
+        disabled: allownew,
+        onClick: endGame
+      },
+      'End Game'
+    )
+  );
+};
+
+exports.default = EndButton;
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(4);
+
+var _actions = __webpack_require__(5);
+
+var _toggleTimerPresent = __webpack_require__(85);
+
+var _toggleTimerPresent2 = _interopRequireDefault(_toggleTimerPresent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    allownew: state.allownew,
+    timer: state.timer
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return (0, _redux.bindActionCreators)({ toggleTimer: _actions.toggleTimer }, dispatch);
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_toggleTimerPresent2.default);
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ToggleTimer = function ToggleTimer(_ref) {
+  var toggleTimer = _ref.toggleTimer,
+      timer = _ref.timer,
+      allownew = _ref.allownew;
+  return _react2.default.createElement(
+    'div',
+    { id: 'toggletimer' },
+    _react2.default.createElement(
+      'div',
+      { id: 'togglecheck' },
+      _react2.default.createElement('input', {
+        type: 'checkbox',
+        name: 'timer-choice',
+        id: 'timer-choice',
+        checked: timer,
+        disabled: !allownew,
+        onChange: toggleTimer
+      }),
+      _react2.default.createElement('label', { htmlFor: 'timer-choice' })
+    )
+  );
+};
+
+exports.default = ToggleTimer;
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _QuizSeven = __webpack_require__(87);
+
+var _QuizSeven2 = _interopRequireDefault(_QuizSeven);
+
+var _InputFour = __webpack_require__(89);
+
+var _InputFour2 = _interopRequireDefault(_InputFour);
+
+var _AnswersCount = __webpack_require__(91);
+
+var _AnswersCount2 = _interopRequireDefault(_AnswersCount);
+
+var _AnswersRight = __webpack_require__(93);
+
+var _AnswersRight2 = _interopRequireDefault(_AnswersRight);
+
+var _AnswersMissed = __webpack_require__(95);
+
+var _AnswersMissed2 = _interopRequireDefault(_AnswersMissed);
+
+var _AnswersWrong = __webpack_require__(97);
+
+var _AnswersWrong2 = _interopRequireDefault(_AnswersWrong);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Gameboard = function Gameboard() {
+  return _react2.default.createElement(
+    'div',
+    { id: 'gameboard-container' },
+    _react2.default.createElement(_QuizSeven2.default, null),
+    _react2.default.createElement(_InputFour2.default, null),
+    _react2.default.createElement(_AnswersCount2.default, null),
+    _react2.default.createElement(_AnswersRight2.default, null),
+    _react2.default.createElement(_AnswersMissed2.default, null),
+    _react2.default.createElement(_AnswersWrong2.default, null)
+  );
+};
+
+exports.default = Gameboard;
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(2);
+
+var _quizSevenPresent = __webpack_require__(88);
+
+var _quizSevenPresent2 = _interopRequireDefault(_quizSevenPresent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var capitalize = function capitalize(word) {
+  return word ? word.toUpperCase() : '';
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    currentseven: capitalize(state.currentseven)
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_quizSevenPresent2.default);
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CurrentSeven = function CurrentSeven(_ref) {
+  var currentseven = _ref.currentseven;
+  return _react2.default.createElement(
+    'div',
+    { id: 'quiz-seven' },
+    _react2.default.createElement(
+      'h1',
+      null,
+      currentseven
+    )
+  );
+};
+
+exports.default = CurrentSeven;
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(4);
+
+var _actions = __webpack_require__(5);
+
+var _inputFourPresent = __webpack_require__(90);
+
+var _inputFourPresent2 = _interopRequireDefault(_inputFourPresent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    allownew: state.allownew,
+    poolfour: state.poolfour,
+    foundfour: state.foundfour,
+    wrongfour: state.wrongfour
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return (0, _redux.bindActionCreators)({ guessRight: _actions.guessRight, guessWrong: _actions.guessWrong }, dispatch);
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_inputFourPresent2.default);
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -12326,41 +12075,651 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Footer = function (_Component) {
-  _inherits(Footer, _Component);
+var InputFour = function (_React$Component) {
+  _inherits(InputFour, _React$Component);
 
-  function Footer() {
-    _classCallCheck(this, Footer);
+  function InputFour(props) {
+    _classCallCheck(this, InputFour);
 
-    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (InputFour.__proto__ || Object.getPrototypeOf(InputFour)).call(this, props));
+
+    _this.state = {
+      guess: ''
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    _this.handleChange = _this.handleChange.bind(_this);
+    return _this;
   }
 
-  _createClass(Footer, [{
-    key: "render",
+  _createClass(InputFour, [{
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      if (!this.props.allownew && prevProps.allownew) {
+        this.textInput.focus();
+      }
+    }
+  }, {
+    key: 'handleChange',
+
+
+    // eslint-disable-next-line no-undef
+    value: function handleChange(event) {
+      this.setState({ guess: event.target.value.toUpperCase() });
+    }
+
+    // eslint-disable-next-line no-undef
+
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(event) {
+      var _this2 = this;
+
+      if (this.props.poolfour.includes(this.state.guess)) {
+        var newpool = this.props.poolfour.filter(function (x) {
+          return x !== _this2.state.guess;
+        });
+        var newfound = this.props.foundfour.concat(this.state.guess);
+        this.props.guessRight(newpool, newfound);
+      } else if (!this.props.foundfour.includes(this.state.guess) && !this.props.wrongfour.includes(this.state.guess)) {
+        var newwrong = this.props.wrongfour.concat(this.state.guess);
+        this.props.guessWrong(newwrong);
+      }
+      event.preventDefault();
+      this.setState({ guess: '' });
+    }
+  }, {
+    key: 'render',
     value: function render() {
+      var _this3 = this;
+
       return _react2.default.createElement(
-        "div",
-        { id: "footer-container" },
+        'div',
+        { id: 'input-four' },
         _react2.default.createElement(
-          "p",
-          null,
-          "Created by Doug Riblet"
+          'form',
+          { onSubmit: this.handleSubmit },
+          _react2.default.createElement('input', {
+            id: 'inputguess',
+            type: 'text',
+            ref: function ref(input) {
+              _this3.textInput = input;
+            },
+            disabled: this.props.allownew,
+            value: this.state.guess,
+            minLength: '4',
+            maxLength: '4',
+            size: '5',
+            onChange: this.handleChange
+          })
         )
       );
     }
   }]);
 
-  return Footer;
-}(_react.Component);
+  return InputFour;
+}(_react2.default.Component);
 
-exports.default = Footer;
+exports.default = InputFour;
 
 /***/ }),
-/* 82 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(4);
+
+var _actions = __webpack_require__(5);
+
+var _answersCountPresent = __webpack_require__(92);
+
+var _answersCountPresent2 = _interopRequireDefault(_answersCountPresent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    poollength: state.poollength,
+    foundlength: state.foundlength,
+    allownew: state.allownew
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return (0, _redux.bindActionCreators)({ endGame: _actions.endGame }, dispatch);
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_answersCountPresent2.default);
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AnswersCount = function AnswersCount(_ref) {
+  var poollength = _ref.poollength,
+      foundlength = _ref.foundlength,
+      allownew = _ref.allownew,
+      endGame = _ref.endGame;
+
+  if (poollength === foundlength && !allownew) {
+    endGame();
+  }
+  return _react2.default.createElement(
+    'div',
+    { id: 'answers-count' },
+    foundlength,
+    ' of ',
+    poollength
+  );
+};
+
+exports.default = AnswersCount;
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(2);
+
+var _answersRightPresent = __webpack_require__(94);
+
+var _answersRightPresent2 = _interopRequireDefault(_answersRightPresent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var alphabetize = function alphabetize(arr) {
+  return arr ? arr.sort().join(' ') : '';
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    foundfour: alphabetize(state.foundfour)
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_answersRightPresent2.default);
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AnswersRight = function AnswersRight(_ref) {
+  var foundfour = _ref.foundfour;
+  return _react2.default.createElement(
+    'div',
+    { id: 'answers-right' },
+    foundfour
+  );
+};
+
+exports.default = AnswersRight;
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(2);
+
+var _answersMissedPresent = __webpack_require__(96);
+
+var _answersMissedPresent2 = _interopRequireDefault(_answersMissedPresent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var alphabetize = function alphabetize(arr) {
+  return arr ? arr.sort().join(' ') : '';
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    poolfour: alphabetize(state.poolfour),
+    showmissed: state.showmissed
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_answersMissedPresent2.default);
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AnswersMissed = function AnswersMissed(_ref) {
+  var poolfour = _ref.poolfour,
+      showmissed = _ref.showmissed;
+  return _react2.default.createElement(
+    'div',
+    { id: 'answers-missed' },
+    showmissed ? poolfour : ''
+  );
+};
+
+exports.default = AnswersMissed;
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(2);
+
+var _answersWrongPresent = __webpack_require__(98);
+
+var _answersWrongPresent2 = _interopRequireDefault(_answersWrongPresent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var alphabetize = function alphabetize(arr) {
+  return arr ? arr.sort().join(' ') : '';
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    wrongfour: alphabetize(state.wrongfour)
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_answersWrongPresent2.default);
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AnswersWrong = function AnswersWrong(_ref) {
+  var wrongfour = _ref.wrongfour;
+  return _react2.default.createElement(
+    'div',
+    { id: 'answers-wrong' },
+    wrongfour
+  );
+};
+
+exports.default = AnswersWrong;
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _TimerClock = __webpack_require__(100);
+
+var _TimerClock2 = _interopRequireDefault(_TimerClock);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Timer = function Timer() {
+  return _react2.default.createElement(
+    'div',
+    { id: 'timer-container' },
+    _react2.default.createElement(_TimerClock2.default, null)
+  );
+};
+
+exports.default = Timer;
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(2);
+
+var _redux = __webpack_require__(4);
+
+var _actions = __webpack_require__(5);
+
+var _timerClockPresent = __webpack_require__(101);
+
+var _timerClockPresent2 = _interopRequireDefault(_timerClockPresent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    isclicking: state.isclicking,
+    secondsleft: state.secondsleft,
+    timer: state.timer
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return (0, _redux.bindActionCreators)({
+    tickTock: _actions.tickTock,
+    endGame: _actions.endGame
+  }, dispatch);
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_timerClockPresent2.default);
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _timerFormat = __webpack_require__(31);
+
+var _timerFormat2 = _interopRequireDefault(_timerFormat);
+
+var _timerCountdown = __webpack_require__(102);
+
+var _timerCountdown2 = _interopRequireDefault(_timerCountdown);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var TimerClock = function TimerClock(_ref) {
+  var tickTock = _ref.tickTock,
+      endGame = _ref.endGame,
+      timer = _ref.timer,
+      isclicking = _ref.isclicking,
+      secondsleft = _ref.secondsleft;
+
+  var timerClass = timer ? 'timer-show' : 'timer-hide';
+  var tick2 = function tick2() {
+    return tickTock();
+  };
+  if (secondsleft === 0 && isclicking) {
+    endGame();
+  }
+  return _react2.default.createElement(
+    'div',
+    {
+      className: timerClass
+    },
+    isclicking ? _react2.default.createElement(_timerCountdown2.default, { tick2: tick2, secondsleft: secondsleft }) : _react2.default.createElement(_timerFormat2.default, { secondsleft: secondsleft })
+  );
+};
+
+exports.default = TimerClock;
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _timerFormat = __webpack_require__(31);
+
+var _timerFormat2 = _interopRequireDefault(_timerFormat);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TimerCountdown = function (_React$Component) {
+  _inherits(TimerCountdown, _React$Component);
+
+  function TimerCountdown() {
+    _classCallCheck(this, TimerCountdown);
+
+    return _possibleConstructorReturn(this, (TimerCountdown.__proto__ || Object.getPrototypeOf(TimerCountdown)).apply(this, arguments));
+  }
+
+  _createClass(TimerCountdown, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      this.tickerID = setInterval(function () {
+        _this2.props.tick2();
+      }, 1000);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      clearInterval(this.tickerID);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_timerFormat2.default, { secondsleft: this.props.secondsleft })
+      );
+    }
+  }]);
+
+  return TimerCountdown;
+}(_react2.default.Component);
+
+exports.default = TimerCountdown;
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _actionTypes = __webpack_require__(30);
+
+var types = _interopRequireWildcard(_actionTypes);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+// eslint-disable-next-line no-undef
+var reducer = function reducer(state, action) {
+  switch (action.type) {
+    case types.GUESS_RIGHT:
+      return Object.assign({}, state, {
+        poolfour: action.newpool,
+        foundfour: action.newfound,
+        foundlength: state.foundlength + 1
+      });
+    case types.GUESS_WRONG:
+      return Object.assign({}, state, {
+        wrongfour: action.newwrong
+      });
+    case types.TOGGLE_TIMER:
+      return Object.assign({}, state, {
+        timer: !state.timer,
+        secondsleft: 0
+      });
+    case types.TICK_TOCK:
+      return Object.assign({}, state, {
+        secondsleft: state.secondsleft - 1
+      });
+    case types.END_GAME:
+      return Object.assign({}, state, {
+        allownew: true,
+        isclicking: false,
+        showmissed: true
+      });
+    case types.REQUEST_NEW_GAME:
+      return Object.assign({}, state, {
+        allownew: false,
+        isfetching: true,
+        isclicking: false,
+        currentseven: '',
+        poolfour: [],
+        foundfour: [],
+        wrongfour: [],
+        showmissed: false
+      });
+    case types.RECEIVE_NEW_TIMED_GAME:
+      return Object.assign({}, state, {
+        allownew: false,
+        isfetching: false,
+        isclicking: true,
+        secondsleft: action.newsecs,
+        currentseven: action.newseven,
+        poolfour: action.newpool,
+        foundfour: [],
+        wrongfour: [],
+        poollength: action.newlength,
+        foundlength: 0,
+        showmissed: false
+      });
+    case types.RECEIVE_NEW_UNTIMED_GAME:
+      return Object.assign({}, state, {
+        allownew: false,
+        isfetching: false,
+        isclicking: false,
+        secondsleft: 0,
+        currentseven: action.newseven,
+        poolfour: action.newpool,
+        foundfour: [],
+        wrongfour: [],
+        poollength: action.newlength,
+        foundlength: 0,
+        showmissed: false
+      });
+    default:
+      return state;
+  }
+};
+
+exports.default = reducer;
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var initialState = {
+  allownew: true,
+  isfetching: false,
+  timer: false,
+  isclicking: false,
+  secondsleft: 0,
+  currentseven: 'JEEZELY',
+  poolfour: ['JEEZ', 'EELY'],
+  foundfour: [],
+  wrongfour: [],
+  poollength: 2,
+  foundlength: 0,
+  showmissed: false
+};
+
+exports.default = initialState;
 
 /***/ })
 /******/ ]);
