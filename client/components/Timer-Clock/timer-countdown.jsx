@@ -9,7 +9,6 @@ type Props = {
 };
 
 export default class TimerCountdown extends React.Component<Props> {
-  tickerID: IntervalID;
   componentDidMount() {
     this.tickerID = setInterval(() => {
       this.props.tick2();
@@ -19,6 +18,9 @@ export default class TimerCountdown extends React.Component<Props> {
   componentWillUnmount() {
     clearInterval(this.tickerID);
   }
+
+  // eslint-disable-next-line no-undef
+  tickerID: IntervalID;
 
   render() {
     return (

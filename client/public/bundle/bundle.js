@@ -12094,7 +12094,7 @@ var InputFour = function (_React$Component) {
   _createClass(InputFour, [{
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps) {
-      if (!this.props.allownew && prevProps.allownew) {
+      if (!this.props.allownew && prevProps.allownew && this.textInput) {
         this.textInput.focus();
       }
     }
@@ -12587,6 +12587,9 @@ var TimerCountdown = function (_React$Component) {
     value: function componentWillUnmount() {
       clearInterval(this.tickerID);
     }
+
+    // eslint-disable-next-line no-undef
+
   }, {
     key: 'render',
     value: function render() {

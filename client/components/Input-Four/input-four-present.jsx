@@ -26,11 +26,12 @@ export default class InputFour extends React.Component<Props, State> {
   }
 
   componentDidUpdate(prevProps: Props) {
-    if (!this.props.allownew && prevProps.allownew) {
+    if (!this.props.allownew && prevProps.allownew && this.textInput) {
       this.textInput.focus();
     }
   }
 
+  textInput: ?HTMLInputElement;
   handleSubmit: Function;
   handleChange: Function;
 
