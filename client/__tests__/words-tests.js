@@ -14,8 +14,8 @@ describe('Word Lists', () => {
     expect(fours.length).toBe(4214);
   });
 
-  test('sevens list contains 1214 words', () => {
-    expect(sevens.length).toBe(1214);
+  test('sevens list contains 2081 words', () => {
+    expect(sevens.length).toBe(2081);
   });
 
   test('fours list contains only strings', () => {
